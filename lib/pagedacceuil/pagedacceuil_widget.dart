@@ -605,7 +605,9 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: Colors.white,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .lineColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
@@ -637,7 +639,9 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: Colors.white,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lineColor,
                                               contentPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
@@ -724,7 +728,9 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: Colors.white,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lineColor,
                                               contentPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
@@ -830,7 +836,9 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: Colors.white,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .lineColor,
                                               contentPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
