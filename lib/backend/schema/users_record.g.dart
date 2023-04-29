@@ -316,14 +316,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.userid;
-    if (value != null) {
-      result
-        ..add('userid')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.mapss;
     if (value != null) {
       result
@@ -525,12 +517,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.amazon = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'userid':
-          result.userid = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
-          break;
         case 'mapss':
           result.mapss = serializers.deserialize(value,
               specifiedType: const FullType(LatLng)) as LatLng?;
@@ -636,8 +622,6 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? amazon;
   @override
-  final DocumentReference<Object?>? userid;
-  @override
   final LatLng? mapss;
   @override
   final DocumentReference<Object?>? ffRef;
@@ -689,7 +673,6 @@ class _$UsersRecord extends UsersRecord {
       this.deezer,
       this.applemusic,
       this.amazon,
-      this.userid,
       this.mapss,
       this.ffRef})
       : super._();
@@ -748,7 +731,6 @@ class _$UsersRecord extends UsersRecord {
         deezer == other.deezer &&
         applemusic == other.applemusic &&
         amazon == other.amazon &&
-        userid == other.userid &&
         mapss == other.mapss &&
         ffRef == other.ffRef;
   }
@@ -799,7 +781,6 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, deezer.hashCode);
     _$hash = $jc(_$hash, applemusic.hashCode);
     _$hash = $jc(_$hash, amazon.hashCode);
-    _$hash = $jc(_$hash, userid.hashCode);
     _$hash = $jc(_$hash, mapss.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
@@ -852,7 +833,6 @@ class _$UsersRecord extends UsersRecord {
           ..add('deezer', deezer)
           ..add('applemusic', applemusic)
           ..add('amazon', amazon)
-          ..add('userid', userid)
           ..add('mapss', mapss)
           ..add('ffRef', ffRef))
         .toString();
@@ -1034,10 +1014,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? get amazon => _$this._amazon;
   set amazon(String? amazon) => _$this._amazon = amazon;
 
-  DocumentReference<Object?>? _userid;
-  DocumentReference<Object?>? get userid => _$this._userid;
-  set userid(DocumentReference<Object?>? userid) => _$this._userid = userid;
-
   LatLng? _mapss;
   LatLng? get mapss => _$this._mapss;
   set mapss(LatLng? mapss) => _$this._mapss = mapss;
@@ -1096,7 +1072,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _deezer = $v.deezer;
       _applemusic = $v.applemusic;
       _amazon = $v.amazon;
-      _userid = $v.userid;
       _mapss = $v.mapss;
       _ffRef = $v.ffRef;
       _$v = null;
@@ -1164,7 +1139,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             deezer: deezer,
             applemusic: applemusic,
             amazon: amazon,
-            userid: userid,
             mapss: mapss,
             ffRef: ffRef);
     replace(_$result);
