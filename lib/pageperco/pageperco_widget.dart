@@ -3,6 +3,7 @@ import '/components/password_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -308,14 +309,12 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'tel',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phone,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchMap(
+                                                address: valueOrDefault(
+                                                    currentUserDocument?.maps,
+                                                    ''),
+                                                title: '',
+                                              );
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -375,14 +374,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'sms',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phonesms,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.menu,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -433,10 +427,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            await launchUrl(Uri(
-                                              scheme: 'mailto',
-                                              path: currentUserEmail,
-                                            ));
+                                            await launchURL(valueOrDefault(
+                                                currentUserDocument?.site, ''));
                                           },
                                           child: Material(
                                             color: Colors.transparent,
@@ -492,7 +484,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               await launchURL(valueOrDefault(
-                                                  currentUserDocument?.whatsapp,
+                                                  currentUserDocument?.contact,
                                                   ''));
                                             },
                                             child: Material(
@@ -550,7 +542,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               await launchURL(valueOrDefault(
-                                                  currentUserDocument?.zoom,
+                                                  currentUserDocument?.booking,
                                                   ''));
                                             },
                                             child: Material(
@@ -610,7 +602,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               await launchURL(valueOrDefault(
-                                                  currentUserDocument?.telegram,
+                                                  currentUserDocument?.airbnb,
                                                   ''));
                                             },
                                             child: Material(
@@ -670,7 +662,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               await launchURL(valueOrDefault(
-                                                  currentUserDocument?.discord,
+                                                  currentUserDocument
+                                                      ?.tripadvisor,
                                                   ''));
                                             },
                                             child: Material(
