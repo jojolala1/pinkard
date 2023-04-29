@@ -100,16 +100,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'creatprofil',
           path: '/creatprofil',
           builder: (context, params) => CreatprofilWidget(),
-        ),
-        FFRoute(
-          name: 'xfjudsjkdeko',
-          path: '/xfjudsjkdeko',
-          builder: (context, params) => XfjudsjkdekoWidget(),
-        ),
-        FFRoute(
-          name: 'sdbdfnbtrn',
-          path: '/sdbdfnbtrn',
-          builder: (context, params) => SdbdfnbtrnWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

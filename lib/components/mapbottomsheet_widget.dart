@@ -32,8 +32,8 @@ class _MapbottomsheetWidgetState extends State<MapbottomsheetWidget> {
     super.initState();
     _model = createModel(context, () => MapbottomsheetModel());
 
-    _model.mapsController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.maps, ''));
+    _model.mapsController ??=
+        TextEditingController(text: currentUserDocument!.mapss?.toString());
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -113,7 +113,7 @@ class _MapbottomsheetWidgetState extends State<MapbottomsheetWidget> {
                       obscureText: false,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).bodyMedium,
-                        hintText: valueOrDefault(currentUserDocument?.maps, ''),
+                        hintText: currentUserDocument!.mapss?.toString(),
                         hintStyle: FlutterFlowTheme.of(context).bodyMedium,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
