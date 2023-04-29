@@ -40,6 +40,13 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.uid;
+    if (value != null) {
+      result
+        ..add('uid')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.createdTime;
     if (value != null) {
       result
@@ -350,6 +357,10 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.photoUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'uid':
+          result.uid = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'created_time':
           result.createdTime = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
@@ -531,6 +542,8 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? photoUrl;
   @override
+  final String? uid;
+  @override
   final DateTime? createdTime;
   @override
   final String? prenom;
@@ -620,6 +633,7 @@ class _$UsersRecord extends UsersRecord {
       {this.email,
       this.displayName,
       this.photoUrl,
+      this.uid,
       this.createdTime,
       this.prenom,
       this.biographie,
@@ -677,6 +691,7 @@ class _$UsersRecord extends UsersRecord {
         email == other.email &&
         displayName == other.displayName &&
         photoUrl == other.photoUrl &&
+        uid == other.uid &&
         createdTime == other.createdTime &&
         prenom == other.prenom &&
         biographie == other.biographie &&
@@ -726,6 +741,7 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, displayName.hashCode);
     _$hash = $jc(_$hash, photoUrl.hashCode);
+    _$hash = $jc(_$hash, uid.hashCode);
     _$hash = $jc(_$hash, createdTime.hashCode);
     _$hash = $jc(_$hash, prenom.hashCode);
     _$hash = $jc(_$hash, biographie.hashCode);
@@ -777,6 +793,7 @@ class _$UsersRecord extends UsersRecord {
           ..add('email', email)
           ..add('displayName', displayName)
           ..add('photoUrl', photoUrl)
+          ..add('uid', uid)
           ..add('createdTime', createdTime)
           ..add('prenom', prenom)
           ..add('biographie', biographie)
@@ -836,6 +853,10 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? _photoUrl;
   String? get photoUrl => _$this._photoUrl;
   set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
+
+  String? _uid;
+  String? get uid => _$this._uid;
+  set uid(String? uid) => _$this._uid = uid;
 
   DateTime? _createdTime;
   DateTime? get createdTime => _$this._createdTime;
@@ -1011,6 +1032,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _email = $v.email;
       _displayName = $v.displayName;
       _photoUrl = $v.photoUrl;
+      _uid = $v.uid;
       _createdTime = $v.createdTime;
       _prenom = $v.prenom;
       _biographie = $v.biographie;
@@ -1077,6 +1099,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             email: email,
             displayName: displayName,
             photoUrl: photoUrl,
+            uid: uid,
             createdTime: createdTime,
             prenom: prenom,
             biographie: biographie,
