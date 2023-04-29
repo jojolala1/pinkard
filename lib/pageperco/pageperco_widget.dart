@@ -3,10 +3,10 @@ import '/components/password_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'pageperco_model.dart';
 export 'pageperco_model.dart';
@@ -28,7 +28,6 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
-  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -75,12 +74,18 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                 ),
                 child: Align(
                   alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Text(
+                  child: GradientText(
                     'Pinkard',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           fontSize: 28.0,
                         ),
+                    colors: [
+                      FlutterFlowTheme.of(context).primary,
+                      Color(0xFFFA09C6)
+                    ],
+                    gradientDirection: GradientDirection.ltr,
+                    gradientType: GradientType.linear,
                   ),
                 ),
               ),
@@ -310,16 +315,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              currentUserLocationValue =
-                                                  await getCurrentUserLocation(
-                                                      defaultLocation:
-                                                          LatLng(0.0, 0.0));
-                                              await launchMap(
-                                                address:
-                                                    currentUserLocationValue
-                                                        ?.toString(),
-                                                title: '',
-                                              );
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.maps,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -1961,14 +1959,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'tel',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phone,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.paypal,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -2028,14 +2021,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'sms',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phonesms,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.revolut,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -2118,14 +2106,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'tel',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phone,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.fiverr,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -2185,14 +2168,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'sms',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phonesms,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.cinqeuro,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -2275,14 +2253,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'tel',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phone,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.spotify,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -2347,14 +2320,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'sms',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phonesms,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.deezer,
+                                                  ''));
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -2405,10 +2373,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            await launchUrl(Uri(
-                                              scheme: 'mailto',
-                                              path: currentUserEmail,
-                                            ));
+                                            await launchURL(valueOrDefault(
+                                                currentUserDocument?.applemusic,
+                                                ''));
                                           },
                                           child: Material(
                                             color: Colors.transparent,
@@ -2464,7 +2431,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               await launchURL(valueOrDefault(
-                                                  currentUserDocument?.whatsapp,
+                                                  currentUserDocument?.amazon,
                                                   ''));
                                             },
                                             child: Material(

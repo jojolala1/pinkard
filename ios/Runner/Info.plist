@@ -57,8 +57,6 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 
-	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>In order to search nearby, this app requires access to your current location.</string>
 	<key>NSCameraUsageDescription</key>
     <string>In order to take a picture or video, this app requires permission to access the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -82,18 +80,6 @@
       <string>fb-messenger-share-api</string>
       <string>fbauth2</string>
       <string>fbshareextension</string>
-      <string>comgooglemaps</string>
-      <string>baidumap</string>
-      <string>iosamap</string>
-      <string>waze</string>
-      <string>yandexmaps</string>
-      <string>yandexnavi</string>
-      <string>citymapper</string>
-      <string>mapswithme</string>
-      <string>osmandmaps</string>
-      <string>dgis</string>
-      <string>qqmap</string>
-      <string>here-location</string>
 
     </array>
 
