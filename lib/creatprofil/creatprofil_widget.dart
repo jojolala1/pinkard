@@ -5,7 +5,6 @@ import '/components/amazonbottomsheet_widget.dart';
 import '/components/applemusicbottomsheet_widget.dart';
 import '/components/bookingbottomsheet_widget.dart';
 import '/components/bottomsheetfb_widget.dart';
-import '/components/codepinfaux_widget.dart';
 import '/components/contactbottomsheet_widget.dart';
 import '/components/deezerbottomsheet_widget.dart';
 import '/components/discordbottomsheet_widget.dart';
@@ -167,41 +166,17 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                       size: 30.0,
                     ),
                     onPressed: () async {
-                      if (valueOrDefault(currentUserDocument?.mdp, 0)
-                                  .toString() !=
-                              null &&
-                          valueOrDefault(currentUserDocument?.mdp, 0)
-                                  .toString() !=
-                              '') {
-                        final usersUpdateData = createUsersRecordData(
-                          displayName: valueOrDefault(
-                              currentUserDocument?.biographie, ''),
-                          prenom:
-                              valueOrDefault(currentUserDocument?.prenom, ''),
-                          mdp: valueOrDefault(currentUserDocument?.mdp, 0),
-                          biographie: valueOrDefault(
-                              currentUserDocument?.biographie, ''),
-                        );
-                        await currentUserReference!.update(usersUpdateData);
+                      final usersUpdateData = createUsersRecordData(
+                        displayName:
+                            valueOrDefault(currentUserDocument?.biographie, ''),
+                        prenom: valueOrDefault(currentUserDocument?.prenom, ''),
+                        mdp: valueOrDefault(currentUserDocument?.mdp, 0),
+                        biographie:
+                            valueOrDefault(currentUserDocument?.biographie, ''),
+                      );
+                      await currentUserReference!.update(usersUpdateData);
 
-                        context.pushNamed('pageperco');
-
-                        return;
-                      } else {
-                        await showModalBottomSheet(
-                          isScrollControlled: true,
-                          backgroundColor: Colors.transparent,
-                          enableDrag: false,
-                          context: context,
-                          builder: (bottomSheetContext) {
-                            return Padding(
-                              padding:
-                                  MediaQuery.of(bottomSheetContext).viewInsets,
-                              child: CodepinfauxWidget(),
-                            );
-                          },
-                        ).then((value) => setState(() {}));
-                      }
+                      context.pushNamed('pageperco');
                     },
                   ),
                 ),

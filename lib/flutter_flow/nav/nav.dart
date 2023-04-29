@@ -282,10 +282,10 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).primaryBtnText,
                   child: Image.asset(
                     'assets/images/pinkard-logo-fond-blanc1[2062].png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fitWidth,
                   ),
                 )
               : page;

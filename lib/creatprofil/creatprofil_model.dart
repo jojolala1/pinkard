@@ -5,7 +5,6 @@ import '/components/amazonbottomsheet_widget.dart';
 import '/components/applemusicbottomsheet_widget.dart';
 import '/components/bookingbottomsheet_widget.dart';
 import '/components/bottomsheetfb_widget.dart';
-import '/components/codepinfaux_widget.dart';
 import '/components/contactbottomsheet_widget.dart';
 import '/components/deezerbottomsheet_widget.dart';
 import '/components/discordbottomsheet_widget.dart';
