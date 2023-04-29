@@ -247,8 +247,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                           _model.currentPageLink =
                                               await generateCurrentPageLink(
                                             context,
-                                            title:
-                                                currentUserDocument!.userid?.id,
+                                            title: currentUserUid,
                                             isShortLink: false,
                                           );
                                         },
