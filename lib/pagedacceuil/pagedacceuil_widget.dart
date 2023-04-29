@@ -57,67 +57,73 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
             body: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 50.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/pinkard-logo-fond-blanc[2062].png',
-                          width: 250.0,
-                          height: 200.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: DefaultTabController(
-                      length: 2,
-                      initialIndex: 0,
-                      child: Column(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 50.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Align(
-                            alignment: Alignment(0.0, 0),
-                            child: TabBar(
-                              isScrollable: true,
-                              labelColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: Color(0xFF0F1113),
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                              indicatorColor: Colors.white,
-                              tabs: [
-                                Tab(
-                                  text: 'connection',
-                                ),
-                                Tab(
-                                  text: 'création',
-                                ),
-                              ],
-                            ),
+                          Image.asset(
+                            'assets/images/pinkard-logo-fond-blanc[2062].png',
+                            width: 250.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
                           ),
-                          Expanded(
-                            child: TabBarView(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 24.0, 24.0, 24.0),
-                                  child: SingleChildScrollView(
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 500.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      child: DefaultTabController(
+                        length: 2,
+                        initialIndex: 0,
+                        child: Column(
+                          children: [
+                            Align(
+                              alignment: Alignment(0.0, 0),
+                              child: TabBar(
+                                isScrollable: true,
+                                labelColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                labelPadding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      color: Color(0xFF0F1113),
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                indicatorColor: Colors.white,
+                                tabs: [
+                                  Tab(
+                                    text: 'connection',
+                                  ),
+                                  Tab(
+                                    text: 'création',
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: TabBarView(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 24.0, 24.0, 24.0),
                                     child: Column(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Padding(
                                           padding:
@@ -563,13 +569,11 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                       ],
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 24.0, 24.0, 24.0),
-                                  child: SingleChildScrollView(
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 24.0, 24.0, 24.0),
                                     child: Column(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Padding(
                                           padding:
@@ -1082,15 +1086,15 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
