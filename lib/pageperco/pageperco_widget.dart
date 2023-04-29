@@ -3,6 +3,7 @@ import '/components/password_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:map_launcher/map_launcher.dart' as $ml;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
+  LatLng? currentUserLocationValue;
 
   @override
   void initState() {
@@ -308,9 +310,16 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchURL(valueOrDefault(
-                                                  currentUserDocument?.maps,
-                                                  ''));
+                                              currentUserLocationValue =
+                                                  await getCurrentUserLocation(
+                                                      defaultLocation:
+                                                          LatLng(0.0, 0.0));
+                                              await launchMap(
+                                                address:
+                                                    currentUserLocationValue
+                                                        ?.toString(),
+                                                title: '',
+                                              );
                                             },
                                             child: Material(
                                               color: Colors.transparent,
