@@ -217,7 +217,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             currentUserDocument?.biographie,
                                             ''),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF050000),
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -242,7 +246,12 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                     ''),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFF050000),
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -260,7 +269,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       builder: (context) => Text(
                                         currentUserDisplayName,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Color(0xFF050000),
+                                            ),
                                       ),
                                     ),
                                   ),
