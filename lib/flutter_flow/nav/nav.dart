@@ -284,7 +284,7 @@ class FFRoute {
               ? Container(
                   color: FlutterFlowTheme.of(context).primaryBtnText,
                   child: Image.asset(
-                    'assets/images/pinkard-logo-fond-blanc1[2062].png',
+                    'assets/images/pinkard-logo-fond-blanc[2062].png',
                     fit: BoxFit.fitWidth,
                   ),
                 )

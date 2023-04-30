@@ -297,7 +297,8 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.normal,
                                         ),
-                                    hintText: 'Prénom',
+                                    hintText: valueOrDefault(
+                                        currentUserDocument?.prenom, ''),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -378,7 +379,8 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.normal,
                                     ),
-                            hintText: 'Nom',
+                            hintText:
+                                valueOrDefault(currentUserDocument?.prenom, ''),
                             hintStyle:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Outfit',
@@ -453,7 +455,8 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                       fontSize: 14.0,
                                       fontWeight: FontWeight.normal,
                                     ),
-                            hintText: 'biographie',
+                            hintText: valueOrDefault(
+                                currentUserDocument?.biographie, ''),
                             hintStyle:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Outfit',

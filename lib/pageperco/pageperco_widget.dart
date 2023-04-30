@@ -137,7 +137,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Column(
-                      mainAxisSize: MainAxisSize.max,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Material(
                           color: Colors.transparent,
