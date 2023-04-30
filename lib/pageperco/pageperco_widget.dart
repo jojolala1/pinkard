@@ -132,12 +132,13 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 3000.0,
+                    height: 2500.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Material(
                           color: Colors.transparent,

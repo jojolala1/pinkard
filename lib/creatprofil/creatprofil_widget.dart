@@ -167,12 +167,10 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                     ),
                     onPressed: () async {
                       final usersUpdateData = createUsersRecordData(
-                        displayName:
-                            valueOrDefault(currentUserDocument?.biographie, ''),
-                        prenom: valueOrDefault(currentUserDocument?.prenom, ''),
+                        displayName: _model.yourNameController.text,
+                        prenom: _model.prenomController.text,
                         mdp: valueOrDefault(currentUserDocument?.mdp, 0),
-                        biographie:
-                            valueOrDefault(currentUserDocument?.biographie, ''),
+                        biographie: _model.myBioController.text,
                       );
                       await currentUserReference!.update(usersUpdateData);
 
