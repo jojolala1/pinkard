@@ -1446,8 +1446,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 children: [
-                                  if (currentPhoneNumber != null &&
-                                      currentPhoneNumber != '')
+                                  if (valueOrDefault(
+                                          currentUserDocument?.phone, 0) !=
+                                      null)
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
