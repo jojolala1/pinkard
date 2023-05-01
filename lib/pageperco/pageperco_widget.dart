@@ -1510,8 +1510,9 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                         ),
                                       ),
                                     ),
-                                  if (currentPhoneNumber != null &&
-                                      currentPhoneNumber != '')
+                                  if (valueOrDefault(
+                                          currentUserDocument?.phonesms, 0) !=
+                                      null)
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-0.95, 0.0),

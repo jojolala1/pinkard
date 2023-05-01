@@ -155,7 +155,8 @@ class _MapbottomsheetWidgetState extends State<MapbottomsheetWidget> {
                                 },
                                 child: Icon(
                                   Icons.clear,
-                                  color: Color(0xFF757575),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   size: 22.0,
                                 ),
                               )
@@ -169,6 +170,7 @@ class _MapbottomsheetWidgetState extends State<MapbottomsheetWidget> {
                           ),
                       textAlign: TextAlign.start,
                       maxLines: null,
+                      keyboardType: TextInputType.url,
                       validator:
                           _model.mapControllerValidator.asValidator(context),
                     ),
