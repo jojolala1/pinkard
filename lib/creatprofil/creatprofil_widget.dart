@@ -1764,7 +1764,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                           borderRadius:
                                               BorderRadius.circular(30.0),
                                           child: Image.asset(
-                                            'assets/images/mail.png',
+                                            'assets/images/mail2.png',
                                             width: 100.0,
                                             height: 100.0,
                                             fit: BoxFit.fill,
@@ -1827,78 +1827,65 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
-                                  child: Stack(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 10.0, 0.0, 40.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          child: Image.asset(
-                                            'assets/images/whatsapp.png',
-                                            width: 100.0,
-                                            height: 100.0,
-                                            fit: BoxFit.cover,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        enableDrag: false,
+                                        context: context,
+                                        builder: (bottomSheetContext) {
+                                          return Padding(
+                                            padding: MediaQuery.of(
+                                                    bottomSheetContext)
+                                                .viewInsets,
+                                            child: WhatsappbottomsheetWidget(),
+                                          );
+                                        },
+                                      ).then((value) => setState(() {}));
+                                    },
+                                    child: Stack(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 10.0, 0.0, 40.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(30.0),
+                                            child: Image.asset(
+                                              'assets/images/whatsapp.png',
+                                              width: 100.0,
+                                              height: 100.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 10.0, 0.0, 0.0),
-                                        child: Stack(
-                                          children: [
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.75),
-                                              child: Text(
-                                                'whatsapp',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
-                                        child: Padding(
+                                        Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                enableDrag: false,
-                                                context: context,
-                                                builder: (bottomSheetContext) {
-                                                  return Padding(
-                                                    padding: MediaQuery.of(
-                                                            bottomSheetContext)
-                                                        .viewInsets,
-                                                    child:
-                                                        WhatsappbottomsheetWidget(),
-                                                  );
-                                                },
-                                              ).then(
-                                                  (value) => setState(() {}));
-                                            },
-                                            child: Stack(
-                                              children: [],
-                                            ),
+                                          child: Stack(
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.75),
+                                                child: Text(
+                                                  'whatsapp',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

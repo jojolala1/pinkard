@@ -668,11 +668,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                              currentUserDocument?.discord,
+                                              currentUserDocument?.tripadvisor,
                                               '') !=
                                           null &&
                                       valueOrDefault(
-                                              currentUserDocument?.discord,
+                                              currentUserDocument?.tripadvisor,
                                               '') !=
                                           '')
                                     Align(
@@ -1430,6 +1430,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Expanded(
                               child: GridView(
@@ -1603,7 +1604,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(0.0),
                                                 child: Image.asset(
-                                                  'assets/images/mail.png',
+                                                  'assets/images/mail2.png',
                                                   width: 100.0,
                                                   height: 100.0,
                                                   fit: BoxFit.fill,
@@ -1915,24 +1916,6 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                             ),
                           ],
                         ),
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
-                            child: Container(
-                              width: double.infinity,
-                              constraints: BoxConstraints(
-                                maxHeight:
-                                    MediaQuery.of(context).size.height * 0.5,
-                              ),
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                            ),
-                          ),
-                        ),
                         Text(
                           'économie',
                           style:
@@ -1942,7 +1925,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                   ),
                         ),
                         Row(
-                          mainAxisSize: MainAxisSize.max,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Expanded(
                               child: GridView(
@@ -2092,7 +2075,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                   ),
                         ),
                         Row(
-                          mainAxisSize: MainAxisSize.max,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Expanded(
                               child: GridView(
@@ -2242,7 +2225,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                   ),
                         ),
                         Row(
-                          mainAxisSize: MainAxisSize.max,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Expanded(
                               child: GridView(
