@@ -19,6 +19,7 @@ import '/components/picturchange_widget.dart';
 import '/components/pinterestbottomsheet_widget.dart';
 import '/components/revolutbottomsheet_widget.dart';
 import '/components/skypebottomsheet_widget.dart';
+import '/components/smsbebottomsheet_widget.dart';
 import '/components/snapbottomsheet_widget.dart';
 import '/components/spotifybottomsheet_widget.dart';
 import '/components/telegrambottomsheet_widget.dart';

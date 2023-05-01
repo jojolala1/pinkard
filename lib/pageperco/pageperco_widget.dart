@@ -314,8 +314,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                 scrollDirection: Axis.vertical,
                                 children: [
                                   if (valueOrDefault(
-                                          currentUserDocument?.phone, 0) !=
-                                      null)
+                                              currentUserDocument?.maps, '') !=
+                                          null &&
+                                      valueOrDefault(
+                                              currentUserDocument?.maps, '') !=
+                                          '')
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
@@ -369,14 +372,10 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                                  currentUserDocument?.phonesms,
-                                                  0)
-                                              .toString() !=
+                                              currentUserDocument?.menu, '') !=
                                           null &&
                                       valueOrDefault(
-                                                  currentUserDocument?.phonesms,
-                                                  0)
-                                              .toString() !=
+                                              currentUserDocument?.menu, '') !=
                                           '')
                                     Align(
                                       alignment:
@@ -430,48 +429,57 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                         ),
                                       ),
                                     ),
-                                  if (currentUserEmail != null &&
-                                      currentUserEmail != '')
+                                  if (valueOrDefault(
+                                              currentUserDocument?.site, '') !=
+                                          null &&
+                                      valueOrDefault(
+                                              currentUserDocument?.site, '') !=
+                                          '')
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-0.95, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await launchURL(valueOrDefault(
-                                                currentUserDocument?.site, ''));
-                                          },
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            elevation: 2.0,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                            ),
-                                            child: Container(
-                                              width: 100.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument?.site,
+                                                  ''));
+                                            },
+                                            child: Material(
+                                              color: Colors.transparent,
+                                              elevation: 2.0,
+                                              shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(30.0),
                                               ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(30.0),
-                                                child: Image.asset(
-                                                  'assets/images/lien.jpg',
-                                                  width: 100.0,
-                                                  height: 100.0,
-                                                  fit: BoxFit.fill,
+                                              child: Container(
+                                                width: 100.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30.0),
+                                                ),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30.0),
+                                                  child: Image.asset(
+                                                    'assets/images/lien.jpg',
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    fit: BoxFit.fill,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -480,11 +488,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                              currentUserDocument?.whatsapp,
+                                              currentUserDocument?.contact,
                                               '') !=
                                           null &&
                                       valueOrDefault(
-                                              currentUserDocument?.whatsapp,
+                                              currentUserDocument?.contact,
                                               '') !=
                                           '')
                                     Align(
@@ -540,10 +548,12 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                              currentUserDocument?.zoom, '') !=
+                                              currentUserDocument?.booking,
+                                              '') !=
                                           null &&
                                       valueOrDefault(
-                                              currentUserDocument?.zoom, '') !=
+                                              currentUserDocument?.booking,
+                                              '') !=
                                           '')
                                     Align(
                                       alignment:
@@ -1435,9 +1445,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 children: [
-                                  if (valueOrDefault(
-                                          currentUserDocument?.phone, 0) !=
-                                      null)
+                                  if (currentPhoneNumber != null &&
+                                      currentPhoneNumber != '')
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
@@ -1495,16 +1504,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                         ),
                                       ),
                                     ),
-                                  if (valueOrDefault(
-                                                  currentUserDocument?.phonesms,
-                                                  0)
-                                              .toString() !=
-                                          null &&
-                                      valueOrDefault(
-                                                  currentUserDocument?.phonesms,
-                                                  0)
-                                              .toString() !=
-                                          '')
+                                  if (currentPhoneNumber != null &&
+                                      currentPhoneNumber != '')
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-0.95, 0.0),
@@ -2258,13 +2259,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                 scrollDirection: Axis.vertical,
                                 children: [
                                   if (valueOrDefault(
-                                              currentUserDocument?.spotify,
-                                              '') !=
-                                          null &&
-                                      valueOrDefault(
-                                              currentUserDocument?.spotify,
-                                              '') !=
-                                          '')
+                                          currentUserDocument?.phone, 0) !=
+                                      null)
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
@@ -2323,12 +2319,14 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                              currentUserDocument?.deezer,
-                                              '') !=
+                                                  currentUserDocument?.phonesms,
+                                                  0)
+                                              .toString() !=
                                           null &&
                                       valueOrDefault(
-                                              currentUserDocument?.deezer,
-                                              '') !=
+                                                  currentUserDocument?.phonesms,
+                                                  0)
+                                              .toString() !=
                                           '')
                                     Align(
                                       alignment:
@@ -2382,60 +2380,49 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                         ),
                                       ),
                                     ),
-                                  if (valueOrDefault(
-                                              currentUserDocument?.applemusic,
-                                              '') !=
-                                          null &&
-                                      valueOrDefault(
-                                              currentUserDocument?.applemusic,
-                                              '') !=
-                                          '')
+                                  if (currentUserEmail != null &&
+                                      currentUserEmail != '')
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-0.95, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
-                                        child: AuthUserStreamWidget(
-                                          builder: (context) => InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await launchURL(valueOrDefault(
-                                                  currentUserDocument
-                                                      ?.applemusic,
-                                                  ''));
-                                            },
-                                            child: Material(
-                                              color: Colors.transparent,
-                                              elevation: 2.0,
-                                              shape: RoundedRectangleBorder(
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL(valueOrDefault(
+                                                currentUserDocument?.applemusic,
+                                                ''));
+                                          },
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            elevation: 2.0,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
+                                            ),
+                                            child: Container(
+                                              width: 100.0,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                                 borderRadius:
                                                     BorderRadius.circular(30.0),
                                               ),
-                                              child: Container(
-                                                width: 100.0,
-                                                height: 100.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                  child: Image.asset(
-                                                    'assets/images/apple_music.jpg',
-                                                    width: 100.0,
-                                                    height: 100.0,
-                                                    fit: BoxFit.fill,
-                                                  ),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(30.0),
+                                                child: Image.asset(
+                                                  'assets/images/apple_music.jpg',
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  fit: BoxFit.fill,
                                                 ),
                                               ),
                                             ),
@@ -2444,11 +2431,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                              currentUserDocument?.amazon,
+                                              currentUserDocument?.whatsapp,
                                               '') !=
                                           null &&
                                       valueOrDefault(
-                                              currentUserDocument?.amazon,
+                                              currentUserDocument?.whatsapp,
                                               '') !=
                                           '')
                                     Align(

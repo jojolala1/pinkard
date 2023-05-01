@@ -19,6 +19,7 @@ import '/components/picturchange_widget.dart';
 import '/components/pinterestbottomsheet_widget.dart';
 import '/components/revolutbottomsheet_widget.dart';
 import '/components/skypebottomsheet_widget.dart';
+import '/components/smsbebottomsheet_widget.dart';
 import '/components/snapbottomsheet_widget.dart';
 import '/components/spotifybottomsheet_widget.dart';
 import '/components/telegrambottomsheet_widget.dart';
@@ -260,252 +261,6 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                      child: Text(
-                        'Prénom',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
-                    ),
-                    Align(
-                      alignment: AlignmentDirectional(1.0, -1.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 0.0, 20.0, 16.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => TextFormField(
-                                  controller: _model.prenomController,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText: valueOrDefault(
-                                        currentUserDocument?.prenom, ''),
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Color(0xFF57636C),
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    hintText: valueOrDefault(
-                                        currentUserDocument?.prenom, ''),
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Color(0xFF57636C),
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0xFFF1F4F8),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    filled: true,
-                                    fillColor: Colors.white,
-                                    contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 24.0, 0.0, 24.0),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        color: Color(0xFF101213),
-                                        fontSize: 14.0,
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                  maxLines: null,
-                                  validator: _model.prenomControllerValidator
-                                      .asValidator(context),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Text(
-                      'Nom',
-                      style: FlutterFlowTheme.of(context).bodyMedium,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
-                      child: AuthUserStreamWidget(
-                        builder: (context) => TextFormField(
-                          controller: _model.yourNameController,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            labelText: currentUserDisplayName,
-                            labelStyle:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Outfit',
-                                      color: Color(0xFF57636C),
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                            hintText:
-                                valueOrDefault(currentUserDocument?.prenom, ''),
-                            hintStyle:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Outfit',
-                                      color: Color(0xFF57636C),
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xFFF1F4F8),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 24.0, 0.0, 24.0),
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Outfit',
-                                    color: Color(0xFF101213),
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                          maxLines: null,
-                          validator: _model.yourNameControllerValidator
-                              .asValidator(context),
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'Biographie',
-                      style: FlutterFlowTheme.of(context).bodyMedium,
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-                      child: AuthUserStreamWidget(
-                        builder: (context) => TextFormField(
-                          controller: _model.myBioController,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            labelText: valueOrDefault(
-                                currentUserDocument?.biographie, ''),
-                            labelStyle:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Outfit',
-                                      color: Color(0xFF57636C),
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                            hintText: valueOrDefault(
-                                currentUserDocument?.biographie, ''),
-                            hintStyle:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Outfit',
-                                      color: Color(0xFF57636C),
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0xFFF1F4F8),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 24.0, 0.0, 24.0),
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Outfit',
-                                    color: Color(0xFF101213),
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                          textAlign: TextAlign.start,
-                          maxLines: 3,
-                          validator: _model.myBioControllerValidator
-                              .asValidator(context),
                         ),
                       ),
                     ),
@@ -1965,7 +1720,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                                           bottomSheetContext)
                                                       .viewInsets,
                                                   child:
-                                                      MailbottomsheetWidget(),
+                                                      SmsbebottomsheetWidget(),
                                                 );
                                               },
                                             ).then((value) => setState(() {}));
@@ -2012,7 +1767,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                             'assets/images/mail.png',
                                             width: 100.0,
                                             height: 100.0,
-                                            fit: BoxFit.cover,
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
@@ -2683,7 +2438,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 30.0),
                       child: Material(
                         color: Colors.transparent,
                         elevation: 1.0,
@@ -3002,6 +2757,260 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                               ),
                             ],
                           ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                      child: Text(
+                        'Prénom',
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(1.0, -1.0),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 20.0, 16.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => TextFormField(
+                                    controller: _model.prenomController,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: valueOrDefault(
+                                          currentUserDocument?.prenom, ''),
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: Color(0xFF57636C),
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                      hintText: valueOrDefault(
+                                          currentUserDocument?.prenom, ''),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: Color(0xFF57636C),
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0xFFF1F4F8),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: Colors.white,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 24.0, 0.0, 24.0),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          color: Color(0xFF101213),
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                    maxLines: null,
+                                    validator: _model.prenomControllerValidator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Nom',
+                      style: FlutterFlowTheme.of(context).bodyMedium,
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => TextFormField(
+                          controller: _model.yourNameController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: currentUserDisplayName,
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Outfit',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            hintText:
+                                valueOrDefault(currentUserDocument?.prenom, ''),
+                            hintStyle:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Outfit',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFFF1F4F8),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Color(0xFF101213),
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                          maxLines: null,
+                          validator: _model.yourNameControllerValidator
+                              .asValidator(context),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Biographie',
+                      style: FlutterFlowTheme.of(context).bodyMedium,
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => TextFormField(
+                          controller: _model.myBioController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: valueOrDefault(
+                                currentUserDocument?.biographie, ''),
+                            labelStyle:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Outfit',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            hintText: valueOrDefault(
+                                currentUserDocument?.biographie, ''),
+                            hintStyle:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Outfit',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFFF1F4F8),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Color(0xFF101213),
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                          textAlign: TextAlign.start,
+                          maxLines: 3,
+                          validator: _model.myBioControllerValidator
+                              .asValidator(context),
                         ),
                       ),
                     ),
