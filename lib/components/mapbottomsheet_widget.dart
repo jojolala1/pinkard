@@ -170,7 +170,6 @@ class _MapbottomsheetWidgetState extends State<MapbottomsheetWidget> {
                           ),
                       textAlign: TextAlign.start,
                       maxLines: null,
-                      keyboardType: TextInputType.url,
                       validator:
                           _model.mapControllerValidator.asValidator(context),
                     ),
