@@ -11,16 +11,16 @@ import 'package:provider/provider.dart';
 class SmsbebottomsheetModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for TextField widget.
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for sms widget.
+  TextEditingController? smsController;
+  String? Function(BuildContext, String?)? smsControllerValidator;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
   void dispose() {
-    textController?.dispose();
+    smsController?.dispose();
   }
 
   /// Additional helper methods are added here.

@@ -31,7 +31,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
     super.initState();
     _model = createModel(context, () => SmsbebottomsheetModel());
 
-    _model.textController ??= TextEditingController(
+    _model.smsController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.phonesms, 0).toString());
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -101,7 +101,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => TextFormField(
-                    controller: _model.textController,
+                    controller: _model.smsController,
                     autofocus: true,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -153,7 +153,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium,
                     validator:
-                        _model.textControllerValidator.asValidator(context),
+                        _model.smsControllerValidator.asValidator(context),
                   ),
                 ),
               ),
@@ -164,7 +164,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
             child: FFButtonWidget(
               onPressed: () async {
                 final usersUpdateData = createUsersRecordData(
-                  phonesms: int.tryParse(_model.textController.text),
+                  phonesms: int.tryParse(_model.smsController.text),
                 );
                 await currentUserReference!.update(usersUpdateData);
 

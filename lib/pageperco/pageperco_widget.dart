@@ -128,11 +128,15 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
             ),
             body: SingleChildScrollView(
               child: Column(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 2500.0,
+                    height: 2400.0,
+                    constraints: BoxConstraints(
+                      minHeight: 200.0,
+                      maxHeight: 2500.0,
+                    ),
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
