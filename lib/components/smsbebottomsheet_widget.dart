@@ -164,7 +164,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
             child: FFButtonWidget(
               onPressed: () async {
                 final usersUpdateData = createUsersRecordData(
-                  phonesms: valueOrDefault(currentUserDocument?.phonesms, 0),
+                  phonesms: int.tryParse(_model.textController.text),
                 );
                 await currentUserReference!.update(usersUpdateData);
 
