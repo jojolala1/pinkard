@@ -60,39 +60,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
             appBar: AppBar(
               backgroundColor: Colors.white,
               automaticallyImplyLeading: false,
-              leading: Container(
-                height: 100.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-              ),
-              title: Container(
-                width: double.infinity,
-                height: 60.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: GradientText(
-                    'Pinkard',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 28.0,
-                        ),
-                    colors: [
-                      FlutterFlowTheme.of(context).primary,
-                      Color(0xFFFA09C6)
-                    ],
-                    gradientDirection: GradientDirection.ltr,
-                    gradientType: GradientType.linear,
-                  ),
-                ),
-              ),
-              actions: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
-                  child: FlutterFlowIconButton(
+              title: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FlutterFlowIconButton(
                     borderColor: Colors.transparent,
                     borderWidth: 1.0,
                     buttonSize: 50.0,
@@ -121,8 +93,41 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                       ).then((value) => setState(() {}));
                     },
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: GradientText(
+                        'Pinkard',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 28.0,
+                            ),
+                        colors: [
+                          FlutterFlowTheme.of(context).primary,
+                          Color(0xFFFA09C6)
+                        ],
+                        gradientDirection: GradientDirection.ltr,
+                        gradientType: GradientType.linear,
+                      ),
+                    ),
+                  ),
+                  FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    icon: Icon(
+                      Icons.inbox,
+                      color: Colors.transparent,
+                      size: 30.0,
+                    ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                ],
+              ),
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -234,12 +239,13 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Expanded(
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, -0.4),
+                                              AlignmentDirectional(-1.0, -0.55),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
@@ -470,6 +476,12 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
+                                                  image: DecorationImage(
+                                                    fit: BoxFit.cover,
+                                                    image: Image.asset(
+                                                      'assets/images/lien.jpg',
+                                                    ).image,
+                                                  ),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -478,8 +490,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
-                                                  child: Image.asset(
-                                                    'assets/images/lien.jpg',
+                                                  child: Image.network(
+                                                    valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.photourl2,
+                                                        ''),
                                                     width: 100.0,
                                                     height: 100.0,
                                                     fit: BoxFit.fill,
@@ -2248,8 +2263,13 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                 scrollDirection: Axis.vertical,
                                 children: [
                                   if (valueOrDefault(
-                                          currentUserDocument?.phone, 0) !=
-                                      null)
+                                              currentUserDocument?.spotify,
+                                              '') !=
+                                          null &&
+                                      valueOrDefault(
+                                              currentUserDocument?.spotify,
+                                              '') !=
+                                          '')
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
@@ -2308,14 +2328,12 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                                  currentUserDocument?.phonesms,
-                                                  0)
-                                              .toString() !=
+                                              currentUserDocument?.deezer,
+                                              '') !=
                                           null &&
                                       valueOrDefault(
-                                                  currentUserDocument?.phonesms,
-                                                  0)
-                                              .toString() !=
+                                              currentUserDocument?.deezer,
+                                              '') !=
                                           '')
                                     Align(
                                       alignment:
@@ -2369,49 +2387,60 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                         ),
                                       ),
                                     ),
-                                  if (currentUserEmail != null &&
-                                      currentUserEmail != '')
+                                  if (valueOrDefault(
+                                              currentUserDocument?.applemusic,
+                                              '') !=
+                                          null &&
+                                      valueOrDefault(
+                                              currentUserDocument?.applemusic,
+                                              '') !=
+                                          '')
                                     Align(
                                       alignment:
                                           AlignmentDirectional(-0.95, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await launchURL(valueOrDefault(
-                                                currentUserDocument?.applemusic,
-                                                ''));
-                                          },
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            elevation: 2.0,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                            ),
-                                            child: Container(
-                                              width: 100.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await launchURL(valueOrDefault(
+                                                  currentUserDocument
+                                                      ?.applemusic,
+                                                  ''));
+                                            },
+                                            child: Material(
+                                              color: Colors.transparent,
+                                              elevation: 2.0,
+                                              shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(30.0),
                                               ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(30.0),
-                                                child: Image.asset(
-                                                  'assets/images/apple_music.jpg',
-                                                  width: 100.0,
-                                                  height: 100.0,
-                                                  fit: BoxFit.fill,
+                                              child: Container(
+                                                width: 100.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30.0),
+                                                ),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30.0),
+                                                  child: Image.asset(
+                                                    'assets/images/apple_music.jpg',
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    fit: BoxFit.fill,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -2420,11 +2449,11 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       ),
                                     ),
                                   if (valueOrDefault(
-                                              currentUserDocument?.whatsapp,
+                                              currentUserDocument?.amazon,
                                               '') !=
                                           null &&
                                       valueOrDefault(
-                                              currentUserDocument?.whatsapp,
+                                              currentUserDocument?.amazon,
                                               '') !=
                                           '')
                                     Align(

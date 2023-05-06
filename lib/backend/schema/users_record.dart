@@ -99,6 +99,8 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   String? get amazon;
 
+  String? get photourl2;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -145,7 +147,8 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..spotify = ''
     ..deezer = ''
     ..applemusic = ''
-    ..amazon = '';
+    ..amazon = ''
+    ..photourl2 = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -212,6 +215,7 @@ Map<String, dynamic> createUsersRecordData({
   String? deezer,
   String? applemusic,
   String? amazon,
+  String? photourl2,
 }) {
   final firestoreData = serializers.toFirestore(
     UsersRecord.serializer,
@@ -259,7 +263,8 @@ Map<String, dynamic> createUsersRecordData({
         ..spotify = spotify
         ..deezer = deezer
         ..applemusic = applemusic
-        ..amazon = amazon,
+        ..amazon = amazon
+        ..photourl2 = photourl2,
     ),
   );
 

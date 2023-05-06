@@ -316,6 +316,13 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.photourl2;
+    if (value != null) {
+      result
+        ..add('photourl2')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -510,6 +517,10 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.amazon = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'photourl2':
+          result.photourl2 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -611,6 +622,8 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? amazon;
   @override
+  final String? photourl2;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder)? updates]) =>
@@ -660,6 +673,7 @@ class _$UsersRecord extends UsersRecord {
       this.deezer,
       this.applemusic,
       this.amazon,
+      this.photourl2,
       this.ffRef})
       : super._();
 
@@ -717,6 +731,7 @@ class _$UsersRecord extends UsersRecord {
         deezer == other.deezer &&
         applemusic == other.applemusic &&
         amazon == other.amazon &&
+        photourl2 == other.photourl2 &&
         ffRef == other.ffRef;
   }
 
@@ -766,6 +781,7 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, deezer.hashCode);
     _$hash = $jc(_$hash, applemusic.hashCode);
     _$hash = $jc(_$hash, amazon.hashCode);
+    _$hash = $jc(_$hash, photourl2.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -817,6 +833,7 @@ class _$UsersRecord extends UsersRecord {
           ..add('deezer', deezer)
           ..add('applemusic', applemusic)
           ..add('amazon', amazon)
+          ..add('photourl2', photourl2)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -997,6 +1014,10 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? get amazon => _$this._amazon;
   set amazon(String? amazon) => _$this._amazon = amazon;
 
+  String? _photourl2;
+  String? get photourl2 => _$this._photourl2;
+  set photourl2(String? photourl2) => _$this._photourl2 = photourl2;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -1051,6 +1072,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _deezer = $v.deezer;
       _applemusic = $v.applemusic;
       _amazon = $v.amazon;
+      _photourl2 = $v.photourl2;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -1117,6 +1139,7 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             deezer: deezer,
             applemusic: applemusic,
             amazon: amazon,
+            photourl2: photourl2,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

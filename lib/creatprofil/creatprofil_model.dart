@@ -9,6 +9,7 @@ import '/components/contactbottomsheet_widget.dart';
 import '/components/deezerbottomsheet_widget.dart';
 import '/components/discordbottomsheet_widget.dart';
 import '/components/instabottomsheet_widget.dart';
+import '/components/lienbottomsheet_widget.dart';
 import '/components/linkedlnbottomsheet_widget.dart';
 import '/components/mailbottomsheet_widget.dart';
 import '/components/mapbottomsheet_widget.dart';

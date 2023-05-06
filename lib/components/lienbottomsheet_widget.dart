@@ -1,11 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/picturchangelien_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'lienbottomsheet_model.dart';
@@ -78,14 +81,51 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   borderRadius: BorderRadius.circular(30.0),
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30.0),
-                  child: Image.asset(
-                    'assets/images/lien.jpg',
-                    width: 100.0,
-                    height: 100.0,
-                    fit: BoxFit.cover,
-                  ),
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(30.0),
+                      child: Image.asset(
+                        'assets/images/lien.jpg',
+                        width: 100.0,
+                        height: 100.0,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Stack(
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(2.47, 2.34),
+                          child: FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 0.0,
+                            borderWidth: 0.0,
+                            buttonSize: 60.0,
+                            icon: FaIcon(
+                              FontAwesomeIcons.penSquare,
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              size: 30.0,
+                            ),
+                            onPressed: () async {
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                enableDrag: false,
+                                context: context,
+                                builder: (bottomSheetContext) {
+                                  return Padding(
+                                    padding: MediaQuery.of(bottomSheetContext)
+                                        .viewInsets,
+                                    child: PicturchangelienWidget(),
+                                  );
+                                },
+                              ).then((value) => setState(() {}));
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),

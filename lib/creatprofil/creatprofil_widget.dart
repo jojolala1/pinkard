@@ -9,6 +9,7 @@ import '/components/contactbottomsheet_widget.dart';
 import '/components/deezerbottomsheet_widget.dart';
 import '/components/discordbottomsheet_widget.dart';
 import '/components/instabottomsheet_widget.dart';
+import '/components/lienbottomsheet_widget.dart';
 import '/components/linkedlnbottomsheet_widget.dart';
 import '/components/mailbottomsheet_widget.dart';
 import '/components/mapbottomsheet_widget.dart';
@@ -750,6 +751,78 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                                                     0.0, 0.75),
                                                 child: Text(
                                                   'tripadvisor',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Container(
+                                  width: 100.0,
+                                  height: 80.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 40.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(30.0),
+                                          child: Image.asset(
+                                            'assets/images/lien.jpg',
+                                            width: 100.0,
+                                            height: 100.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await showModalBottomSheet(
+                                              isScrollControlled: true,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              enableDrag: false,
+                                              context: context,
+                                              builder: (bottomSheetContext) {
+                                                return Padding(
+                                                  padding: MediaQuery.of(
+                                                          bottomSheetContext)
+                                                      .viewInsets,
+                                                  child:
+                                                      LienbottomsheetWidget(),
+                                                );
+                                              },
+                                            ).then((value) => setState(() {}));
+                                          },
+                                          child: Stack(
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.75),
+                                                child: Text(
+                                                  'lien',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium,
