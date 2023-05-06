@@ -137,10 +137,10 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 2400.0,
+                    height: double.infinity,
                     constraints: BoxConstraints(
-                      minHeight: 200.0,
-                      maxHeight: 2500.0,
+                      minHeight: 20.0,
+                      maxHeight: 2350.0,
                     ),
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -217,7 +217,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.3),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 45.0, 0.0, 0.0),

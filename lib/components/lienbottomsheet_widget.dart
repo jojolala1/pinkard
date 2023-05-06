@@ -95,12 +95,12 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
                     Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(2.47, 2.34),
+                          alignment: AlignmentDirectional(4.5, 4.5),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 0.0,
                             borderWidth: 0.0,
-                            buttonSize: 60.0,
+                            buttonSize: 80.0,
                             icon: FaIcon(
                               FontAwesomeIcons.penSquare,
                               color: FlutterFlowTheme.of(context).primaryText,
