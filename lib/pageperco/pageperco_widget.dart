@@ -497,7 +497,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                         ''),
                                                     width: 100.0,
                                                     height: 100.0,
-                                                    fit: BoxFit.fill,
+                                                    fit: BoxFit.contain,
                                                   ),
                                                 ),
                                               ),
