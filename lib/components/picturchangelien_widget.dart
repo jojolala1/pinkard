@@ -259,6 +259,7 @@ class _PicturchangelienWidgetState extends State<PicturchangelienWidget> {
                                 );
                                 await currentUserReference!
                                     .update(usersUpdateData);
+                                Navigator.pop(context);
                               },
                               text: 'sauvgarder',
                               options: FFButtonOptions(

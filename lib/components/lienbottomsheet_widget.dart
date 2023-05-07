@@ -35,10 +35,9 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
     super.initState();
     _model = createModel(context, () => LienbottomsheetModel());
 
-    _model.lienController ??= TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.lienController?.text = 'lien';
-        }));
+    _model.lienController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.site, ''));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -96,7 +95,7 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
                     Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(4.5, 4.5),
+                          alignment: AlignmentDirectional(4.0, 4.0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 0.0,
@@ -234,7 +233,8 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
                   site: _model.lienController.text,
                 );
                 await currentUserReference!.update(usersUpdateData);
-                context.safePop();
+
+                context.pushNamed('creatprofil');
               },
               text: 'valider',
               options: FFButtonOptions(
