@@ -65,12 +65,12 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FlutterFlowIconButton(
-                    borderColor: Colors.transparent,
+                    borderColor: Color(0xFF151313),
                     borderWidth: 1.0,
                     buttonSize: 50.0,
                     icon: Icon(
                       Icons.inbox,
-                      color: FlutterFlowTheme.of(context).primaryText,
+                      color: Colors.black,
                       size: 30.0,
                     ),
                     onPressed: () async {
@@ -118,7 +118,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                     buttonSize: 50.0,
                     icon: Icon(
                       Icons.inbox,
-                      color: Colors.transparent,
+                      color: Colors.black,
                       size: 30.0,
                     ),
                     onPressed: () {
@@ -143,7 +143,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                       maxHeight: 2350.0,
                     ),
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primaryBtnText,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -164,8 +164,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                             width: double.infinity,
                             height: 250.0,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                              color:
+                                  FlutterFlowTheme.of(context).primaryBtnText,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
@@ -185,14 +185,14 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                       height: 100.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .primaryBtnText,
                                       ),
                                       child: Container(
                                         width: 100.0,
                                         height: 100.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primaryBtnText,
                                         ),
                                         child: Align(
                                           alignment:
@@ -220,7 +220,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                   alignment: AlignmentDirectional(-1.0, 0.3),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 45.0, 0.0, 0.0),
+                                        20.0, 55.0, 0.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Text(
                                         valueOrDefault(
@@ -302,6 +302,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Roboto',
+                                  color: Colors.black,
                                   fontSize: 25.0,
                                 ),
                           ),
@@ -359,7 +360,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -417,7 +418,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -475,7 +476,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   image: DecorationImage(
                                                     fit: BoxFit.cover,
                                                     image: Image.asset(
@@ -544,7 +545,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -604,7 +605,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -664,7 +665,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -725,7 +726,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -754,13 +755,14 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 30.0, 0.0, 0.0),
+                              0.0, 10.0, 0.0, 0.0),
                           child: Text(
                             'résaux',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Roboto',
+                                  color: Colors.black,
                                   fontSize: 25.0,
                                 ),
                           ),
@@ -827,7 +829,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -891,7 +893,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -955,7 +957,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1019,7 +1021,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1083,7 +1085,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1156,7 +1158,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1220,7 +1222,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1284,7 +1286,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1348,7 +1350,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1411,7 +1413,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             30.0),
@@ -1439,13 +1441,19 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                             ],
                           ),
                         ),
-                        Text(
-                          'comunication',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 25.0,
-                                  ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Text(
+                            'comunication',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color: Colors.black,
+                                  fontSize: 25.0,
+                                ),
+                          ),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
@@ -1541,14 +1549,19 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await launchUrl(Uri(
-                                                scheme: 'sms',
-                                                path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.phonesms,
-                                                        0)
-                                                    .toString(),
-                                              ));
+                                              if (isiOS) {
+                                                await launchUrl(Uri.parse(
+                                                    "sms:valueOrDefault(currentUserDocument?.phonesms, 0).toString()&body=${Uri.encodeComponent('')}"));
+                                              } else {
+                                                await launchUrl(Uri(
+                                                  scheme: 'sms',
+                                                  path: valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.phonesms,
+                                                          0)
+                                                      .toString(),
+                                                ));
+                                              }
                                             },
                                             child: Material(
                                               color: Colors.transparent,
@@ -1617,7 +1630,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                 borderRadius:
                                                     BorderRadius.circular(30.0),
                                               ),
@@ -1674,7 +1687,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -1732,7 +1745,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -1792,7 +1805,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -1852,7 +1865,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -1910,7 +1923,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -1937,163 +1950,187 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                             ),
                           ],
                         ),
-                        Text(
-                          'économie',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 25.0,
-                                  ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Text(
+                            'économie',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color: Colors.black,
+                                  fontSize: 25.0,
+                                ),
+                          ),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
-                              child: GridView(
-                                padding: EdgeInsets.zero,
-                                gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                  crossAxisSpacing: 0.0,
-                                  mainAxisSpacing: 0.0,
-                                  childAspectRatio: 1.0,
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: GridView(
+                                  padding: EdgeInsets.zero,
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 3,
+                                    crossAxisSpacing: 0.0,
+                                    mainAxisSpacing: 0.0,
+                                    childAspectRatio: 1.0,
+                                  ),
+                                  primary: false,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  children: [
+                                    if (valueOrDefault(
+                                                currentUserDocument?.paypal,
+                                                '') !=
+                                            null &&
+                                        valueOrDefault(
+                                                currentUserDocument?.paypal,
+                                                '') !=
+                                            '')
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-1.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 10.0, 0.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await launchURL(valueOrDefault(
+                                                    currentUserDocument?.paypal,
+                                                    ''));
+                                              },
+                                              child: Material(
+                                                color: Colors.transparent,
+                                                elevation: 2.0,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30.0),
+                                                ),
+                                                child: Container(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                    child: Image.asset(
+                                                      'assets/images/paypal.png',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    if (valueOrDefault(
+                                                currentUserDocument?.revolut,
+                                                '') !=
+                                            null &&
+                                        valueOrDefault(
+                                                currentUserDocument?.revolut,
+                                                '') !=
+                                            '')
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-0.95, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 10.0, 0.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await launchURL(valueOrDefault(
+                                                    currentUserDocument
+                                                        ?.revolut,
+                                                    ''));
+                                              },
+                                              child: Material(
+                                                color: Colors.transparent,
+                                                elevation: 2.0,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30.0),
+                                                ),
+                                                child: Container(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                    child: Image.asset(
+                                                      'assets/images/revolut.png',
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
                                 ),
-                                primary: false,
-                                shrinkWrap: true,
-                                scrollDirection: Axis.vertical,
-                                children: [
-                                  if (valueOrDefault(
-                                              currentUserDocument?.paypal,
-                                              '') !=
-                                          null &&
-                                      valueOrDefault(
-                                              currentUserDocument?.paypal,
-                                              '') !=
-                                          '')
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 10.0, 0.0),
-                                        child: AuthUserStreamWidget(
-                                          builder: (context) => InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await launchURL(valueOrDefault(
-                                                  currentUserDocument?.paypal,
-                                                  ''));
-                                            },
-                                            child: Material(
-                                              color: Colors.transparent,
-                                              elevation: 2.0,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(30.0),
-                                              ),
-                                              child: Container(
-                                                width: 100.0,
-                                                height: 100.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                  child: Image.asset(
-                                                    'assets/images/paypal.png',
-                                                    width: 100.0,
-                                                    height: 100.0,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  if (valueOrDefault(
-                                              currentUserDocument?.revolut,
-                                              '') !=
-                                          null &&
-                                      valueOrDefault(
-                                              currentUserDocument?.revolut,
-                                              '') !=
-                                          '')
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(-0.95, 0.0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 10.0, 0.0),
-                                        child: AuthUserStreamWidget(
-                                          builder: (context) => InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              await launchURL(valueOrDefault(
-                                                  currentUserDocument?.revolut,
-                                                  ''));
-                                            },
-                                            child: Material(
-                                              color: Colors.transparent,
-                                              elevation: 2.0,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(30.0),
-                                              ),
-                                              child: Container(
-                                                width: 100.0,
-                                                height: 100.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                  child: Image.asset(
-                                                    'assets/images/revolut.png',
-                                                    width: 100.0,
-                                                    height: 100.0,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                ],
                               ),
                             ),
                           ],
                         ),
-                        Text(
-                          'service',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 25.0,
-                                  ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Text(
+                            'service',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color: Colors.black,
+                                  fontSize: 25.0,
+                                ),
+                          ),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
@@ -2150,7 +2187,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -2210,7 +2247,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -2237,13 +2274,19 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                             ),
                           ],
                         ),
-                        Text(
-                          'autre',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 25.0,
-                                  ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: Text(
+                            'autre',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color: Colors.black,
+                                  fontSize: 25.0,
+                                ),
+                          ),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
@@ -2300,7 +2343,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
@@ -2486,7 +2529,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .primaryBtnText,
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           30.0),
