@@ -294,7 +294,10 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                           ),
                         ),
                         Text(
-                          widget.profil.toString(),
+                          valueOrDefault<String>(
+                            widget.profil.toString(),
+                            '0',
+                          ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Text(
