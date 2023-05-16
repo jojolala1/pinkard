@@ -18,7 +18,7 @@ class PagepercoWidget extends StatefulWidget {
     this.profil,
   }) : super(key: key);
 
-  final List<int>? profil;
+  final int? profil;
 
   @override
   _PagepercoWidgetState createState() => _PagepercoWidgetState();
@@ -304,19 +304,18 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 30.0, 0.0, 0.0),
-                          child: Text(
-                            'entreprise',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  color: Colors.black,
-                                  fontSize: 25.0,
-                                ),
-                          ),
+                        Text(
+                          widget.profil.toString(),
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Text(
+                          'entreprise',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Roboto',
+                                    color: Colors.black,
+                                    fontSize: 25.0,
+                                  ),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
