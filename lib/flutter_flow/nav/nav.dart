@@ -72,9 +72,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) => appStateNotifier.loggedIn
-          ? CreatprofilWidget()
-          : PagedacceuilWidget(),
+      errorBuilder: (context, _) =>
+          appStateNotifier.loggedIn ? CreatprofilWidget() : PagepercoWidget(),
       navigatorBuilder: (_, __, child) => DynamicLinksHandler(child: child),
       routes: [
         FFRoute(
@@ -82,7 +81,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? CreatprofilWidget()
-              : PagedacceuilWidget(),
+              : PagepercoWidget(),
         ),
         FFRoute(
           name: 'pagedacceuil',
@@ -268,7 +267,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/pagedacceuil';
+            return '/pageperco/:profil';
           }
           return null;
         },

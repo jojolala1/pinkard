@@ -137,7 +137,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                   await authManager.signOut();
                   GoRouter.of(context).clearRedirectLocation();
 
-                  context.goNamedAuth('pagedacceuil', mounted);
+                  context.goNamedAuth('pageperco', mounted);
                 },
               ),
             ),
