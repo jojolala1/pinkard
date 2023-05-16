@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'pageperco_model.dart';
@@ -15,10 +14,10 @@ export 'pageperco_model.dart';
 class PagepercoWidget extends StatefulWidget {
   const PagepercoWidget({
     Key? key,
-    required this.profil,
+    this.profil,
   }) : super(key: key);
 
-  final List<int>? profil;
+  final int? profil;
 
   @override
   _PagepercoWidgetState createState() => _PagepercoWidgetState();
@@ -112,29 +111,19 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                       ),
                     ),
                   ),
-                  Builder(
-                    builder: (context) => FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      icon: Icon(
-                        Icons.threesixty_sharp,
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
-                        size: 30.0,
-                      ),
-                      onPressed: () async {
-                        _model.currentPageLink = await generateCurrentPageLink(
-                          context,
-                          isShortLink: false,
-                        );
-
-                        await Share.share(
-                          widget.profil!.length.toString(),
-                          sharePositionOrigin: getWidgetBoundingBox(context),
-                        );
-                      },
+                  FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    icon: Icon(
+                      Icons.threesixty_sharp,
+                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                      size: 30.0,
                     ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
                   ),
                 ],
               ),
