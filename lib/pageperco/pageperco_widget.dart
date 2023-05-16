@@ -15,10 +15,10 @@ export 'pageperco_model.dart';
 class PagepercoWidget extends StatefulWidget {
   const PagepercoWidget({
     Key? key,
-    this.profil,
+    required this.profil,
   }) : super(key: key);
 
-  final int? profil;
+  final List<int>? profil;
 
   @override
   _PagepercoWidgetState createState() => _PagepercoWidgetState();
@@ -130,7 +130,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                         );
 
                         await Share.share(
-                          '',
+                          widget.profil!.length.toString(),
                           sharePositionOrigin: getWidgetBoundingBox(context),
                         );
                       },
