@@ -91,7 +91,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         ),
         FFRoute(
           name: 'pageperco',
-          path: '//pageperco/user/uid',
+          path: '/pageperco/user/uid/',
           builder: (context, params) => PagepercoWidget(
             lienperco: params.getParam('lienperco', ParamType.DateTime),
           ),
