@@ -18,7 +18,7 @@ class PagepercoWidget extends StatefulWidget {
     this.profil,
   }) : super(key: key);
 
-  final int? profil;
+  final List<int>? profil;
 
   @override
   _PagepercoWidgetState createState() => _PagepercoWidgetState();

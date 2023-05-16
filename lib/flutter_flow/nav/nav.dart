@@ -93,7 +93,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'pageperco',
           path: '/pageperco/:profil',
           builder: (context, params) => PagepercoWidget(
-            profil: params.getParam('profil', ParamType.int),
+            profil: params.getParam<int>('profil', ParamType.int, true),
           ),
         ),
         FFRoute(
