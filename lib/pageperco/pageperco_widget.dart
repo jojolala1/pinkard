@@ -130,7 +130,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                         );
 
                         await Share.share(
-                          _model.currentPageLink,
+                          widget.profil!.toString(),
                           sharePositionOrigin: getWidgetBoundingBox(context),
                         );
                       },
