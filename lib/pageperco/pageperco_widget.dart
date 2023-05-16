@@ -65,7 +65,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FlutterFlowIconButton(
-                    borderColor: Color(0xFF151313),
+                    borderColor: FlutterFlowTheme.of(context).primaryBtnText,
                     borderWidth: 1.0,
                     buttonSize: 50.0,
                     icon: Icon(
@@ -117,8 +117,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                     borderWidth: 1.0,
                     buttonSize: 50.0,
                     icon: Icon(
-                      Icons.inbox,
-                      color: Colors.black,
+                      Icons.threesixty_sharp,
+                      color: FlutterFlowTheme.of(context).primaryBtnText,
                       size: 30.0,
                     ),
                     onPressed: () {
