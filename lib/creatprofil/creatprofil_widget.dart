@@ -171,7 +171,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
                       final usersUpdateData = createUsersRecordData(
                         displayName: _model.yourNameController.text,
                         prenom: _model.prenomController.text,
-                        mdp: valueOrDefault(currentUserDocument?.mdp, 0),
+                        mdp: int.tryParse(_model.mdpController.text),
                         biographie: _model.myBioController.text,
                       );
                       await currentUserReference!.update(usersUpdateData);
