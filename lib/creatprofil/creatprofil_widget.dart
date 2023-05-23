@@ -81,10 +81,14 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
     super.initState();
     _model = createModel(context, () => CreatprofilModel());
 
-    _model.prenomController ??= TextEditingController();
-    _model.yourNameController ??= TextEditingController();
-    _model.myBioController ??= TextEditingController();
-    _model.mdpController ??= TextEditingController();
+    _model.prenomController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.prenom, ''));
+    _model.yourNameController ??=
+        TextEditingController(text: currentUserDisplayName);
+    _model.myBioController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.biographie, ''));
+    _model.mdpController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.mdp, 0).toString());
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -92,12 +96,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.prenomController?.text = 'Prénom';
-          _model.yourNameController?.text = 'nom de famille';
-          _model.myBioController?.text = 'biographie';
-          _model.mdpController?.text = 'code pin pour modification';
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
