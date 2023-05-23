@@ -16,7 +16,7 @@ export 'pageperco_model.dart';
 class PagepercoWidget extends StatefulWidget {
   const PagepercoWidget({
     Key? key,
-    required this.userRef,
+    this.userRef,
   }) : super(key: key);
 
   final DocumentReference? userRef;
