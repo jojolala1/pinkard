@@ -1,174 +1,309 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'users_record.g.dart';
+class UsersRecord extends FirestoreRecord {
+  UsersRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
-  static Serializer<UsersRecord> get serializer => _$usersRecordSerializer;
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
 
-  String? get email;
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
 
-  @BuiltValueField(wireName: 'display_name')
-  String? get displayName;
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
 
-  @BuiltValueField(wireName: 'photo_url')
-  String? get photoUrl;
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
 
-  String? get uid;
+  // "created_time" field.
+  DateTime? _createdTime;
+  DateTime? get createdTime => _createdTime;
+  bool hasCreatedTime() => _createdTime != null;
 
-  @BuiltValueField(wireName: 'created_time')
-  DateTime? get createdTime;
+  // "prenom" field.
+  String? _prenom;
+  String get prenom => _prenom ?? '';
+  bool hasPrenom() => _prenom != null;
 
-  String? get prenom;
+  // "biographie" field.
+  String? _biographie;
+  String get biographie => _biographie ?? '';
+  bool hasBiographie() => _biographie != null;
 
-  String? get biographie;
+  // "instagram" field.
+  String? _instagram;
+  String get instagram => _instagram ?? '';
+  bool hasInstagram() => _instagram != null;
 
-  String? get instagram;
+  // "phone" field.
+  int? _phone;
+  int get phone => _phone ?? 0;
+  bool hasPhone() => _phone != null;
 
-  int? get phone;
+  // "phone_number" field.
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber ?? '';
+  bool hasPhoneNumber() => _phoneNumber != null;
 
-  @BuiltValueField(wireName: 'phone_number')
-  String? get phoneNumber;
+  // "mdp" field.
+  int? _mdp;
+  int get mdp => _mdp ?? 0;
+  bool hasMdp() => _mdp != null;
 
-  int? get mdp;
+  // "mdp2" field.
+  int? _mdp2;
+  int get mdp2 => _mdp2 ?? 0;
+  bool hasMdp2() => _mdp2 != null;
 
-  int? get mdp2;
+  // "facebook" field.
+  String? _facebook;
+  String get facebook => _facebook ?? '';
+  bool hasFacebook() => _facebook != null;
 
-  String? get facebook;
+  // "photos" field.
+  String? _photos;
+  String get photos => _photos ?? '';
+  bool hasPhotos() => _photos != null;
 
-  String? get photos;
+  // "snapchat" field.
+  String? _snapchat;
+  String get snapchat => _snapchat ?? '';
+  bool hasSnapchat() => _snapchat != null;
 
-  String? get snapchat;
+  // "tiktok" field.
+  String? _tiktok;
+  String get tiktok => _tiktok ?? '';
+  bool hasTiktok() => _tiktok != null;
 
-  String? get tiktok;
+  // "messenger" field.
+  String? _messenger;
+  String get messenger => _messenger ?? '';
+  bool hasMessenger() => _messenger != null;
 
-  String? get messenger;
+  // "youtube" field.
+  String? _youtube;
+  String get youtube => _youtube ?? '';
+  bool hasYoutube() => _youtube != null;
 
-  String? get youtube;
+  // "pinterest" field.
+  String? _pinterest;
+  String get pinterest => _pinterest ?? '';
+  bool hasPinterest() => _pinterest != null;
 
-  String? get pinterest;
+  // "linkdln" field.
+  String? _linkdln;
+  String get linkdln => _linkdln ?? '';
+  bool hasLinkdln() => _linkdln != null;
 
-  String? get linkdln;
+  // "twich" field.
+  String? _twich;
+  String get twich => _twich ?? '';
+  bool hasTwich() => _twich != null;
 
-  String? get twich;
+  // "twitter" field.
+  String? _twitter;
+  String get twitter => _twitter ?? '';
+  bool hasTwitter() => _twitter != null;
 
-  String? get twitter;
+  // "phonesms" field.
+  int? _phonesms;
+  int get phonesms => _phonesms ?? 0;
+  bool hasPhonesms() => _phonesms != null;
 
-  int? get phonesms;
+  // "whatsapp" field.
+  String? _whatsapp;
+  String get whatsapp => _whatsapp ?? '';
+  bool hasWhatsapp() => _whatsapp != null;
 
-  String? get whatsapp;
+  // "zoom" field.
+  String? _zoom;
+  String get zoom => _zoom ?? '';
+  bool hasZoom() => _zoom != null;
 
-  String? get zoom;
+  // "discord" field.
+  String? _discord;
+  String get discord => _discord ?? '';
+  bool hasDiscord() => _discord != null;
 
-  String? get discord;
+  // "skype" field.
+  String? _skype;
+  String get skype => _skype ?? '';
+  bool hasSkype() => _skype != null;
 
-  String? get skype;
+  // "telegram" field.
+  String? _telegram;
+  String get telegram => _telegram ?? '';
+  bool hasTelegram() => _telegram != null;
 
-  String? get telegram;
+  // "maps" field.
+  String? _maps;
+  String get maps => _maps ?? '';
+  bool hasMaps() => _maps != null;
 
-  String? get maps;
+  // "menu" field.
+  String? _menu;
+  String get menu => _menu ?? '';
+  bool hasMenu() => _menu != null;
 
-  String? get menu;
+  // "site" field.
+  String? _site;
+  String get site => _site ?? '';
+  bool hasSite() => _site != null;
 
-  String? get site;
+  // "contact" field.
+  String? _contact;
+  String get contact => _contact ?? '';
+  bool hasContact() => _contact != null;
 
-  String? get contact;
+  // "booking" field.
+  String? _booking;
+  String get booking => _booking ?? '';
+  bool hasBooking() => _booking != null;
 
-  String? get booking;
+  // "airbnb" field.
+  String? _airbnb;
+  String get airbnb => _airbnb ?? '';
+  bool hasAirbnb() => _airbnb != null;
 
-  String? get airbnb;
+  // "tripadvisor" field.
+  String? _tripadvisor;
+  String get tripadvisor => _tripadvisor ?? '';
+  bool hasTripadvisor() => _tripadvisor != null;
 
-  String? get tripadvisor;
+  // "paypal" field.
+  String? _paypal;
+  String get paypal => _paypal ?? '';
+  bool hasPaypal() => _paypal != null;
 
-  String? get paypal;
+  // "revolut" field.
+  String? _revolut;
+  String get revolut => _revolut ?? '';
+  bool hasRevolut() => _revolut != null;
 
-  String? get revolut;
+  // "fiverr" field.
+  String? _fiverr;
+  String get fiverr => _fiverr ?? '';
+  bool hasFiverr() => _fiverr != null;
 
-  String? get fiverr;
+  // "cinqeuro" field.
+  String? _cinqeuro;
+  String get cinqeuro => _cinqeuro ?? '';
+  bool hasCinqeuro() => _cinqeuro != null;
 
-  String? get cinqeuro;
+  // "spotify" field.
+  String? _spotify;
+  String get spotify => _spotify ?? '';
+  bool hasSpotify() => _spotify != null;
 
-  String? get spotify;
+  // "deezer" field.
+  String? _deezer;
+  String get deezer => _deezer ?? '';
+  bool hasDeezer() => _deezer != null;
 
-  String? get deezer;
+  // "applemusic" field.
+  String? _applemusic;
+  String get applemusic => _applemusic ?? '';
+  bool hasApplemusic() => _applemusic != null;
 
-  String? get applemusic;
+  // "amazon" field.
+  String? _amazon;
+  String get amazon => _amazon ?? '';
+  bool hasAmazon() => _amazon != null;
 
-  String? get amazon;
+  // "photourl2" field.
+  String? _photourl2;
+  String get photourl2 => _photourl2 ?? '';
+  bool hasPhotourl2() => _photourl2 != null;
 
-  String? get photourl2;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(UsersRecordBuilder builder) => builder
-    ..email = ''
-    ..displayName = ''
-    ..photoUrl = ''
-    ..uid = ''
-    ..prenom = ''
-    ..biographie = ''
-    ..instagram = ''
-    ..phone = 0
-    ..phoneNumber = ''
-    ..mdp = 0
-    ..mdp2 = 0
-    ..facebook = ''
-    ..photos = ''
-    ..snapchat = ''
-    ..tiktok = ''
-    ..messenger = ''
-    ..youtube = ''
-    ..pinterest = ''
-    ..linkdln = ''
-    ..twich = ''
-    ..twitter = ''
-    ..phonesms = 0
-    ..whatsapp = ''
-    ..zoom = ''
-    ..discord = ''
-    ..skype = ''
-    ..telegram = ''
-    ..maps = ''
-    ..menu = ''
-    ..site = ''
-    ..contact = ''
-    ..booking = ''
-    ..airbnb = ''
-    ..tripadvisor = ''
-    ..paypal = ''
-    ..revolut = ''
-    ..fiverr = ''
-    ..cinqeuro = ''
-    ..spotify = ''
-    ..deezer = ''
-    ..applemusic = ''
-    ..amazon = ''
-    ..photourl2 = '';
+  void _initializeFields() {
+    _email = snapshotData['email'] as String?;
+    _displayName = snapshotData['display_name'] as String?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _uid = snapshotData['uid'] as String?;
+    _createdTime = snapshotData['created_time'] as DateTime?;
+    _prenom = snapshotData['prenom'] as String?;
+    _biographie = snapshotData['biographie'] as String?;
+    _instagram = snapshotData['instagram'] as String?;
+    _phone = snapshotData['phone'] as int?;
+    _phoneNumber = snapshotData['phone_number'] as String?;
+    _mdp = snapshotData['mdp'] as int?;
+    _mdp2 = snapshotData['mdp2'] as int?;
+    _facebook = snapshotData['facebook'] as String?;
+    _photos = snapshotData['photos'] as String?;
+    _snapchat = snapshotData['snapchat'] as String?;
+    _tiktok = snapshotData['tiktok'] as String?;
+    _messenger = snapshotData['messenger'] as String?;
+    _youtube = snapshotData['youtube'] as String?;
+    _pinterest = snapshotData['pinterest'] as String?;
+    _linkdln = snapshotData['linkdln'] as String?;
+    _twich = snapshotData['twich'] as String?;
+    _twitter = snapshotData['twitter'] as String?;
+    _phonesms = snapshotData['phonesms'] as int?;
+    _whatsapp = snapshotData['whatsapp'] as String?;
+    _zoom = snapshotData['zoom'] as String?;
+    _discord = snapshotData['discord'] as String?;
+    _skype = snapshotData['skype'] as String?;
+    _telegram = snapshotData['telegram'] as String?;
+    _maps = snapshotData['maps'] as String?;
+    _menu = snapshotData['menu'] as String?;
+    _site = snapshotData['site'] as String?;
+    _contact = snapshotData['contact'] as String?;
+    _booking = snapshotData['booking'] as String?;
+    _airbnb = snapshotData['airbnb'] as String?;
+    _tripadvisor = snapshotData['tripadvisor'] as String?;
+    _paypal = snapshotData['paypal'] as String?;
+    _revolut = snapshotData['revolut'] as String?;
+    _fiverr = snapshotData['fiverr'] as String?;
+    _cinqeuro = snapshotData['cinqeuro'] as String?;
+    _spotify = snapshotData['spotify'] as String?;
+    _deezer = snapshotData['deezer'] as String?;
+    _applemusic = snapshotData['applemusic'] as String?;
+    _amazon = snapshotData['amazon'] as String?;
+    _photourl2 = snapshotData['photourl2'] as String?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
 
-  static Stream<UsersRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<UsersRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => UsersRecord.fromSnapshot(s));
 
-  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => UsersRecord.fromSnapshot(s));
 
-  UsersRecord._();
-  factory UsersRecord([void Function(UsersRecordBuilder) updates]) =
-      _$UsersRecord;
+  static UsersRecord fromSnapshot(DocumentSnapshot snapshot) => UsersRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static UsersRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      UsersRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'UsersRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createUsersRecordData({
@@ -217,55 +352,53 @@ Map<String, dynamic> createUsersRecordData({
   String? amazon,
   String? photourl2,
 }) {
-  final firestoreData = serializers.toFirestore(
-    UsersRecord.serializer,
-    UsersRecord(
-      (u) => u
-        ..email = email
-        ..displayName = displayName
-        ..photoUrl = photoUrl
-        ..uid = uid
-        ..createdTime = createdTime
-        ..prenom = prenom
-        ..biographie = biographie
-        ..instagram = instagram
-        ..phone = phone
-        ..phoneNumber = phoneNumber
-        ..mdp = mdp
-        ..mdp2 = mdp2
-        ..facebook = facebook
-        ..photos = photos
-        ..snapchat = snapchat
-        ..tiktok = tiktok
-        ..messenger = messenger
-        ..youtube = youtube
-        ..pinterest = pinterest
-        ..linkdln = linkdln
-        ..twich = twich
-        ..twitter = twitter
-        ..phonesms = phonesms
-        ..whatsapp = whatsapp
-        ..zoom = zoom
-        ..discord = discord
-        ..skype = skype
-        ..telegram = telegram
-        ..maps = maps
-        ..menu = menu
-        ..site = site
-        ..contact = contact
-        ..booking = booking
-        ..airbnb = airbnb
-        ..tripadvisor = tripadvisor
-        ..paypal = paypal
-        ..revolut = revolut
-        ..fiverr = fiverr
-        ..cinqeuro = cinqeuro
-        ..spotify = spotify
-        ..deezer = deezer
-        ..applemusic = applemusic
-        ..amazon = amazon
-        ..photourl2 = photourl2,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'email': email,
+      'display_name': displayName,
+      'photo_url': photoUrl,
+      'uid': uid,
+      'created_time': createdTime,
+      'prenom': prenom,
+      'biographie': biographie,
+      'instagram': instagram,
+      'phone': phone,
+      'phone_number': phoneNumber,
+      'mdp': mdp,
+      'mdp2': mdp2,
+      'facebook': facebook,
+      'photos': photos,
+      'snapchat': snapchat,
+      'tiktok': tiktok,
+      'messenger': messenger,
+      'youtube': youtube,
+      'pinterest': pinterest,
+      'linkdln': linkdln,
+      'twich': twich,
+      'twitter': twitter,
+      'phonesms': phonesms,
+      'whatsapp': whatsapp,
+      'zoom': zoom,
+      'discord': discord,
+      'skype': skype,
+      'telegram': telegram,
+      'maps': maps,
+      'menu': menu,
+      'site': site,
+      'contact': contact,
+      'booking': booking,
+      'airbnb': airbnb,
+      'tripadvisor': tripadvisor,
+      'paypal': paypal,
+      'revolut': revolut,
+      'fiverr': fiverr,
+      'cinqeuro': cinqeuro,
+      'spotify': spotify,
+      'deezer': deezer,
+      'applemusic': applemusic,
+      'amazon': amazon,
+      'photourl2': photourl2,
+    }.withoutNulls,
   );
 
   return firestoreData;

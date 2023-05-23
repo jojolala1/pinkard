@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
-import '../../backend/backend.dart';
+import '/backend/backend.dart';
 
 import '../../auth/base_auth_user_provider.dart';
 
@@ -18,7 +18,7 @@ import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
-export '../../backend/firebase_dynamic_links/firebase_dynamic_links.dart'
+export '/backend/firebase_dynamic_links/firebase_dynamic_links.dart'
     show generateCurrentPageLink;
 
 const kTransitionInfoKey = '__transition_info__';
@@ -72,8 +72,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? CreatprofilWidget() : PagepercoWidget(),
+      errorBuilder: (context, _) => appStateNotifier.loggedIn
+          ? CreatprofilWidget()
+          : PagedacceuilWidget(),
       navigatorBuilder: (_, __, child) => DynamicLinksHandler(child: child),
       routes: [
         FFRoute(
@@ -81,7 +82,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? CreatprofilWidget()
-              : PagepercoWidget(),
+              : PagedacceuilWidget(),
         ),
         FFRoute(
           name: 'pagedacceuil',
@@ -90,9 +91,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         ),
         FFRoute(
           name: 'pageperco',
-          path: '/pageperco/:profil',
+          path: '/pageperco/',
           builder: (context, params) => PagepercoWidget(
-            profil: params.getParam('profil', ParamType.int),
+            userRef: params.getParam(
+                'userRef', ParamType.DocumentReference, false, ['users']),
           ),
         ),
         FFRoute(
@@ -234,7 +236,8 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList, collectionNamePath);
+    return deserializeParam<T>(param, type, isList,
+        collectionNamePath: collectionNamePath);
   }
 }
 
@@ -267,7 +270,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/pageperco/:profil';
+            return '/pagedacceuil';
           }
           return null;
         },

@@ -346,8 +346,8 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                 return;
                                               }
 
-                                              context.goNamedAuth(
-                                                  'creatprofil', mounted);
+                                              context.goNamedAuth('creatprofil',
+                                                  context.mounted);
                                             },
                                             text: 'connection',
                                             options: FFButtonOptions(
@@ -498,7 +498,8 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'creatprofil', mounted);
+                                                        'creatprofil',
+                                                        context.mounted);
                                                   },
                                                   child: Container(
                                                     width: 50.0,
@@ -552,7 +553,8 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'creatprofil', mounted);
+                                                        'creatprofil',
+                                                        context.mounted);
                                                   },
                                                   child: Container(
                                                     width: 50.0,
@@ -937,8 +939,8 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                 return;
                                               }
 
-                                              context.goNamedAuth(
-                                                  'creatprofil', mounted);
+                                              context.goNamedAuth('creatprofil',
+                                                  context.mounted);
                                             },
                                             text: 'creer un compte',
                                             options: FFButtonOptions(
@@ -1034,7 +1036,8 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'creatprofil', mounted);
+                                                        'creatprofil',
+                                                        context.mounted);
                                                   },
                                                   child: Container(
                                                     width: 50.0,
@@ -1088,7 +1091,8 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                                     }
 
                                                     context.goNamedAuth(
-                                                        'creatprofil', mounted);
+                                                        'creatprofil',
+                                                        context.mounted);
                                                   },
                                                   child: Container(
                                                     width: 50.0,

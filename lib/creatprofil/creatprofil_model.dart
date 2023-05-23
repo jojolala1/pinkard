@@ -36,7 +36,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -48,22 +47,66 @@ import 'package:provider/provider.dart';
 class CreatprofilModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for prenom widget.
   TextEditingController? prenomController;
   String? Function(BuildContext, String?)? prenomControllerValidator;
+  String? _prenomControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for yourName widget.
   TextEditingController? yourNameController;
   String? Function(BuildContext, String?)? yourNameControllerValidator;
+  String? _yourNameControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for myBio widget.
   TextEditingController? myBioController;
   String? Function(BuildContext, String?)? myBioControllerValidator;
+  String? _myBioControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    return null;
+  }
+
   // State field(s) for mdp widget.
   TextEditingController? mdpController;
   String? Function(BuildContext, String?)? mdpControllerValidator;
+  String? _mdpControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Field is required';
+    }
+
+    if (val.length < 4) {
+      return 'pas assez de caractères';
+    }
+    if (val.length > 4) {
+      return 'trop de caractères';
+    }
+
+    return null;
+  }
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    prenomControllerValidator = _prenomControllerValidator;
+    yourNameControllerValidator = _yourNameControllerValidator;
+    myBioControllerValidator = _myBioControllerValidator;
+    mdpControllerValidator = _mdpControllerValidator;
+  }
 
   void dispose() {
     prenomController?.dispose();
