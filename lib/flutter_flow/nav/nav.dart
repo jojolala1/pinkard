@@ -91,12 +91,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         ),
         FFRoute(
           name: 'pageperco',
-          path: '/pageperco/',
-          builder: (context, params) => PagepercoWidget(),
+          path: '/pageperco',
+          builder: (context, params) => PagepercoWidget(
+            userRef: params.getParam(
+                'userRef', ParamType.DocumentReference, false, ['users']),
+          ),
         ),
         FFRoute(
           name: 'creatprofil',
-          path: '/creatprofil/',
+          path: '/creatprofil',
           builder: (context, params) => CreatprofilWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
