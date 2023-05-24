@@ -97,10 +97,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'creatprofil',
           path: '/creatprofil/',
-          builder: (context, params) => CreatprofilWidget(
-            profilRef: params.getParam(
-                'profilRef', ParamType.DocumentReference, false, ['users']),
-          ),
+          builder: (context, params) => CreatprofilWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
