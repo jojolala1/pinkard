@@ -142,8 +142,12 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                           color: FlutterFlowTheme.of(context).primaryBtnText,
                           size: 30.0,
                         ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
+                        onPressed: () async {
+                          _model.currentPageLink =
+                              await generateCurrentPageLink(
+                            context,
+                            isShortLink: false,
+                          );
                         },
                       ),
                     ],
