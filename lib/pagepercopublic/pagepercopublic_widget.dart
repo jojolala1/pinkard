@@ -52,7 +52,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
     context.watch<FFAppState>();
 
     return StreamBuilder<UsersRecord>(
-      stream: UsersRecord.getDocument(currentUserReference!),
+      stream: UsersRecord.getDocument(widget.userRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
