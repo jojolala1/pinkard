@@ -51,8 +51,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return StreamBuilder<List<UsersRecord>>(
-      stream: queryUsersRecord(),
+    return StreamBuilder<UsersRecord>(
+      stream: UsersRecord.getDocument(widget.userRef!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -66,7 +66,7 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
             ),
           );
         }
-        List<UsersRecord> pagepercoUsersRecordList = snapshot.data!;
+        final pagepercoUsersRecord = snapshot.data!;
         return Title(
             title: 'pageperco',
             color: FlutterFlowTheme.of(context).primary,
