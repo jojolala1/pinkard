@@ -102,6 +102,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/creatprofil',
           requireAuth: true,
           builder: (context, params) => CreatprofilWidget(),
+        ),
+        FFRoute(
+          name: 'pagepercopublic',
+          path: '/pagepercopublic',
+          builder: (context, params) => PagepercopublicWidget(
+            userRef: params.getParam(
+                'userRef', ParamType.DocumentReference, false, ['users']),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
