@@ -100,6 +100,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'creatprofil',
           path: '/creatprofil',
+          requireAuth: true,
           builder: (context, params) => CreatprofilWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

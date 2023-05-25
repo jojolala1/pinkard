@@ -44,6 +44,9 @@ import 'package:provider/provider.dart';
 class CreatprofilModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for yourName widget.
+  TextEditingController? yourNameController;
+  String? Function(BuildContext, String?)? yourNameControllerValidator;
   // State field(s) for prenom widget.
   TextEditingController? prenomController;
   String? Function(BuildContext, String?)? prenomControllerValidator;
@@ -53,19 +56,16 @@ class CreatprofilModel extends FlutterFlowModel {
   // State field(s) for mdp widget.
   TextEditingController? mdpController;
   String? Function(BuildContext, String?)? mdpControllerValidator;
-  // State field(s) for yourName widget.
-  TextEditingController? yourNameController;
-  String? Function(BuildContext, String?)? yourNameControllerValidator;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
   void dispose() {
+    yourNameController?.dispose();
     prenomController?.dispose();
     myBioController?.dispose();
     mdpController?.dispose();
-    yourNameController?.dispose();
   }
 
   /// Additional helper methods are added here.
