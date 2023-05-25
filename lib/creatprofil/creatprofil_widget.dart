@@ -152,7 +152,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                         );
                         await currentUserReference!.update(usersUpdateData);
 
-                        context.pushNamed('pageperco');
+                        context.pushNamed(
+                          'pageperco',
+                          queryParams: {
+                            'userRef': serializeParam(
+                              currentUserReference,
+                              ParamType.DocumentReference,
+                            ),
+                          }.withoutNulls,
+                        );
                       },
                     ),
                   ),
