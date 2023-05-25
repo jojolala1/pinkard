@@ -83,34 +83,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.loggedIn
               ? CreatprofilWidget()
               : PagedacceuilWidget(),
+          routes: [
+            FFRoute(
+              name: 'pagedacceuil',
+              path: 'pagedacceuil',
+              builder: (context, params) => PagedacceuilWidget(),
+            ),
+            FFRoute(
+              name: 'pageperco',
+              path: 'pageperco',
+              builder: (context, params) => PagepercoWidget(
+                userRef: params.getParam(
+                    'userRef', ParamType.DocumentReference, false, ['users']),
+              ),
+            ),
+            FFRoute(
+              name: 'creatprofil',
+              path: 'creatprofil',
+              requireAuth: true,
+              builder: (context, params) => CreatprofilWidget(),
+            ),
+            FFRoute(
+              name: 'pagepercopublic',
+              path: 'pagepercopublic',
+              builder: (context, params) => PagepercopublicWidget(
+                userRef: params.getParam(
+                    'userRef', ParamType.DocumentReference, false, ['users']),
+              ),
+            )
+          ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
-        FFRoute(
-          name: 'pagedacceuil',
-          path: '/pagedacceuil',
-          builder: (context, params) => PagedacceuilWidget(),
-        ),
-        FFRoute(
-          name: 'pageperco',
-          path: '/pageperco',
-          builder: (context, params) => PagepercoWidget(
-            userRef: params.getParam(
-                'userRef', ParamType.DocumentReference, false, ['users']),
-          ),
-        ),
-        FFRoute(
-          name: 'creatprofil',
-          path: '/creatprofil',
-          requireAuth: true,
-          builder: (context, params) => CreatprofilWidget(),
-        ),
-        FFRoute(
-          name: 'pagepercopublic',
-          path: '/pagepercopublic',
-          builder: (context, params) => PagepercopublicWidget(
-            userRef: params.getParam(
-                'userRef', ParamType.DocumentReference, false, ['users']),
-          ),
-        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
     );
