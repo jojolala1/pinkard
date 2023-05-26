@@ -105,7 +105,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                 child: Padding(
                                   padding: MediaQuery.of(bottomSheetContext)
                                       .viewInsets,
-                                  child: PasswordWidget(),
+                                  child: PasswordWidget(
+                                    passref: widget.userRef!,
+                                  ),
                                 ),
                               );
                             },
