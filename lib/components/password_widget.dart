@@ -117,47 +117,16 @@ class _PasswordWidgetState extends State<PasswordWidget> {
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 16.0, 0.0),
-                                  child: StreamBuilder<List<UsersRecord>>(
-                                    stream: queryUsersRecord(
-                                      singleRecord: true,
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: CircularProgressIndicator(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<UsersRecord> textUsersRecordList =
-                                          snapshot.data!;
-                                      // Return an empty Container when the item does not exist.
-                                      if (snapshot.data!.isEmpty) {
-                                        return Container();
-                                      }
-                                      final textUsersRecord =
-                                          textUsersRecordList.isNotEmpty
-                                              ? textUsersRecordList.first
-                                              : null;
-                                      return Text(
-                                        'modifier le profil',
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineMedium
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFF14181B),
-                                              fontSize: 28.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                      );
-                                    },
+                                  child: Text(
+                                    'modifier le profil',
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          color: Color(0xFF14181B),
+                                          fontSize: 28.0,
+                                          fontWeight: FontWeight.normal,
+                                        ),
                                   ),
                                 ),
                               ),
