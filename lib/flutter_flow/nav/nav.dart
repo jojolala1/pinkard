@@ -90,17 +90,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PagedacceuilWidget(),
             ),
             FFRoute(
-              name: 'pageperco',
-              path: 'pageperco',
-              builder: (context, params) => PagepercoWidget(
-                userRef: params.getParam(
-                    'userRef', ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
               name: 'creatprofil',
               path: 'creatprofil',
-              requireAuth: true,
               builder: (context, params) => CreatprofilWidget(),
             ),
             FFRoute(
