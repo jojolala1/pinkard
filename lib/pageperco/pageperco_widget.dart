@@ -942,10 +942,8 @@ class _PagepercoWidgetState extends State<PagepercoWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       await launchURL(
-                                                          valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.instagram,
-                                                              ''));
+                                                          pagepercoUsersRecord
+                                                              .instagram);
                                                     },
                                                     child: Material(
                                                       color: Colors.transparent,
