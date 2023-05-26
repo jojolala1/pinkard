@@ -82,39 +82,43 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      FlutterFlowIconButton(
-                        borderColor:
-                            FlutterFlowTheme.of(context).primaryBtnText,
-                        borderWidth: 1.0,
-                        buttonSize: 50.0,
-                        icon: Icon(
-                          Icons.inbox,
-                          color: Colors.black,
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            enableDrag: false,
-                            context: context,
-                            builder: (bottomSheetContext) {
-                              return GestureDetector(
-                                onTap: () => FocusScope.of(context)
-                                    .requestFocus(_unfocusNode),
-                                child: Padding(
-                                  padding: MediaQuery.of(bottomSheetContext)
-                                      .viewInsets,
-                                  child: PasswordWidget(
-                                    passref:
-                                        pagepercopublicUsersRecord.reference,
-                                  ),
-                                ),
-                              );
+                      if (currentUserDisplayName != null &&
+                          currentUserDisplayName != '')
+                        AuthUserStreamWidget(
+                          builder: (context) => FlutterFlowIconButton(
+                            borderColor:
+                                FlutterFlowTheme.of(context).primaryBtnText,
+                            borderWidth: 1.0,
+                            buttonSize: 50.0,
+                            icon: Icon(
+                              Icons.inbox,
+                              color: Colors.black,
+                              size: 30.0,
+                            ),
+                            onPressed: () async {
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                enableDrag: false,
+                                context: context,
+                                builder: (bottomSheetContext) {
+                                  return GestureDetector(
+                                    onTap: () => FocusScope.of(context)
+                                        .requestFocus(_unfocusNode),
+                                    child: Padding(
+                                      padding: MediaQuery.of(bottomSheetContext)
+                                          .viewInsets,
+                                      child: PasswordWidget(
+                                        passref: pagepercopublicUsersRecord
+                                            .reference,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ).then((value) => setState(() {}));
                             },
-                          ).then((value) => setState(() {}));
-                        },
-                      ),
+                          ),
+                        ),
                       Expanded(
                         child: Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
