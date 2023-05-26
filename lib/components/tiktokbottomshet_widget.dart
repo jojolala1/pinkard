@@ -46,8 +46,6 @@ class _TiktokbottomshetWidgetState extends State<TiktokbottomshetWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: double.infinity,
       height: 350.0,

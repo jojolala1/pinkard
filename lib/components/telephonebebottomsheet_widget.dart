@@ -47,8 +47,6 @@ class _TelephonebebottomsheetWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: double.infinity,
       height: 350.0,

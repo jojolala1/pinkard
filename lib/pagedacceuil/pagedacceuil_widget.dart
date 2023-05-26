@@ -45,8 +45,6 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Title(
         title: 'pagedacceuil',
         color: FlutterFlowTheme.of(context).primary,

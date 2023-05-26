@@ -78,38 +78,18 @@ class CreatprofilModel extends FlutterFlowModel {
     return null;
   }
 
-  // State field(s) for mdp widget.
-  TextEditingController? mdpController;
-  String? Function(BuildContext, String?)? mdpControllerValidator;
-  String? _mdpControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    if (val.length < 4) {
-      return 'vous devez insérer 4 chiffres';
-    }
-    if (val.length > 4) {
-      return 'vous devez insérer 4 chiffres';
-    }
-
-    return null;
-  }
-
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
     yourNameControllerValidator = _yourNameControllerValidator;
     prenomControllerValidator = _prenomControllerValidator;
     myBioControllerValidator = _myBioControllerValidator;
-    mdpControllerValidator = _mdpControllerValidator;
   }
 
   void dispose() {
     yourNameController?.dispose();
     prenomController?.dispose();
     myBioController?.dispose();
-    mdpController?.dispose();
   }
 
   /// Additional helper methods are added here.

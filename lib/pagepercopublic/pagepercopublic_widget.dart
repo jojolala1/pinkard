@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/password_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -49,8 +48,6 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<UsersRecord>(
       stream: UsersRecord.getDocument(widget.userRef!),
       builder: (context, snapshot) {
@@ -96,26 +93,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                               size: 30.0,
                             ),
                             onPressed: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                enableDrag: false,
-                                context: context,
-                                builder: (bottomSheetContext) {
-                                  return GestureDetector(
-                                    onTap: () => FocusScope.of(context)
-                                        .requestFocus(_unfocusNode),
-                                    child: Padding(
-                                      padding: MediaQuery.of(bottomSheetContext)
-                                          .viewInsets,
-                                      child: PasswordWidget(
-                                        passref: pagepercopublicUsersRecord
-                                            .reference,
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ).then((value) => setState(() {}));
+                              context.pushNamed('creatprofil');
                             },
                           ),
                         ),
@@ -329,20 +307,24 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: Text(
-                                  'entreprise',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Roboto',
-                                        color: Colors.black,
-                                        fontSize: 25.0,
-                                      ),
+                              if ('${pagepercopublicUsersRecord.maps}${pagepercopublicUsersRecord.menu}${pagepercopublicUsersRecord.site}${pagepercopublicUsersRecord.contact}${pagepercopublicUsersRecord.booking}${pagepercopublicUsersRecord.airbnb}${pagepercopublicUsersRecord.tripadvisor}' !=
+                                      null &&
+                                  '${pagepercopublicUsersRecord.maps}${pagepercopublicUsersRecord.menu}${pagepercopublicUsersRecord.site}${pagepercopublicUsersRecord.contact}${pagepercopublicUsersRecord.booking}${pagepercopublicUsersRecord.airbnb}${pagepercopublicUsersRecord.tripadvisor}' !=
+                                      '')
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 20.0, 0.0, 0.0),
+                                  child: Text(
+                                    'entreprise',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Roboto',
+                                          color: Colors.black,
+                                          fontSize: 25.0,
+                                        ),
+                                  ),
                                 ),
-                              ),
                               Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [

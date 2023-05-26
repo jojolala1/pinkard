@@ -45,8 +45,6 @@ class _PicturchangeWidgetState extends State<PicturchangeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: MediaQuery.of(context).size.width * 1.0,
       height: 350.0,
