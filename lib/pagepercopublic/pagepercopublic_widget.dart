@@ -351,13 +351,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                       shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
                                       children: [
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.maps,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.maps !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.maps,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.maps !=
                                                 '')
                                           Align(
                                             alignment:
@@ -366,52 +362,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .maps);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .maps);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/maps.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/maps.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -419,13 +409,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.menu,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.menu !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.menu,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.menu !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -434,52 +420,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .menu);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .menu);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/menu_restau.jpg',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/menu_restau.jpg',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -487,13 +467,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.site,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.site !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.site,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.site !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -502,49 +478,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .site);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .site);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
+                                                      image: DecorationImage(
+                                                        fit: BoxFit.cover,
+                                                        image: Image.asset(
+                                                          'assets/images/lien.jpg',
+                                                        ).image,
+                                                      ),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        image: DecorationImage(
-                                                          fit: BoxFit.cover,
-                                                          image: Image.asset(
-                                                            'assets/images/lien.jpg',
-                                                          ).image,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
@@ -564,15 +537,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.contact,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .contact !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.contact,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .contact !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -581,52 +550,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .contact);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .contact);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/contact.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/contact.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -634,15 +597,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.booking,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .booking !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.booking,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .booking !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -651,52 +610,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .booking);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .booking);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/book.jpg',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/book.jpg',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -704,15 +657,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.telegram,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.airbnb !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.telegram,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.airbnb !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -721,52 +668,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .airbnb);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .airbnb);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/airbnb.webp',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/airbnb.webp',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -774,15 +715,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.tripadvisor,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .tripadvisor !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.tripadvisor,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .tripadvisor !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -791,52 +728,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .tripadvisor);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .tripadvisor);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/tripadvisor.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/tripadvisor.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -945,15 +876,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.facebook,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .facebook !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.facebook,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .facebook !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -962,50 +889,248 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .facebook);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .facebook);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/fb.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (pagepercopublicUsersRecord
+                                                      .snapchat !=
+                                                  null &&
+                                              pagepercopublicUsersRecord
+                                                      .snapchat !=
+                                                  '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -0.95, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .snapchat);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                      ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/snapchat.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (pagepercopublicUsersRecord
+                                                      .tiktok !=
+                                                  null &&
+                                              pagepercopublicUsersRecord
+                                                      .tiktok !=
+                                                  '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -0.95, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .tiktok);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                      ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/tiktk.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (pagepercopublicUsersRecord
+                                                      .messenger !=
+                                                  null &&
+                                              pagepercopublicUsersRecord
+                                                      .messenger !=
+                                                  '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -0.95, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .messenger);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    10.0,
+                                                                    10.0,
+                                                                    10.0),
                                                         child: ClipRRect(
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      30.0),
+                                                                      0.0),
                                                           child: Image.asset(
-                                                            'assets/images/fb.png',
+                                                            'assets/images/meesengerr.webp',
                                                             width: 100.0,
                                                             height: 100.0,
                                                             fit: BoxFit.cover,
@@ -1017,15 +1142,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.snapchat,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .linkdln !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.snapchat,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .linkdln !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -1034,54 +1155,50 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .snapchat);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .linkdln);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/snapchat.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/linkdln.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -1089,15 +1206,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.tiktok,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .twitter !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.tiktok,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .twitter !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -1106,54 +1219,50 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .tiktok);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .twitter);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/tiktk.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/twitter.webp',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -1161,15 +1270,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.messenger,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .pinterest !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.messenger,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .pinterest !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -1178,63 +1283,50 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .messenger);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .pinterest);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      10.0,
-                                                                      10.0,
-                                                                      10.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child: Image.asset(
-                                                              'assets/images/meesengerr.webp',
-                                                              width: 100.0,
-                                                              height: 100.0,
-                                                              fit: BoxFit.cover,
-                                                            ),
-                                                          ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/pinterest.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -1242,15 +1334,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.linkdln,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .youtube !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.linkdln,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .youtube !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -1259,54 +1347,50 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .linkdln);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .youtube);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/linkdln.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/ytb.webp',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -1314,15 +1398,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.twitter,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .twich !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.twitter,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .twich !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -1331,270 +1411,50 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .twitter);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/twitter.webp',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .twich);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
                                                     ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.pinterest,
-                                                      '') !=
-                                                  null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.pinterest,
-                                                      '') !=
-                                                  '')
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.95, 0.0),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .pinterest);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/pinterest.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.youtube,
-                                                      '') !=
-                                                  null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.youtube,
-                                                      '') !=
-                                                  '')
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.95, 0.0),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .youtube);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                      child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
-                                                      ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/ytb.webp',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.twich,
-                                                      '') !=
-                                                  null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.twich,
-                                                      '') !=
-                                                  '')
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -0.95, 0.0),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .twich);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/twitch.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                        child: Image.asset(
+                                                          'assets/images/twitch.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -1638,9 +1498,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                       shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
                                       children: [
-                                        if (valueOrDefault(
-                                                currentUserDocument?.phone,
-                                                0) !=
+                                        if (pagepercopublicUsersRecord.phone !=
                                             null)
                                           Align(
                                             alignment:
@@ -1649,55 +1507,49 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchUrl(Uri(
-                                                      scheme: 'tel',
-                                                      path:
-                                                          pagepercopublicUsersRecord
-                                                              .phone
-                                                              .toString(),
-                                                    ));
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchUrl(Uri(
+                                                    scheme: 'tel',
+                                                    path:
+                                                        pagepercopublicUsersRecord
+                                                            .phone
+                                                            .toString(),
+                                                  ));
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/bouton-telephone-symbole_318-41893.avif',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/bouton-telephone-symbole_318-41893.avif',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -1705,9 +1557,8 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                currentUserDocument?.phonesms,
-                                                0) !=
+                                        if (pagepercopublicUsersRecord
+                                                .phonesms !=
                                             null)
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -1716,60 +1567,54 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (isiOS) {
-                                                      await launchUrl(Uri.parse(
-                                                          "sms:pagepercopublicUsersRecord.phonesms.toString()&body=${Uri.encodeComponent('')}"));
-                                                    } else {
-                                                      await launchUrl(Uri(
-                                                        scheme: 'sms',
-                                                        path:
-                                                            pagepercopublicUsersRecord
-                                                                .phonesms
-                                                                .toString(),
-                                                      ));
-                                                    }
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  if (isiOS) {
+                                                    await launchUrl(Uri.parse(
+                                                        "sms:pagepercopublicUsersRecord.phonesms.toString()&body=${Uri.encodeComponent('')}"));
+                                                  } else {
+                                                    await launchUrl(Uri(
+                                                      scheme: 'sms',
+                                                      path:
+                                                          pagepercopublicUsersRecord
+                                                              .phonesms
+                                                              .toString(),
+                                                    ));
+                                                  }
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/sms.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/sms.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -1777,8 +1622,10 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (currentUserEmail != null &&
-                                            currentUserEmail != '')
+                                        if (pagepercopublicUsersRecord.email !=
+                                                null &&
+                                            pagepercopublicUsersRecord.email !=
+                                                '')
                                           Align(
                                             alignment: AlignmentDirectional(
                                                 -0.95, 0.0),
@@ -1836,15 +1683,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.whatsapp,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .whatsapp !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.whatsapp,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .whatsapp !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -1853,52 +1696,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .whatsapp);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .whatsapp);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/whatsapp.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/whatsapp.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -1906,13 +1743,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.zoom,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.zoom !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.zoom,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.zoom !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -1921,52 +1754,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .zoom);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .zoom);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/zoom.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/zoom.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -1974,15 +1801,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.telegram,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .telegram !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.telegram,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .telegram !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -1991,52 +1814,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .telegram);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .telegram);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/telegram.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/telegram.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -2044,15 +1861,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.discord,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .discord !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.discord,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .discord !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -2061,52 +1874,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .discord);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .discord);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/discord.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/discord.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -2114,13 +1921,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.skype,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.skype !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.skype,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.skype !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -2129,52 +1932,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .skype);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .skype);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/skype.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/skype.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -2220,15 +2017,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                         shrinkWrap: true,
                                         scrollDirection: Axis.vertical,
                                         children: [
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.paypal,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .paypal !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.paypal,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .paypal !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -2237,54 +2030,50 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .paypal);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .paypal);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/paypal.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/paypal.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -2292,15 +2081,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 ),
                                               ),
                                             ),
-                                          if (valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.revolut,
-                                                      '') !=
+                                          if (pagepercopublicUsersRecord
+                                                      .revolut !=
                                                   null &&
-                                              valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.revolut,
-                                                      '') !=
+                                              pagepercopublicUsersRecord
+                                                      .revolut !=
                                                   '')
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -2309,54 +2094,50 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 10.0, 0.0),
-                                                child: AuthUserStreamWidget(
-                                                  builder: (context) => InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await launchURL(
-                                                          pagepercopublicUsersRecord
-                                                              .revolut);
-                                                    },
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 2.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await launchURL(
+                                                        pagepercopublicUsersRecord
+                                                            .revolut);
+                                                  },
+                                                  child: Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 2.0,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                       ),
-                                                      child: Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                        ),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/revolut.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(30.0),
+                                                        child: Image.asset(
+                                                          'assets/images/revolut.png',
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -2399,13 +2180,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                       shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
                                       children: [
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.fiverr,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.fiverr !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.fiverr,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.fiverr !=
                                                 '')
                                           Align(
                                             alignment:
@@ -2414,52 +2191,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .fiverr);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .fiverr);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/fivver.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/fivver.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -2467,15 +2238,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.cinqeuro,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .cinqeuro !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.cinqeuro,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .cinqeuro !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -2484,52 +2251,46 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .cinqeuro);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .cinqeuro);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/5euro.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/5euro.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -2571,15 +2332,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                       shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
                                       children: [
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.spotify,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .spotify !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.spotify,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .spotify !=
                                                 '')
                                           Align(
                                             alignment:
@@ -2588,125 +2345,51 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .spotify);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              30.0),
-                                                    ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    5.0,
-                                                                    5.0,
-                                                                    5.0,
-                                                                    5.0),
-                                                        child: ClipRRect(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      30.0),
-                                                          child: Image.asset(
-                                                            'assets/images/spotify.png',
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .spotify);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
                                                   ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.deezer,
-                                                    '') !=
-                                                null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.deezer,
-                                                    '') !=
-                                                '')
-                                          Align(
-                                            alignment: AlignmentDirectional(
-                                                -0.95, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .deezer);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(30.0),
                                                         child: Image.asset(
-                                                          'assets/images/deezer.png',
+                                                          'assets/images/spotify.png',
                                                           width: 100.0,
                                                           height: 100.0,
                                                           fit: BoxFit.cover,
@@ -2718,15 +2401,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.applemusic,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord.deezer !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.applemusic,
-                                                    '') !=
+                                            pagepercopublicUsersRecord.deezer !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -2735,51 +2412,45 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .applemusic);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .deezer);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/apple_music.jpg',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.fill,
-                                                        ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/deezer.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
@@ -2787,13 +2458,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               ),
                                             ),
                                           ),
-                                        if (valueOrDefault(
-                                                    currentUserDocument?.amazon,
-                                                    '') !=
+                                        if (pagepercopublicUsersRecord
+                                                    .applemusic !=
                                                 null &&
-                                            valueOrDefault(
-                                                    currentUserDocument?.amazon,
-                                                    '') !=
+                                            pagepercopublicUsersRecord
+                                                    .applemusic !=
                                                 '')
                                           Align(
                                             alignment: AlignmentDirectional(
@@ -2802,52 +2471,103 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await launchURL(
-                                                        pagepercopublicUsersRecord
-                                                            .amazon);
-                                                  },
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 2.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .applemusic);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               30.0),
                                                     ),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/apple_music.jpg',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.fill,
                                                       ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30.0),
-                                                        child: Image.asset(
-                                                          'assets/images/amazon.png',
-                                                          width: 100.0,
-                                                          height: 100.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (pagepercopublicUsersRecord.amazon !=
+                                                null &&
+                                            pagepercopublicUsersRecord.amazon !=
+                                                '')
+                                          Align(
+                                            alignment: AlignmentDirectional(
+                                                -0.95, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      pagepercopublicUsersRecord
+                                                          .amazon);
+                                                },
+                                                child: Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 2.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30.0),
+                                                      child: Image.asset(
+                                                        'assets/images/amazon.png',
+                                                        width: 100.0,
+                                                        height: 100.0,
+                                                        fit: BoxFit.cover,
                                                       ),
                                                     ),
                                                   ),
