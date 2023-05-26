@@ -61,8 +61,6 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
     super.initState();
     _model = createModel(context, () => CreatprofilModel());
 
-    _model.yourNameController ??=
-        TextEditingController(text: currentUserDisplayName);
     _model.prenomController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.prenom, ''));
     _model.myBioController ??= TextEditingController(
@@ -298,7 +296,11 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                       20.0, 20.0, 20.0, 16.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => TextFormField(
-                                      controller: _model.yourNameController,
+                                      controller: _model.yourNameController ??=
+                                          TextEditingController(
+                                        text:
+                                            creatprofilUsersRecord!.displayName,
+                                      ),
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: currentUserDisplayName,
