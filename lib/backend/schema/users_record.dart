@@ -54,11 +54,6 @@ class UsersRecord extends FirestoreRecord {
   String get instagram => _instagram ?? '';
   bool hasInstagram() => _instagram != null;
 
-  // "phone" field.
-  int? _phone;
-  int get phone => _phone ?? 0;
-  bool hasPhone() => _phone != null;
-
   // "phone_number" field.
   String? _phoneNumber;
   String get phoneNumber => _phoneNumber ?? '';
@@ -123,11 +118,6 @@ class UsersRecord extends FirestoreRecord {
   String? _twitter;
   String get twitter => _twitter ?? '';
   bool hasTwitter() => _twitter != null;
-
-  // "phonesms" field.
-  int? _phonesms;
-  int get phonesms => _phonesms ?? 0;
-  bool hasPhonesms() => _phonesms != null;
 
   // "whatsapp" field.
   String? _whatsapp;
@@ -234,6 +224,16 @@ class UsersRecord extends FirestoreRecord {
   String get photourl2 => _photourl2 ?? '';
   bool hasPhotourl2() => _photourl2 != null;
 
+  // "phone" field.
+  String? _phone;
+  String get phone => _phone ?? '';
+  bool hasPhone() => _phone != null;
+
+  // "phonesms" field.
+  String? _phonesms;
+  String get phonesms => _phonesms ?? '';
+  bool hasPhonesms() => _phonesms != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -243,7 +243,6 @@ class UsersRecord extends FirestoreRecord {
     _prenom = snapshotData['prenom'] as String?;
     _biographie = snapshotData['biographie'] as String?;
     _instagram = snapshotData['instagram'] as String?;
-    _phone = snapshotData['phone'] as int?;
     _phoneNumber = snapshotData['phone_number'] as String?;
     _mdp = snapshotData['mdp'] as int?;
     _mdp2 = snapshotData['mdp2'] as int?;
@@ -257,7 +256,6 @@ class UsersRecord extends FirestoreRecord {
     _linkdln = snapshotData['linkdln'] as String?;
     _twich = snapshotData['twich'] as String?;
     _twitter = snapshotData['twitter'] as String?;
-    _phonesms = snapshotData['phonesms'] as int?;
     _whatsapp = snapshotData['whatsapp'] as String?;
     _zoom = snapshotData['zoom'] as String?;
     _discord = snapshotData['discord'] as String?;
@@ -279,6 +277,8 @@ class UsersRecord extends FirestoreRecord {
     _applemusic = snapshotData['applemusic'] as String?;
     _amazon = snapshotData['amazon'] as String?;
     _photourl2 = snapshotData['photourl2'] as String?;
+    _phone = snapshotData['phone'] as String?;
+    _phonesms = snapshotData['phonesms'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -315,7 +315,6 @@ Map<String, dynamic> createUsersRecordData({
   String? prenom,
   String? biographie,
   String? instagram,
-  int? phone,
   String? phoneNumber,
   int? mdp,
   int? mdp2,
@@ -329,7 +328,6 @@ Map<String, dynamic> createUsersRecordData({
   String? linkdln,
   String? twich,
   String? twitter,
-  int? phonesms,
   String? whatsapp,
   String? zoom,
   String? discord,
@@ -351,6 +349,8 @@ Map<String, dynamic> createUsersRecordData({
   String? applemusic,
   String? amazon,
   String? photourl2,
+  String? phone,
+  String? phonesms,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -362,7 +362,6 @@ Map<String, dynamic> createUsersRecordData({
       'prenom': prenom,
       'biographie': biographie,
       'instagram': instagram,
-      'phone': phone,
       'phone_number': phoneNumber,
       'mdp': mdp,
       'mdp2': mdp2,
@@ -376,7 +375,6 @@ Map<String, dynamic> createUsersRecordData({
       'linkdln': linkdln,
       'twich': twich,
       'twitter': twitter,
-      'phonesms': phonesms,
       'whatsapp': whatsapp,
       'zoom': zoom,
       'discord': discord,
@@ -398,6 +396,8 @@ Map<String, dynamic> createUsersRecordData({
       'applemusic': applemusic,
       'amazon': amazon,
       'photourl2': photourl2,
+      'phone': phone,
+      'phonesms': phonesms,
     }.withoutNulls,
   );
 

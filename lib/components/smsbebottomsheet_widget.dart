@@ -32,7 +32,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
     _model = createModel(context, () => SmsbebottomsheetModel());
 
     _model.smsController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.phonesms, 0).toString());
+        text: valueOrDefault(currentUserDocument?.phonesms, ''));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -103,8 +103,8 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
                     autofocus: true,
                     obscureText: false,
                     decoration: InputDecoration(
-                      hintText: valueOrDefault(currentUserDocument?.phonesms, 0)
-                          .toString(),
+                      hintText:
+                          valueOrDefault(currentUserDocument?.phonesms, ''),
                       hintStyle: FlutterFlowTheme.of(context).bodySmall,
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -150,6 +150,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium,
+                    keyboardType: TextInputType.phone,
                     validator:
                         _model.smsControllerValidator.asValidator(context),
                   ),
@@ -162,7 +163,7 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
             child: FFButtonWidget(
               onPressed: () async {
                 final usersUpdateData = createUsersRecordData(
-                  phonesms: int.tryParse(_model.smsController.text),
+                  phonesms: _model.smsController.text,
                 );
                 await currentUserReference!.update(usersUpdateData);
 

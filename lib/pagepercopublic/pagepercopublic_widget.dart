@@ -1332,9 +1332,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                               ),
                             ],
                           ),
-                        if ('${pagepercopublicUsersRecord.phone.toString()}${pagepercopublicUsersRecord.phonesms.toString()}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
+                        if ('${pagepercopublicUsersRecord.phone}${pagepercopublicUsersRecord.phonesms}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
                                 null &&
-                            '${pagepercopublicUsersRecord.phone.toString()}${pagepercopublicUsersRecord.phonesms.toString()}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
+                            '${pagepercopublicUsersRecord.phone}${pagepercopublicUsersRecord.phonesms}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
                                 '')
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -1350,9 +1350,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   ),
                             ),
                           ),
-                        if ('${pagepercopublicUsersRecord.phone.toString()}${pagepercopublicUsersRecord.phonesms.toString()}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
+                        if ('${pagepercopublicUsersRecord.phone}${pagepercopublicUsersRecord.phonesms}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
                                 null &&
-                            '${pagepercopublicUsersRecord.phone.toString()}${pagepercopublicUsersRecord.phonesms.toString()}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
+                            '${pagepercopublicUsersRecord.phone}${pagepercopublicUsersRecord.phonesms}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
                                 '')
                           Row(
                             mainAxisSize: MainAxisSize.min,
@@ -1371,7 +1371,8 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   scrollDirection: Axis.vertical,
                                   children: [
                                     if (pagepercopublicUsersRecord.phone !=
-                                        null)
+                                            null &&
+                                        pagepercopublicUsersRecord.phone != '')
                                       Align(
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
@@ -1388,8 +1389,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               await launchUrl(Uri(
                                                 scheme: 'tel',
                                                 path: pagepercopublicUsersRecord
-                                                    .phone
-                                                    .toString(),
+                                                    .phone,
                                               ));
                                             },
                                             child: Material(
@@ -1427,7 +1427,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                         ),
                                       ),
                                     if (pagepercopublicUsersRecord.phonesms !=
-                                        null)
+                                            null &&
+                                        pagepercopublicUsersRecord.phonesms !=
+                                            '')
                                       Align(
                                         alignment:
                                             AlignmentDirectional(-0.95, 0.0),
@@ -1443,14 +1445,13 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                             onTap: () async {
                                               if (isiOS) {
                                                 await launchUrl(Uri.parse(
-                                                    "sms:pagepercopublicUsersRecord.phonesms.toString()&body=${Uri.encodeComponent('')}"));
+                                                    "sms:pagepercopublicUsersRecord.phonesms&body=${Uri.encodeComponent('')}"));
                                               } else {
                                                 await launchUrl(Uri(
                                                   scheme: 'sms',
                                                   path:
                                                       pagepercopublicUsersRecord
-                                                          .phonesms
-                                                          .toString(),
+                                                          .phonesms,
                                                 ));
                                               }
                                             },

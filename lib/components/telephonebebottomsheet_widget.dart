@@ -34,7 +34,7 @@ class _TelephonebebottomsheetWidgetState
     _model = createModel(context, () => TelephonebebottomsheetModel());
 
     _model.phoneController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.phone, 0).toString());
+        text: valueOrDefault(currentUserDocument?.phone, ''));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -108,8 +108,7 @@ class _TelephonebebottomsheetWidgetState
                     autofocus: true,
                     obscureText: false,
                     decoration: InputDecoration(
-                      hintText: valueOrDefault(currentUserDocument?.phone, 0)
-                          .toString(),
+                      hintText: valueOrDefault(currentUserDocument?.phone, ''),
                       hintStyle:
                           FlutterFlowTheme.of(context).bodySmall.override(
                                 fontFamily: 'Poppins',
@@ -148,6 +147,7 @@ class _TelephonebebottomsheetWidgetState
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium,
                     textAlign: TextAlign.start,
+                    keyboardType: TextInputType.phone,
                     validator:
                         _model.phoneControllerValidator.asValidator(context),
                   ),
@@ -160,7 +160,7 @@ class _TelephonebebottomsheetWidgetState
             child: FFButtonWidget(
               onPressed: () async {
                 final usersUpdateData = createUsersRecordData(
-                  phone: int.tryParse(_model.phoneController.text),
+                  phone: _model.phoneController.text,
                 );
                 await currentUserReference!.update(usersUpdateData);
 
