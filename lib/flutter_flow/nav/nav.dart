@@ -101,6 +101,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 userRef: params.getParam(
                     'userRef', ParamType.DocumentReference, false, ['users']),
               ),
+            ),
+            FFRoute(
+              name: 'pagepercopublicV2',
+              path: 'pagepercopublicV2',
+              builder: (context, params) => PagepercopublicV2Widget(
+                userRef: params.getParam(
+                    'userRef', ParamType.DocumentReference, false, ['users']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
