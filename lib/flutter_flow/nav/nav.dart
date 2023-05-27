@@ -83,27 +83,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.loggedIn
               ? CreatprofilWidget()
               : PagedacceuilWidget(),
-          routes: [
-            FFRoute(
-              name: 'pagedacceuil',
-              path: 'pagedacceuil',
-              builder: (context, params) => PagedacceuilWidget(),
-            ),
-            FFRoute(
-              name: 'creatprofil',
-              path: 'creatprofil',
-              builder: (context, params) => CreatprofilWidget(),
-            ),
-            FFRoute(
-              name: 'pagepercopublic',
-              path: 'pagepercopublic',
-              builder: (context, params) => PagepercopublicWidget(
-                userRef: params.getParam(
-                    'userRef', ParamType.DocumentReference, false, ['users']),
-              ),
-            )
-          ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
+        FFRoute(
+          name: 'pagedacceuil',
+          path: '/pagedacceuil',
+          builder: (context, params) => PagedacceuilWidget(),
+        ),
+        FFRoute(
+          name: 'creatprofil',
+          path: '/creatprofil',
+          builder: (context, params) => CreatprofilWidget(),
+        ),
+        FFRoute(
+          name: 'pagepercopublic',
+          path: '/pagepercopublic',
+          builder: (context, params) => PagepercopublicWidget(
+            userRef: params.getParam(
+                'userRef', ParamType.DocumentReference, false, ['users']),
+          ),
+        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
     );
