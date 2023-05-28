@@ -255,7 +255,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       Form(
                         key: _model.formKey,
-                        autovalidateMode: AutovalidateMode.disabled,
+                        autovalidateMode: AutovalidateMode.always,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
