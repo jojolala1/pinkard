@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -189,10 +189,31 @@ class _ContactbottomsheetWidgetState extends State<ContactbottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final usersUpdateData = createUsersRecordData(
-                  contact: _model.contactController.text,
-                );
-                await currentUserReference!.update(usersUpdateData);
+                final selectedFile = await selectFile();
+                if (selectedFile != null) {
+                  setState(() => _model.isDataUploading = true);
+                  FFUploadedFile? selectedUploadedFile;
+                  String? downloadUrl;
+                  try {
+                    selectedUploadedFile = FFUploadedFile(
+                      name: selectedFile.storagePath.split('/').last,
+                      bytes: selectedFile.bytes,
+                    );
+                    downloadUrl = await uploadData(
+                        selectedFile.storagePath, selectedFile.bytes);
+                  } finally {
+                    _model.isDataUploading = false;
+                  }
+                  if (selectedUploadedFile != null && downloadUrl != null) {
+                    setState(() {
+                      _model.uploadedLocalFile = selectedUploadedFile!;
+                      _model.uploadedFileUrl = downloadUrl!;
+                    });
+                  } else {
+                    setState(() {});
+                    return;
+                  }
+                }
 
                 context.pushNamed('creatprofil');
               },

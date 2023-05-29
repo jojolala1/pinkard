@@ -171,10 +171,9 @@ class _PicturchangeWidgetState extends State<PicturchangeWidget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
-                                final selectedMedia =
-                                    await selectMediaWithSourceBottomSheet(
-                                  context: context,
-                                  allowPhoto: true,
+                                final selectedMedia = await selectMedia(
+                                  mediaSource: MediaSource.photoGallery,
+                                  multiImage: false,
                                 );
                                 if (selectedMedia != null &&
                                     selectedMedia.every((m) =>

@@ -234,6 +234,51 @@ class UsersRecord extends FirestoreRecord {
   String get phonesms => _phonesms ?? '';
   bool hasPhonesms() => _phonesms != null;
 
+  // "photo1" field.
+  String? _photo1;
+  String get photo1 => _photo1 ?? '';
+  bool hasPhoto1() => _photo1 != null;
+
+  // "photo2" field.
+  String? _photo2;
+  String get photo2 => _photo2 ?? '';
+  bool hasPhoto2() => _photo2 != null;
+
+  // "photo3" field.
+  String? _photo3;
+  String get photo3 => _photo3 ?? '';
+  bool hasPhoto3() => _photo3 != null;
+
+  // "photo4" field.
+  String? _photo4;
+  String get photo4 => _photo4 ?? '';
+  bool hasPhoto4() => _photo4 != null;
+
+  // "photo5" field.
+  String? _photo5;
+  String get photo5 => _photo5 ?? '';
+  bool hasPhoto5() => _photo5 != null;
+
+  // "photo6" field.
+  String? _photo6;
+  String get photo6 => _photo6 ?? '';
+  bool hasPhoto6() => _photo6 != null;
+
+  // "video1" field.
+  String? _video1;
+  String get video1 => _video1 ?? '';
+  bool hasVideo1() => _video1 != null;
+
+  // "video2" field.
+  String? _video2;
+  String get video2 => _video2 ?? '';
+  bool hasVideo2() => _video2 != null;
+
+  // "video3" field.
+  String? _video3;
+  String get video3 => _video3 ?? '';
+  bool hasVideo3() => _video3 != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -279,6 +324,15 @@ class UsersRecord extends FirestoreRecord {
     _photourl2 = snapshotData['photourl2'] as String?;
     _phone = snapshotData['phone'] as String?;
     _phonesms = snapshotData['phonesms'] as String?;
+    _photo1 = snapshotData['photo1'] as String?;
+    _photo2 = snapshotData['photo2'] as String?;
+    _photo3 = snapshotData['photo3'] as String?;
+    _photo4 = snapshotData['photo4'] as String?;
+    _photo5 = snapshotData['photo5'] as String?;
+    _photo6 = snapshotData['photo6'] as String?;
+    _video1 = snapshotData['video1'] as String?;
+    _video2 = snapshotData['video2'] as String?;
+    _video3 = snapshotData['video3'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -351,6 +405,15 @@ Map<String, dynamic> createUsersRecordData({
   String? photourl2,
   String? phone,
   String? phonesms,
+  String? photo1,
+  String? photo2,
+  String? photo3,
+  String? photo4,
+  String? photo5,
+  String? photo6,
+  String? video1,
+  String? video2,
+  String? video3,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -398,6 +461,15 @@ Map<String, dynamic> createUsersRecordData({
       'photourl2': photourl2,
       'phone': phone,
       'phonesms': phonesms,
+      'photo1': photo1,
+      'photo2': photo2,
+      'photo3': photo3,
+      'photo4': photo4,
+      'photo5': photo5,
+      'photo6': photo6,
+      'video1': video1,
+      'video2': video2,
+      'video3': video3,
     }.withoutNulls,
   );
 

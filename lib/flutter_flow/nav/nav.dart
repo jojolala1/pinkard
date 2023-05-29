@@ -101,6 +101,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 userRef: params.getParam(
                     'userRef', ParamType.DocumentReference, false, ['users']),
               ),
+            ),
+            FFRoute(
+              name: 'galerie',
+              path: 'galerie',
+              builder: (context, params) => GalerieWidget(),
+            ),
+            FFRoute(
+              name: 'pagepercopublicCopy',
+              path: 'galeriepublic',
+              builder: (context, params) => PagepercopublicCopyWidget(
+                userRef: params.getParam(
+                    'userRef', ParamType.DocumentReference, false, ['users']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
