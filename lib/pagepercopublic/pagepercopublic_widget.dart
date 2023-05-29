@@ -899,9 +899,15 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            await launchURL(
-                                                pagepercopublicUsersRecord
-                                                    .tripadvisor);
+                                            context.pushNamed(
+                                              'galeriepublic',
+                                              queryParams: {
+                                                'userRef': serializeParam(
+                                                  currentUserReference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
                                           },
                                           child: Material(
                                             color: Colors.transparent,

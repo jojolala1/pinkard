@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/components/photo1bottomsheet_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -37,11 +38,6 @@ class GalerieModel extends FlutterFlowModel {
   FFUploadedFile uploadedLocalFile5 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl5 = '';
-
-  bool isDataUploading6 = false;
-  FFUploadedFile uploadedLocalFile6 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl6 = '';
 
   /// Initialization and disposal methods.
 

@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/components/photo1bottomsheet_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -103,9 +104,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                         size: 30.0,
                       ),
                       onPressed: () async {
-                        final usersUpdateData = createUsersRecordData(
-                          photo1: _model.uploadedFileUrl1,
-                        );
+                        final usersUpdateData = createUsersRecordData();
                         await currentUserReference!.update(usersUpdateData);
 
                         context.pushNamed('creatprofil');
@@ -266,6 +265,82 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                       size: 100.0,
                                                     ),
                                                     onPressed: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder:
+                                                            (bottomSheetContext) {
+                                                          return GestureDetector(
+                                                            onTap: () => FocusScope
+                                                                    .of(context)
+                                                                .requestFocus(
+                                                                    _unfocusNode),
+                                                            child: Padding(
+                                                              padding: MediaQuery.of(
+                                                                      bottomSheetContext)
+                                                                  .viewInsets,
+                                                              child:
+                                                                  Photo1bottomsheetWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-0.95, 0.0),
+                                        child: Material(
+                                          color: Colors.transparent,
+                                          elevation: 2.0,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30.0),
+                                          ),
+                                          child: Container(
+                                            width: 166.0,
+                                            height: 160.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBtnText,
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
+                                            ),
+                                            child: Stack(
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: FlutterFlowIconButton(
+                                                    borderColor:
+                                                        Color(0x00FFFFFF),
+                                                    borderRadius: 0.0,
+                                                    buttonSize: 120.0,
+                                                    fillColor:
+                                                        Color(0x00FFFFFF),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .add_circle_outline_sharp,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 100.0,
+                                                    ),
+                                                    onPressed: () async {
                                                       final selectedMedia =
                                                           await selectMedia(
                                                         mediaSource: MediaSource
@@ -348,6 +423,23 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                         }
                                                       }
                                                     },
+                                                  ),
+                                                ),
+                                                AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                    child: Image.network(
+                                                      valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.photo2,
+                                                          ''),
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -491,7 +583,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     child: Image.network(
                                                       valueOrDefault(
                                                           currentUserDocument
-                                                              ?.photo2,
+                                                              ?.photo3,
                                                           ''),
                                                       width: 300.0,
                                                       height: 200.0,
@@ -640,7 +732,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     child: Image.network(
                                                       valueOrDefault(
                                                           currentUserDocument
-                                                              ?.photo3,
+                                                              ?.photo4,
                                                           ''),
                                                       width: 300.0,
                                                       height: 200.0,
@@ -789,7 +881,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     child: Image.network(
                                                       valueOrDefault(
                                                           currentUserDocument
-                                                              ?.photo4,
+                                                              ?.photo5,
                                                           ''),
                                                       width: 300.0,
                                                       height: 200.0,
@@ -918,155 +1010,6 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                 selectedUploadedFiles
                                                                     .first;
                                                             _model.uploadedFileUrl5 =
-                                                                downloadUrls
-                                                                    .first;
-                                                          });
-                                                        } else {
-                                                          setState(() {});
-                                                          return;
-                                                        }
-                                                      }
-                                                    },
-                                                  ),
-                                                ),
-                                                AuthUserStreamWidget(
-                                                  builder: (context) =>
-                                                      ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30.0),
-                                                    child: Image.network(
-                                                      valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.photo5,
-                                                          ''),
-                                                      width: 300.0,
-                                                      height: 200.0,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(-0.95, 0.0),
-                                        child: Material(
-                                          color: Colors.transparent,
-                                          elevation: 2.0,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(30.0),
-                                          ),
-                                          child: Container(
-                                            width: 166.0,
-                                            height: 160.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                            ),
-                                            child: Stack(
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: FlutterFlowIconButton(
-                                                    borderColor:
-                                                        Color(0x00FFFFFF),
-                                                    borderRadius: 0.0,
-                                                    buttonSize: 120.0,
-                                                    fillColor:
-                                                        Color(0x00FFFFFF),
-                                                    icon: Icon(
-                                                      Icons
-                                                          .add_circle_outline_sharp,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 100.0,
-                                                    ),
-                                                    onPressed: () async {
-                                                      final selectedMedia =
-                                                          await selectMedia(
-                                                        mediaSource: MediaSource
-                                                            .photoGallery,
-                                                        multiImage: false,
-                                                      );
-                                                      if (selectedMedia !=
-                                                              null &&
-                                                          selectedMedia.every((m) =>
-                                                              validateFileFormat(
-                                                                  m.storagePath,
-                                                                  context))) {
-                                                        setState(() => _model
-                                                                .isDataUploading6 =
-                                                            true);
-                                                        var selectedUploadedFiles =
-                                                            <FFUploadedFile>[];
-                                                        var downloadUrls =
-                                                            <String>[];
-                                                        try {
-                                                          selectedUploadedFiles =
-                                                              selectedMedia
-                                                                  .map((m) =>
-                                                                      FFUploadedFile(
-                                                                        name: m
-                                                                            .storagePath
-                                                                            .split('/')
-                                                                            .last,
-                                                                        bytes: m
-                                                                            .bytes,
-                                                                        height: m
-                                                                            .dimensions
-                                                                            ?.height,
-                                                                        width: m
-                                                                            .dimensions
-                                                                            ?.width,
-                                                                        blurHash:
-                                                                            m.blurHash,
-                                                                      ))
-                                                                  .toList();
-
-                                                          downloadUrls =
-                                                              (await Future
-                                                                      .wait(
-                                                            selectedMedia.map(
-                                                              (m) async =>
-                                                                  await uploadData(
-                                                                      m.storagePath,
-                                                                      m.bytes),
-                                                            ),
-                                                          ))
-                                                                  .where((u) =>
-                                                                      u != null)
-                                                                  .map(
-                                                                      (u) => u!)
-                                                                  .toList();
-                                                        } finally {
-                                                          _model.isDataUploading6 =
-                                                              false;
-                                                        }
-                                                        if (selectedUploadedFiles
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length &&
-                                                            downloadUrls
-                                                                    .length ==
-                                                                selectedMedia
-                                                                    .length) {
-                                                          setState(() {
-                                                            _model.uploadedLocalFile6 =
-                                                                selectedUploadedFiles
-                                                                    .first;
-                                                            _model.uploadedFileUrl6 =
                                                                 downloadUrls
                                                                     .first;
                                                           });
