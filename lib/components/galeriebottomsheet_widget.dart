@@ -97,8 +97,8 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                       color: FlutterFlowTheme.of(context).primaryText,
                       size: 34.0,
                     ),
-                    onPressed: () {
-                      print('IconButton pressed ...');
+                    onPressed: () async {
+                      Navigator.pop(context);
                     },
                   ),
                 ),
