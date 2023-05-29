@@ -9,11 +9,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'pagepercopublic_copy_model.dart';
-export 'pagepercopublic_copy_model.dart';
+import 'galeriepublic_model.dart';
+export 'galeriepublic_model.dart';
 
-class PagepercopublicCopyWidget extends StatefulWidget {
-  const PagepercopublicCopyWidget({
+class GaleriepublicWidget extends StatefulWidget {
+  const GaleriepublicWidget({
     Key? key,
     required this.userRef,
   }) : super(key: key);
@@ -21,12 +21,11 @@ class PagepercopublicCopyWidget extends StatefulWidget {
   final DocumentReference? userRef;
 
   @override
-  _PagepercopublicCopyWidgetState createState() =>
-      _PagepercopublicCopyWidgetState();
+  _GaleriepublicWidgetState createState() => _GaleriepublicWidgetState();
 }
 
-class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
-  late PagepercopublicCopyModel _model;
+class _GaleriepublicWidgetState extends State<GaleriepublicWidget> {
+  late GaleriepublicModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -39,7 +38,7 @@ class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PagepercopublicCopyModel());
+    _model = createModel(context, () => GaleriepublicModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -69,9 +68,9 @@ class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
             ),
           );
         }
-        final pagepercopublicCopyUsersRecord = snapshot.data!;
+        final galeriepublicUsersRecord = snapshot.data!;
         return Title(
-            title: 'pagepercopublicCopy',
+            title: 'galeriepublic',
             color: FlutterFlowTheme.of(context).primary,
             child: GestureDetector(
               onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
@@ -130,7 +129,7 @@ class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: Image.network(
-                                        pagepercopublicCopyUsersRecord.photoUrl,
+                                        galeriepublicUsersRecord.photoUrl,
                                         width: 300.0,
                                         height: 200.0,
                                         fit: BoxFit.cover,
@@ -259,7 +258,7 @@ class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
-                      pagepercopublicCopyUsersRecord.photo1,
+                      galeriepublicUsersRecord.photo1,
                       width: 300.0,
                       height: 200.0,
                       fit: BoxFit.cover,

@@ -108,9 +108,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => GalerieWidget(),
             ),
             FFRoute(
-              name: 'pagepercopublicCopy',
+              name: 'galeriepublic',
               path: 'galeriepublic',
-              builder: (context, params) => PagepercopublicCopyWidget(
+              builder: (context, params) => GaleriepublicWidget(
                 userRef: params.getParam(
                     'userRef', ParamType.DocumentReference, false, ['users']),
               ),

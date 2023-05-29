@@ -4,5 +4,4 @@ export '/creatprofil/creatprofil_widget.dart' show CreatprofilWidget;
 export '/pagepercopublic/pagepercopublic_widget.dart'
     show PagepercopublicWidget;
 export '/galerie/galerie_widget.dart' show GalerieWidget;
-export '/pagepercopublic_copy/pagepercopublic_copy_widget.dart'
-    show PagepercopublicCopyWidget;
+export '/galeriepublic/galeriepublic_widget.dart' show GaleriepublicWidget;
