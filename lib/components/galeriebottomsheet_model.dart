@@ -1,5 +1,4 @@
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
@@ -8,10 +7,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class GaleriepublicModel extends FlutterFlowModel {
-  ///  State fields for stateful widgets in this page.
+class GaleriebottomsheetModel extends FlutterFlowModel {
+  ///  State fields for stateful widgets in this component.
 
   // State field(s) for PageView widget.
   PageController? pageViewController;

@@ -106,14 +106,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'galerie',
               path: 'galerie',
               builder: (context, params) => GalerieWidget(),
-            ),
-            FFRoute(
-              name: 'galeriepublic',
-              path: 'galeriepublic',
-              builder: (context, params) => GaleriepublicWidget(
-                userRef: params.getParam(
-                    'userRef', ParamType.DocumentReference, false, ['users']),
-              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
