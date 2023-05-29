@@ -207,114 +207,22 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                 4.0, 4.0),
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
-                                                          InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          final selectedMedia =
-                                                              await selectMedia(
-                                                            mediaSource:
-                                                                MediaSource
-                                                                    .photoGallery,
-                                                            multiImage: false,
-                                                          );
-                                                          if (selectedMedia !=
-                                                                  null &&
-                                                              selectedMedia.every((m) =>
-                                                                  validateFileFormat(
-                                                                      m.storagePath,
-                                                                      context))) {
-                                                            setState(() => _model
-                                                                    .isDataUploading1 =
-                                                                true);
-                                                            var selectedUploadedFiles =
-                                                                <FFUploadedFile>[];
-                                                            var downloadUrls =
-                                                                <String>[];
-                                                            try {
-                                                              selectedUploadedFiles =
-                                                                  selectedMedia
-                                                                      .map((m) =>
-                                                                          FFUploadedFile(
-                                                                            name:
-                                                                                m.storagePath.split('/').last,
-                                                                            bytes:
-                                                                                m.bytes,
-                                                                            height:
-                                                                                m.dimensions?.height,
-                                                                            width:
-                                                                                m.dimensions?.width,
-                                                                            blurHash:
-                                                                                m.blurHash,
-                                                                          ))
-                                                                      .toList();
-
-                                                              downloadUrls =
-                                                                  (await Future
-                                                                          .wait(
-                                                                selectedMedia
-                                                                    .map(
-                                                                  (m) async =>
-                                                                      await uploadData(
-                                                                          m.storagePath,
-                                                                          m.bytes),
-                                                                ),
-                                                              ))
-                                                                      .where((u) =>
-                                                                          u !=
-                                                                          null)
-                                                                      .map((u) =>
-                                                                          u!)
-                                                                      .toList();
-                                                            } finally {
-                                                              _model.isDataUploading1 =
-                                                                  false;
-                                                            }
-                                                            if (selectedUploadedFiles
-                                                                        .length ==
-                                                                    selectedMedia
-                                                                        .length &&
-                                                                downloadUrls
-                                                                        .length ==
-                                                                    selectedMedia
-                                                                        .length) {
-                                                              setState(() {
-                                                                _model.uploadedLocalFile1 =
-                                                                    selectedUploadedFiles
-                                                                        .first;
-                                                                _model.uploadedFileUrl1 =
-                                                                    downloadUrls
-                                                                        .first;
-                                                              });
-                                                            } else {
-                                                              setState(() {});
-                                                              return;
-                                                            }
-                                                          }
-                                                        },
-                                                        child: Container(
-                                                          width: 120.0,
-                                                          height: 120.0,
-                                                          clipBehavior:
-                                                              Clip.antiAlias,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                          child: Image.network(
-                                                            valueOrDefault(
-                                                                currentUserDocument
-                                                                    ?.photo1,
-                                                                ''),
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                          Container(
+                                                        width: 120.0,
+                                                        height: 120.0,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Image.network(
+                                                          valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.photo1,
+                                                              ''),
+                                                          fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
@@ -357,9 +265,88 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               .secondaryText,
                                                       size: 100.0,
                                                     ),
-                                                    onPressed: () {
-                                                      print(
-                                                          'IconButton pressed ...');
+                                                    onPressed: () async {
+                                                      final selectedMedia =
+                                                          await selectMedia(
+                                                        mediaSource: MediaSource
+                                                            .photoGallery,
+                                                        multiImage: false,
+                                                      );
+                                                      if (selectedMedia !=
+                                                              null &&
+                                                          selectedMedia.every((m) =>
+                                                              validateFileFormat(
+                                                                  m.storagePath,
+                                                                  context))) {
+                                                        setState(() => _model
+                                                                .isDataUploading1 =
+                                                            true);
+                                                        var selectedUploadedFiles =
+                                                            <FFUploadedFile>[];
+                                                        var downloadUrls =
+                                                            <String>[];
+                                                        try {
+                                                          selectedUploadedFiles =
+                                                              selectedMedia
+                                                                  .map((m) =>
+                                                                      FFUploadedFile(
+                                                                        name: m
+                                                                            .storagePath
+                                                                            .split('/')
+                                                                            .last,
+                                                                        bytes: m
+                                                                            .bytes,
+                                                                        height: m
+                                                                            .dimensions
+                                                                            ?.height,
+                                                                        width: m
+                                                                            .dimensions
+                                                                            ?.width,
+                                                                        blurHash:
+                                                                            m.blurHash,
+                                                                      ))
+                                                                  .toList();
+
+                                                          downloadUrls =
+                                                              (await Future
+                                                                      .wait(
+                                                            selectedMedia.map(
+                                                              (m) async =>
+                                                                  await uploadData(
+                                                                      m.storagePath,
+                                                                      m.bytes),
+                                                            ),
+                                                          ))
+                                                                  .where((u) =>
+                                                                      u != null)
+                                                                  .map(
+                                                                      (u) => u!)
+                                                                  .toList();
+                                                        } finally {
+                                                          _model.isDataUploading1 =
+                                                              false;
+                                                        }
+                                                        if (selectedUploadedFiles
+                                                                    .length ==
+                                                                selectedMedia
+                                                                    .length &&
+                                                            downloadUrls
+                                                                    .length ==
+                                                                selectedMedia
+                                                                    .length) {
+                                                          setState(() {
+                                                            _model.uploadedLocalFile1 =
+                                                                selectedUploadedFiles
+                                                                    .first;
+                                                            _model.uploadedFileUrl1 =
+                                                                downloadUrls
+                                                                    .first;
+                                                          });
+                                                        } else {
+                                                          setState(() {});
+                                                          return;
+                                                        }
+                                                      }
                                                     },
                                                   ),
                                                 ),
