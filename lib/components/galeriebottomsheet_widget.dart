@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
@@ -76,87 +77,117 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(0.0),
-              bottomRight: Radius.circular(0.0),
-              topLeft: Radius.circular(16.0),
-              topRight: Radius.circular(16.0),
-            ),
+            borderRadius: BorderRadius.circular(0.0),
           ),
-          child: Container(
-            width: double.infinity,
-            height: 500.0,
-            child: Stack(
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
-                  child: PageView(
-                    controller: _model.pageViewController ??=
-                        PageController(initialPage: 0),
-                    scrollDirection: Axis.horizontal,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Align(
+                alignment: AlignmentDirectional(-1.0, 0.0),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Color(0x00FFFFFF),
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0x00FFFFFF),
+                    icon: Icon(
+                      Icons.arrow_back_rounded,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 34.0,
+                    ),
+                    onPressed: () {
+                      print('IconButton pressed ...');
+                    },
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 350.0,
+                  child: Stack(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          containerUsersRecord.photo1,
-                          width: 300.0,
-                          height: 200.0,
-                          fit: BoxFit.cover,
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                        child: PageView(
+                          controller: _model.pageViewController ??=
+                              PageController(initialPage: 0),
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                containerUsersRecord.photos,
+                                width: 300.0,
+                                height: 200.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                containerUsersRecord.photo1,
+                                width: 300.0,
+                                height: 200.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                'https://picsum.photos/seed/289/600',
+                                width: 300.0,
+                                height: 200.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          containerUsersRecord.photo1,
-                          width: 300.0,
-                          height: 200.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://picsum.photos/seed/289/600',
-                          width: 300.0,
-                          height: 200.0,
-                          fit: BoxFit.cover,
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 1.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 0.0, 16.0),
+                          child: smooth_page_indicator.SmoothPageIndicator(
+                            controller: _model.pageViewController ??=
+                                PageController(initialPage: 0),
+                            count: 3,
+                            axisDirection: Axis.horizontal,
+                            onDotClicked: (i) async {
+                              await _model.pageViewController!.animateToPage(
+                                i,
+                                duration: Duration(milliseconds: 500),
+                                curve: Curves.ease,
+                              );
+                            },
+                            effect: smooth_page_indicator.ExpandingDotsEffect(
+                              expansionFactor: 3.0,
+                              spacing: 8.0,
+                              radius: 1.0,
+                              dotWidth: 16.0,
+                              dotHeight: 8.0,
+                              dotColor: FlutterFlowTheme.of(context).accent1,
+                              activeDotColor:
+                                  FlutterFlowTheme.of(context).primary,
+                              paintStyle: PaintingStyle.fill,
+                            ),
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(-1.0, 1.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
-                    child: smooth_page_indicator.SmoothPageIndicator(
-                      controller: _model.pageViewController ??=
-                          PageController(initialPage: 0),
-                      count: 3,
-                      axisDirection: Axis.horizontal,
-                      onDotClicked: (i) async {
-                        await _model.pageViewController!.animateToPage(
-                          i,
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.ease,
-                        );
-                      },
-                      effect: smooth_page_indicator.ExpandingDotsEffect(
-                        expansionFactor: 3.0,
-                        spacing: 8.0,
-                        radius: 16.0,
-                        dotWidth: 16.0,
-                        dotHeight: 8.0,
-                        dotColor: FlutterFlowTheme.of(context).accent1,
-                        activeDotColor: FlutterFlowTheme.of(context).primary,
-                        paintStyle: PaintingStyle.fill,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [],
+              ),
+            ],
           ),
         );
       },
