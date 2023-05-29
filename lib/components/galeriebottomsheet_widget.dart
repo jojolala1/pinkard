@@ -119,9 +119,9 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                           scrollDirection: Axis.horizontal,
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(16.0),
                               child: Image.network(
-                                containerUsersRecord.photos,
+                                containerUsersRecord.photoUrl,
                                 width: 300.0,
                                 height: 200.0,
                                 fit: BoxFit.cover,
@@ -168,7 +168,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                             effect: smooth_page_indicator.ExpandingDotsEffect(
                               expansionFactor: 3.0,
                               spacing: 8.0,
-                              radius: 1.0,
+                              radius: 16.0,
                               dotWidth: 16.0,
                               dotHeight: 8.0,
                               dotColor: FlutterFlowTheme.of(context).accent1,
