@@ -6,9 +6,11 @@ import '/components/photo3bottomsheet_widget.dart';
 import '/components/photo4bottomsheet_widget.dart';
 import '/components/photo5bottomsheet_widget.dart';
 import '/components/photo6bottomsheet_widget.dart';
+import '/components/video1bottomsheet_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_video_player.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -489,7 +491,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     child: Image.network(
                                                       valueOrDefault(
                                                           currentUserDocument
-                                                              ?.photo1,
+                                                              ?.photo3,
                                                           ''),
                                                       width: 300.0,
                                                       height: 200.0,
@@ -614,7 +616,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     child: Image.network(
                                                       valueOrDefault(
                                                           currentUserDocument
-                                                              ?.photo1,
+                                                              ?.photo4,
                                                           ''),
                                                       width: 300.0,
                                                       height: 200.0,
@@ -739,7 +741,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     child: Image.network(
                                                       valueOrDefault(
                                                           currentUserDocument
-                                                              ?.photo1,
+                                                              ?.photo5,
                                                           ''),
                                                       width: 300.0,
                                                       height: 200.0,
@@ -864,7 +866,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     child: Image.network(
                                                       valueOrDefault(
                                                           currentUserDocument
-                                                              ?.photo1,
+                                                              ?.photo6,
                                                           ''),
                                                       width: 300.0,
                                                       height: 200.0,
@@ -965,28 +967,79 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(30.0),
                                             ),
-                                          ),
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(-0.95, 0.0),
-                                        child: Material(
-                                          color: Colors.transparent,
-                                          elevation: 2.0,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(30.0),
-                                          ),
-                                          child: Container(
-                                            width: 166.0,
-                                            height: 160.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
+                                            child: Stack(
+                                              children: [
+                                                AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      FlutterFlowVideoPlayer(
+                                                    path: valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.video1,
+                                                        ''),
+                                                    videoType:
+                                                        VideoType.network,
+                                                    width: 200.0,
+                                                    height: 200.0,
+                                                    autoPlay: false,
+                                                    looping: false,
+                                                    showControls: false,
+                                                    allowFullScreen: false,
+                                                    allowPlaybackSpeedMenu:
+                                                        false,
+                                                    lazyLoad: true,
+                                                    pauseOnNavigate: false,
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: FlutterFlowIconButton(
+                                                    borderColor:
+                                                        Color(0x00FFFFFF),
+                                                    borderRadius: 0.0,
+                                                    buttonSize: 120.0,
+                                                    fillColor:
+                                                        Color(0x00FFFFFF),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .add_circle_outline_sharp,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .lineColor,
+                                                      size: 100.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder:
+                                                            (bottomSheetContext) {
+                                                          return GestureDetector(
+                                                            onTap: () => FocusScope
+                                                                    .of(context)
+                                                                .requestFocus(
+                                                                    _unfocusNode),
+                                                            child: Padding(
+                                                              padding: MediaQuery.of(
+                                                                      bottomSheetContext)
+                                                                  .viewInsets,
+                                                              child:
+                                                                  Video1bottomsheetWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
@@ -1002,7 +1055,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                 BorderRadius.circular(30.0),
                                           ),
                                           child: Container(
-                                            width: 166.0,
+                                            width: 160.0,
                                             height: 160.0,
                                             decoration: BoxDecoration(
                                               color:
@@ -1010,6 +1063,233 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                       .primaryBtnText,
                                               borderRadius:
                                                   BorderRadius.circular(30.0),
+                                            ),
+                                            child: Stack(
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 4.0,
+                                                                4.0, 4.0),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Container(
+                                                        width: 120.0,
+                                                        height: 120.0,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Image.network(
+                                                          valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.photo2,
+                                                              ''),
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                    child: Image.network(
+                                                      valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.photo2,
+                                                          ''),
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: FlutterFlowIconButton(
+                                                    borderColor:
+                                                        Color(0x00FFFFFF),
+                                                    borderRadius: 0.0,
+                                                    buttonSize: 120.0,
+                                                    fillColor:
+                                                        Color(0x00FFFFFF),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .add_circle_outline_sharp,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .lineColor,
+                                                      size: 100.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder:
+                                                            (bottomSheetContext) {
+                                                          return GestureDetector(
+                                                            onTap: () => FocusScope
+                                                                    .of(context)
+                                                                .requestFocus(
+                                                                    _unfocusNode),
+                                                            child: Padding(
+                                                              padding: MediaQuery.of(
+                                                                      bottomSheetContext)
+                                                                  .viewInsets,
+                                                              child:
+                                                                  Photo2bottomsheeWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-0.95, 0.0),
+                                        child: Material(
+                                          color: Colors.transparent,
+                                          elevation: 2.0,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(30.0),
+                                          ),
+                                          child: Container(
+                                            width: 160.0,
+                                            height: 160.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBtnText,
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
+                                            ),
+                                            child: Stack(
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 4.0,
+                                                                4.0, 4.0),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          Container(
+                                                        width: 120.0,
+                                                        height: 120.0,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Image.network(
+                                                          valueOrDefault(
+                                                              currentUserDocument
+                                                                  ?.photo1,
+                                                              ''),
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30.0),
+                                                    child: Image.network(
+                                                      valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.photo3,
+                                                          ''),
+                                                      width: 300.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: FlutterFlowIconButton(
+                                                    borderColor:
+                                                        Color(0x00FFFFFF),
+                                                    borderRadius: 0.0,
+                                                    buttonSize: 120.0,
+                                                    fillColor:
+                                                        Color(0x00FFFFFF),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .add_circle_outline_sharp,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .lineColor,
+                                                      size: 100.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder:
+                                                            (bottomSheetContext) {
+                                                          return GestureDetector(
+                                                            onTap: () => FocusScope
+                                                                    .of(context)
+                                                                .requestFocus(
+                                                                    _unfocusNode),
+                                                            child: Padding(
+                                                              padding: MediaQuery.of(
+                                                                      bottomSheetContext)
+                                                                  .viewInsets,
+                                                              child:
+                                                                  Photo3bottomsheetWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
