@@ -13,7 +13,9 @@ class GaleriebottomsheetModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for PageView widget.
-  PageController? pageViewController;
+  PageController? pageViewController1;
+  // State field(s) for PageView widget.
+  PageController? pageViewController2;
 
   /// Initialization and disposal methods.
 

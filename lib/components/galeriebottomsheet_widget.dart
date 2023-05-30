@@ -27,10 +27,15 @@ class GaleriebottomsheetWidget extends StatefulWidget {
 class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
   late GaleriebottomsheetModel _model;
 
-  int get pageViewCurrentIndex => _model.pageViewController != null &&
-          _model.pageViewController!.hasClients &&
-          _model.pageViewController!.page != null
-      ? _model.pageViewController!.page!.round()
+  int get pageViewCurrentIndex1 => _model.pageViewController1 != null &&
+          _model.pageViewController1!.hasClients &&
+          _model.pageViewController1!.page != null
+      ? _model.pageViewController1!.page!.round()
+      : 0;
+  int get pageViewCurrentIndex2 => _model.pageViewController2 != null &&
+          _model.pageViewController2!.hasClients &&
+          _model.pageViewController2!.page != null
+      ? _model.pageViewController2!.page!.round()
       : 0;
 
   @override
@@ -103,46 +108,101 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   ),
                 ),
               ),
+              Text(
+                'photos',
+                style: FlutterFlowTheme.of(context).bodyMedium,
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 350.0,
+                  height: 300.0,
                   child: Stack(
                     children: [
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                         child: PageView(
-                          controller: _model.pageViewController ??=
-                              PageController(initialPage: 0),
+                          controller: _model.pageViewController1 ??=
+                              PageController(initialPage: 5),
                           scrollDirection: Axis.horizontal,
                           children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(16.0),
-                              child: Image.network(
-                                containerUsersRecord.photoUrl,
-                                width: 300.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
+                            Visibility(
+                              visible: containerUsersRecord.photo1 != null &&
+                                  containerUsersRecord.photo1 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo1,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.network(
-                                containerUsersRecord.photo1,
-                                width: 300.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
+                            Visibility(
+                              visible: containerUsersRecord.photo2 != null &&
+                                  containerUsersRecord.photo2 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo2,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.network(
-                                'https://picsum.photos/seed/289/600',
-                                width: 300.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
+                            Visibility(
+                              visible: containerUsersRecord.photo3 != null &&
+                                  containerUsersRecord.photo3 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo3,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: containerUsersRecord.photo4 != null &&
+                                  containerUsersRecord.photo4 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo4,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: containerUsersRecord.photo5 != null &&
+                                  containerUsersRecord.photo5 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo5,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: containerUsersRecord.photo6 != null &&
+                                  containerUsersRecord.photo6 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo6,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ],
@@ -154,12 +214,12 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 16.0),
                           child: smooth_page_indicator.SmoothPageIndicator(
-                            controller: _model.pageViewController ??=
-                                PageController(initialPage: 0),
-                            count: 3,
+                            controller: _model.pageViewController1 ??=
+                                PageController(initialPage: 5),
+                            count: 6,
                             axisDirection: Axis.horizontal,
                             onDotClicked: (i) async {
-                              await _model.pageViewController!.animateToPage(
+                              await _model.pageViewController1!.animateToPage(
                                 i,
                                 duration: Duration(milliseconds: 500),
                                 curve: Curves.ease,
@@ -172,8 +232,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                               dotWidth: 16.0,
                               dotHeight: 8.0,
                               dotColor: FlutterFlowTheme.of(context).accent1,
-                              activeDotColor:
-                                  FlutterFlowTheme.of(context).primary,
+                              activeDotColor: Color(0xFFD252FF),
                               paintStyle: PaintingStyle.fill,
                             ),
                           ),
@@ -183,9 +242,103 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   ),
                 ),
               ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [],
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                child: Text(
+                  'vidéos',
+                  style: FlutterFlowTheme.of(context).bodyMedium,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 300.0,
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                        child: PageView(
+                          controller: _model.pageViewController2 ??=
+                              PageController(initialPage: 2),
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Visibility(
+                              visible: containerUsersRecord.photo1 != null &&
+                                  containerUsersRecord.photo1 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo1,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: containerUsersRecord.photo2 != null &&
+                                  containerUsersRecord.photo2 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo2,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: containerUsersRecord.photo3 != null &&
+                                  containerUsersRecord.photo3 != '',
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.network(
+                                  containerUsersRecord.photo3,
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(-1.0, 1.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 0.0, 16.0),
+                          child: smooth_page_indicator.SmoothPageIndicator(
+                            controller: _model.pageViewController2 ??=
+                                PageController(initialPage: 2),
+                            count: 3,
+                            axisDirection: Axis.horizontal,
+                            onDotClicked: (i) async {
+                              await _model.pageViewController2!.animateToPage(
+                                i,
+                                duration: Duration(milliseconds: 500),
+                                curve: Curves.ease,
+                              );
+                            },
+                            effect: smooth_page_indicator.ExpandingDotsEffect(
+                              expansionFactor: 3.0,
+                              spacing: 8.0,
+                              radius: 16.0,
+                              dotWidth: 16.0,
+                              dotHeight: 8.0,
+                              dotColor: FlutterFlowTheme.of(context).accent1,
+                              activeDotColor: Color(0xFFD252FF),
+                              paintStyle: PaintingStyle.fill,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
