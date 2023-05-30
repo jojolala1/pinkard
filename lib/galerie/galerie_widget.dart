@@ -202,38 +202,6 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                             ),
                                             child: Stack(
                                               children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(4.0, 4.0,
-                                                                4.0, 4.0),
-                                                    child: AuthUserStreamWidget(
-                                                      builder: (context) =>
-                                                          Container(
-                                                        width: 120.0,
-                                                        height: 120.0,
-                                                        clipBehavior:
-                                                            Clip.antiAlias,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                        child: Image.network(
-                                                          valueOrDefault(
-                                                              currentUserDocument
-                                                                  ?.photo1,
-                                                              ''),
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
                                                 AuthUserStreamWidget(
                                                   builder: (context) =>
                                                       ClipRRect(

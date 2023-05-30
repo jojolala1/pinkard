@@ -72,20 +72,12 @@ class CreatprofilModel extends FlutterFlowModel {
   // State field(s) for myBio widget.
   TextEditingController? myBioController;
   String? Function(BuildContext, String?)? myBioControllerValidator;
-  String? _myBioControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    return null;
-  }
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
     yourNameControllerValidator = _yourNameControllerValidator;
     prenomControllerValidator = _prenomControllerValidator;
-    myBioControllerValidator = _myBioControllerValidator;
   }
 
   void dispose() {
