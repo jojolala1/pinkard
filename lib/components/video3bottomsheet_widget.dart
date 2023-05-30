@@ -243,6 +243,7 @@ class _Video3bottomsheetWidgetState extends State<Video3bottomsheetWidget> {
                                 );
                                 await currentUserReference!
                                     .update(usersUpdateData);
+                                Navigator.pop(context);
                               },
                               text: 'sauvgarder',
                               options: FFButtonOptions(

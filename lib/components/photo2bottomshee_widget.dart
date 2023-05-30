@@ -255,6 +255,7 @@ class _Photo2bottomsheeWidgetState extends State<Photo2bottomsheeWidget> {
                                 );
                                 await currentUserReference!
                                     .update(usersUpdateData);
+                                Navigator.pop(context);
                               },
                               text: 'sauvgarder',
                               options: FFButtonOptions(

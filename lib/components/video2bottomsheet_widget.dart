@@ -244,6 +244,7 @@ class _Video2bottomsheetWidgetState extends State<Video2bottomsheetWidget> {
                                 );
                                 await currentUserReference!
                                     .update(usersUpdateData);
+                                Navigator.pop(context);
                               },
                               text: 'sauvgarder',
                               options: FFButtonOptions(

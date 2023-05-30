@@ -795,8 +795,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                     showControls: false,
                                                     allowFullScreen: false,
                                                     allowPlaybackSpeedMenu:
-                                                        true,
-                                                    lazyLoad: true,
+                                                        false,
+                                                    lazyLoad: false,
                                                     pauseOnNavigate: false,
                                                   ),
                                                 ),

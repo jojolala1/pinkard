@@ -256,6 +256,7 @@ class _Photo1bottomsheetWidgetState extends State<Photo1bottomsheetWidget> {
                                 );
                                 await currentUserReference!
                                     .update(usersUpdateData);
+                                Navigator.pop(context);
                               },
                               text: 'sauvgarder',
                               options: FFButtonOptions(
