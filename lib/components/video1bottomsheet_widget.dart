@@ -140,7 +140,7 @@ class _Video1bottomsheetWidgetState extends State<Video1bottomsheetWidget> {
                                         showControls: false,
                                         allowFullScreen: false,
                                         allowPlaybackSpeedMenu: false,
-                                        lazyLoad: true,
+                                        lazyLoad: false,
                                         pauseOnNavigate: false,
                                       ),
                                     ),
