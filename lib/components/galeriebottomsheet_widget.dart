@@ -253,7 +253,8 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 20.0),
                   child: Container(
                     width: double.infinity,
                     height: 300.0,
@@ -280,25 +281,31 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                                   allowPlaybackSpeedMenu: true,
                                 ),
                               ),
-                              FlutterFlowVideoPlayer(
-                                path:
-                                    'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4',
-                                videoType: VideoType.network,
-                                autoPlay: false,
-                                looping: true,
-                                showControls: true,
-                                allowFullScreen: true,
-                                allowPlaybackSpeedMenu: false,
+                              Visibility(
+                                visible: containerUsersRecord.video2 != null &&
+                                    containerUsersRecord.video2 != '',
+                                child: FlutterFlowVideoPlayer(
+                                  path: containerUsersRecord.video2,
+                                  videoType: VideoType.network,
+                                  autoPlay: false,
+                                  looping: true,
+                                  showControls: true,
+                                  allowFullScreen: true,
+                                  allowPlaybackSpeedMenu: false,
+                                ),
                               ),
-                              FlutterFlowVideoPlayer(
-                                path:
-                                    'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4',
-                                videoType: VideoType.network,
-                                autoPlay: false,
-                                looping: true,
-                                showControls: true,
-                                allowFullScreen: true,
-                                allowPlaybackSpeedMenu: false,
+                              Visibility(
+                                visible: containerUsersRecord.video3 != null &&
+                                    containerUsersRecord.video3 != '',
+                                child: FlutterFlowVideoPlayer(
+                                  path: containerUsersRecord.video3,
+                                  videoType: VideoType.network,
+                                  autoPlay: false,
+                                  looping: true,
+                                  showControls: true,
+                                  allowFullScreen: true,
+                                  allowPlaybackSpeedMenu: false,
+                                ),
                               ),
                             ],
                           ),

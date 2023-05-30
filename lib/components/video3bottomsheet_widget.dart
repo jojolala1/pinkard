@@ -10,19 +10,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'video1bottomsheet_model.dart';
-export 'video1bottomsheet_model.dart';
+import 'video3bottomsheet_model.dart';
+export 'video3bottomsheet_model.dart';
 
-class Video1bottomsheetWidget extends StatefulWidget {
-  const Video1bottomsheetWidget({Key? key}) : super(key: key);
+class Video3bottomsheetWidget extends StatefulWidget {
+  const Video3bottomsheetWidget({Key? key}) : super(key: key);
 
   @override
-  _Video1bottomsheetWidgetState createState() =>
-      _Video1bottomsheetWidgetState();
+  _Video3bottomsheetWidgetState createState() =>
+      _Video3bottomsheetWidgetState();
 }
 
-class _Video1bottomsheetWidgetState extends State<Video1bottomsheetWidget> {
-  late Video1bottomsheetModel _model;
+class _Video3bottomsheetWidgetState extends State<Video3bottomsheetWidget> {
+  late Video3bottomsheetModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -33,7 +33,7 @@ class _Video1bottomsheetWidgetState extends State<Video1bottomsheetWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Video1bottomsheetModel());
+    _model = createModel(context, () => Video3bottomsheetModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -131,17 +131,15 @@ class _Video1bottomsheetWidgetState extends State<Video1bottomsheetWidget> {
                                       builder: (context) =>
                                           FlutterFlowVideoPlayer(
                                         path: valueOrDefault(
-                                            currentUserDocument?.video1, ''),
+                                            currentUserDocument?.video3, ''),
                                         videoType: VideoType.network,
                                         width: 100.0,
                                         height: 100.0,
                                         autoPlay: false,
-                                        looping: false,
-                                        showControls: false,
-                                        allowFullScreen: false,
+                                        looping: true,
+                                        showControls: true,
+                                        allowFullScreen: true,
                                         allowPlaybackSpeedMenu: false,
-                                        lazyLoad: true,
-                                        pauseOnNavigate: false,
                                       ),
                                     ),
                                   ),
@@ -241,11 +239,10 @@ class _Video1bottomsheetWidgetState extends State<Video1bottomsheetWidget> {
                             FFButtonWidget(
                               onPressed: () async {
                                 final usersUpdateData = createUsersRecordData(
-                                  video1: _model.uploadedFileUrl,
+                                  video3: _model.uploadedFileUrl,
                                 );
                                 await currentUserReference!
                                     .update(usersUpdateData);
-                                Navigator.pop(context);
                               },
                               text: 'sauvgarder',
                               options: FFButtonOptions(
