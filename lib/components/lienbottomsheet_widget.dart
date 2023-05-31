@@ -81,13 +81,15 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
                 ),
                 child: Stack(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(30.0),
-                      child: Image.asset(
-                        'assets/images/lien.jpg',
-                        width: 100.0,
-                        height: 100.0,
-                        fit: BoxFit.cover,
+                    AuthUserStreamWidget(
+                      builder: (context) => ClipRRect(
+                        borderRadius: BorderRadius.circular(30.0),
+                        child: Image.network(
+                          valueOrDefault(currentUserDocument?.photourl2, ''),
+                          width: 100.0,
+                          height: 100.0,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Stack(

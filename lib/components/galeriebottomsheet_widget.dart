@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart'
-    as smooth_page_indicator;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,12 +28,6 @@ class GaleriebottomsheetWidget extends StatefulWidget {
 
 class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
   late GaleriebottomsheetModel _model;
-
-  int get pageViewCurrentIndex => _model.pageViewController != null &&
-          _model.pageViewController!.hasClients &&
-          _model.pageViewController!.page != null
-      ? _model.pageViewController!.page!.round()
-      : 0;
 
   @override
   void setState(VoidCallback callback) {
@@ -83,243 +75,109 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
             color: FlutterFlowTheme.of(context).secondaryBackground,
             borderRadius: BorderRadius.circular(0.0),
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(-1.0, 0.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Color(0x00FFFFFF),
-                      borderRadius: 20.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      fillColor: Color(0x00FFFFFF),
-                      icon: Icon(
-                        Icons.arrow_back_rounded,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 34.0,
-                      ),
-                      onPressed: () async {
-                        Navigator.pop(context);
-                      },
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Align(
+                alignment: AlignmentDirectional(-1.0, 0.0),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 0.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Color(0x00FFFFFF),
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    fillColor: Color(0x00FFFFFF),
+                    icon: Icon(
+                      Icons.arrow_back_rounded,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 34.0,
                     ),
+                    onPressed: () async {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
-                Text(
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                child: Text(
                   'photos',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
                         fontSize: 24.0,
                       ),
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Expanded(
-                      child: GridView(
-                        padding: EdgeInsets.zero,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          childAspectRatio: 1.0,
-                        ),
-                        primary: false,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        children: [
-                          if (containerUsersRecord.photo1 != null &&
-                              containerUsersRecord.photo1 != '')
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(30.0),
-                                    ),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type: PageTransitionType.fade,
-                                            child: FlutterFlowExpandedImageView(
-                                              image: Image.network(
-                                                containerUsersRecord.photo1,
-                                                fit: BoxFit.contain,
-                                              ),
-                                              allowRotation: false,
-                                              tag: containerUsersRecord.photo1,
-                                              useHeroAnimation: true,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                      child: Hero(
-                                        tag: containerUsersRecord.photo1,
-                                        transitionOnUserGestures: true,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          child: Image.network(
-                                            containerUsersRecord.photo1,
-                                            width: 100.0,
-                                            height: 100.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Expanded(
+                    child: GridView(
+                      padding: EdgeInsets.zero,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        childAspectRatio: 1.0,
+                      ),
+                      primary: false,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      children: [
+                        if (containerUsersRecord.photo1 != null &&
+                            containerUsersRecord.photo1 != '')
+                          Align(
+                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
                                 ),
-                              ),
-                            ),
-                          if (containerUsersRecord.photo2 != null &&
-                              containerUsersRecord.photo2 != '')
-                            Align(
-                              alignment: AlignmentDirectional(-0.95, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
+                                child: Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(30.0),
-                                    ),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type: PageTransitionType.fade,
-                                            child: FlutterFlowExpandedImageView(
-                                              image: Image.network(
-                                                containerUsersRecord.photo2,
-                                                fit: BoxFit.contain,
-                                              ),
-                                              allowRotation: false,
-                                              tag: containerUsersRecord.photo2,
-                                              useHeroAnimation: true,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                      child: Hero(
-                                        tag: containerUsersRecord.photo2,
-                                        transitionOnUserGestures: true,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          child: Image.network(
-                                            containerUsersRecord.photo2,
-                                            width: 100.0,
-                                            height: 100.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (containerUsersRecord.photo3 != null &&
-                              containerUsersRecord.photo3 != '')
-                            Align(
-                              alignment: AlignmentDirectional(-0.95, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(30.0),
-                                    ),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await Navigator.push(
-                                            context,
-                                            PageTransition(
-                                              type: PageTransitionType.fade,
-                                              child:
-                                                  FlutterFlowExpandedImageView(
-                                                image: Image.network(
-                                                  valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.photo3,
-                                                      ''),
-                                                  fit: BoxFit.contain,
-                                                ),
-                                                allowRotation: false,
-                                                tag: valueOrDefault(
-                                                    currentUserDocument?.photo3,
-                                                    ''),
-                                                useHeroAnimation: true,
-                                              ),
-                                            ),
-                                          );
-                                        },
-                                        child: Hero(
-                                          tag: valueOrDefault(
-                                              currentUserDocument?.photo3, ''),
-                                          transitionOnUserGestures: true,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(30.0),
-                                            child: Image.network(
-                                              valueOrDefault(
-                                                  currentUserDocument?.photo3,
-                                                  ''),
-                                              width: 100.0,
-                                              height: 100.0,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.fade,
+                                          child: FlutterFlowExpandedImageView(
+                                            image: Image.network(
+                                              containerUsersRecord.photo1,
                                               fit: BoxFit.contain,
                                             ),
+                                            allowRotation: false,
+                                            tag: containerUsersRecord.photo1,
+                                            useHeroAnimation: true,
                                           ),
+                                        ),
+                                      );
+                                    },
+                                    child: Hero(
+                                      tag: containerUsersRecord.photo1,
+                                      transitionOnUserGestures: true,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                        child: Image.network(
+                                          containerUsersRecord.photo1,
+                                          width: 100.0,
+                                          height: 100.0,
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
                                     ),
@@ -327,130 +185,9 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                                 ),
                               ),
                             ),
-                          if (containerUsersRecord.photo4 != null &&
-                              containerUsersRecord.photo4 != '')
-                            Align(
-                              alignment: AlignmentDirectional(-0.95, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(30.0),
-                                    ),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type: PageTransitionType.fade,
-                                            child: FlutterFlowExpandedImageView(
-                                              image: Image.network(
-                                                containerUsersRecord.photo4,
-                                                fit: BoxFit.contain,
-                                              ),
-                                              allowRotation: false,
-                                              tag: containerUsersRecord.photo4,
-                                              useHeroAnimation: true,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                      child: Hero(
-                                        tag: containerUsersRecord.photo4,
-                                        transitionOnUserGestures: true,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          child: Image.network(
-                                            containerUsersRecord.photo4,
-                                            width: 100.0,
-                                            height: 100.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (containerUsersRecord.photo5 != null &&
-                              containerUsersRecord.photo5 != '')
-                            Align(
-                              alignment: AlignmentDirectional(-0.95, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(30.0),
-                                    ),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type: PageTransitionType.fade,
-                                            child: FlutterFlowExpandedImageView(
-                                              image: Image.network(
-                                                containerUsersRecord.photo5,
-                                                fit: BoxFit.contain,
-                                              ),
-                                              allowRotation: false,
-                                              tag: containerUsersRecord.photo5,
-                                              useHeroAnimation: true,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                      child: Hero(
-                                        tag: containerUsersRecord.photo5,
-                                        transitionOnUserGestures: true,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          child: Image.network(
-                                            containerUsersRecord.photo5,
-                                            width: 100.0,
-                                            height: 100.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                          ),
+                        if (containerUsersRecord.photo2 != null &&
+                            containerUsersRecord.photo2 != '')
                           Align(
                             alignment: AlignmentDirectional(-0.95, 0.0),
                             child: Padding(
@@ -470,11 +207,70 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                                         .primaryBtnText,
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
-                                  child: Visibility(
-                                    visible:
-                                        containerUsersRecord.photo6 != null &&
-                                            containerUsersRecord.photo6 != '',
-                                    child: InkWell(
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.fade,
+                                          child: FlutterFlowExpandedImageView(
+                                            image: Image.network(
+                                              containerUsersRecord.photo2,
+                                              fit: BoxFit.contain,
+                                            ),
+                                            allowRotation: false,
+                                            tag: containerUsersRecord.photo2,
+                                            useHeroAnimation: true,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Hero(
+                                      tag: containerUsersRecord.photo2,
+                                      transitionOnUserGestures: true,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                        child: Image.network(
+                                          containerUsersRecord.photo2,
+                                          width: 100.0,
+                                          height: 100.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (containerUsersRecord.photo3 != null &&
+                            containerUsersRecord.photo3 != '')
+                          Align(
+                            alignment: AlignmentDirectional(-0.95, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
+                                ),
+                                child: Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
                                       hoverColor: Colors.transparent,
@@ -486,27 +282,34 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                                             type: PageTransitionType.fade,
                                             child: FlutterFlowExpandedImageView(
                                               image: Image.network(
-                                                containerUsersRecord.photo6,
+                                                valueOrDefault(
+                                                    currentUserDocument?.photo3,
+                                                    ''),
                                                 fit: BoxFit.contain,
                                               ),
                                               allowRotation: false,
-                                              tag: containerUsersRecord.photo6,
+                                              tag: valueOrDefault(
+                                                  currentUserDocument?.photo3,
+                                                  ''),
                                               useHeroAnimation: true,
                                             ),
                                           ),
                                         );
                                       },
                                       child: Hero(
-                                        tag: containerUsersRecord.photo6,
+                                        tag: valueOrDefault(
+                                            currentUserDocument?.photo3, ''),
                                         transitionOnUserGestures: true,
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(30.0),
                                           child: Image.network(
-                                            containerUsersRecord.photo6,
+                                            valueOrDefault(
+                                                currentUserDocument?.photo3,
+                                                ''),
                                             width: 100.0,
                                             height: 100.0,
-                                            fit: BoxFit.cover,
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
                                       ),
@@ -516,115 +319,356 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                  child: Text(
-                    'vidéos',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 24.0,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 20.0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 300.0,
-                    child: Stack(
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 5.0),
-                          child: PageView(
-                            controller: _model.pageViewController ??=
-                                PageController(initialPage: 1),
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              Visibility(
-                                visible: containerUsersRecord.video1 != null &&
-                                    containerUsersRecord.video1 != '',
-                                child: FlutterFlowVideoPlayer(
-                                  path: containerUsersRecord.video1,
-                                  videoType: VideoType.network,
-                                  autoPlay: true,
-                                  looping: true,
-                                  showControls: true,
-                                  allowFullScreen: true,
-                                  allowPlaybackSpeedMenu: true,
+                        if (containerUsersRecord.photo4 != null &&
+                            containerUsersRecord.photo4 != '')
+                          Align(
+                            alignment: AlignmentDirectional(-0.95, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
                                 ),
-                              ),
-                              Visibility(
-                                visible: containerUsersRecord.video2 != null &&
-                                    containerUsersRecord.video2 != '',
-                                child: FlutterFlowVideoPlayer(
-                                  path: containerUsersRecord.video2,
-                                  videoType: VideoType.network,
-                                  autoPlay: false,
-                                  looping: true,
-                                  showControls: true,
-                                  allowFullScreen: true,
-                                  allowPlaybackSpeedMenu: false,
+                                child: Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.fade,
+                                          child: FlutterFlowExpandedImageView(
+                                            image: Image.network(
+                                              containerUsersRecord.photo4,
+                                              fit: BoxFit.contain,
+                                            ),
+                                            allowRotation: false,
+                                            tag: containerUsersRecord.photo4,
+                                            useHeroAnimation: true,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Hero(
+                                      tag: containerUsersRecord.photo4,
+                                      transitionOnUserGestures: true,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                        child: Image.network(
+                                          containerUsersRecord.photo4,
+                                          width: 100.0,
+                                          height: 100.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              Visibility(
-                                visible: containerUsersRecord.video3 != null &&
-                                    containerUsersRecord.video3 != '',
-                                child: FlutterFlowVideoPlayer(
-                                  path: containerUsersRecord.video3,
-                                  videoType: VideoType.network,
-                                  autoPlay: false,
-                                  looping: true,
-                                  showControls: true,
-                                  allowFullScreen: true,
-                                  allowPlaybackSpeedMenu: false,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(-1.0, 1.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 0.0, 16.0),
-                            child: smooth_page_indicator.SmoothPageIndicator(
-                              controller: _model.pageViewController ??=
-                                  PageController(initialPage: 1),
-                              count: 3,
-                              axisDirection: Axis.horizontal,
-                              onDotClicked: (i) async {
-                                await _model.pageViewController!.animateToPage(
-                                  i,
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.ease,
-                                );
-                              },
-                              effect: smooth_page_indicator.ExpandingDotsEffect(
-                                expansionFactor: 3.0,
-                                spacing: 8.0,
-                                radius: 16.0,
-                                dotWidth: 16.0,
-                                dotHeight: 8.0,
-                                dotColor: FlutterFlowTheme.of(context).accent1,
-                                activeDotColor: Color(0xFFD252FF),
-                                paintStyle: PaintingStyle.fill,
                               ),
                             ),
                           ),
-                        ),
+                        if (containerUsersRecord.photo5 != null &&
+                            containerUsersRecord.photo5 != '')
+                          Align(
+                            alignment: AlignmentDirectional(-0.95, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
+                                ),
+                                child: Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.fade,
+                                          child: FlutterFlowExpandedImageView(
+                                            image: Image.network(
+                                              containerUsersRecord.photo5,
+                                              fit: BoxFit.contain,
+                                            ),
+                                            allowRotation: false,
+                                            tag: containerUsersRecord.photo5,
+                                            useHeroAnimation: true,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Hero(
+                                      tag: containerUsersRecord.photo5,
+                                      transitionOnUserGestures: true,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                        child: Image.network(
+                                          containerUsersRecord.photo5,
+                                          width: 100.0,
+                                          height: 100.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (containerUsersRecord.photo6 != null &&
+                            containerUsersRecord.photo6 != '')
+                          Align(
+                            alignment: AlignmentDirectional(-0.95, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
+                                ),
+                                child: Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.fade,
+                                          child: FlutterFlowExpandedImageView(
+                                            image: Image.network(
+                                              containerUsersRecord.photo6,
+                                              fit: BoxFit.contain,
+                                            ),
+                                            allowRotation: false,
+                                            tag: containerUsersRecord.photo6,
+                                            useHeroAnimation: true,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Hero(
+                                      tag: containerUsersRecord.photo6,
+                                      transitionOnUserGestures: true,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                        child: Image.network(
+                                          containerUsersRecord.photo6,
+                                          width: 100.0,
+                                          height: 100.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                       ],
                     ),
                   ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                child: Text(
+                  'vidéos',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Poppins',
+                        fontSize: 24.0,
+                      ),
                 ),
-              ],
-            ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: GridView(
+                        padding: EdgeInsets.zero,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio: 1.0,
+                        ),
+                        primary: false,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        children: [
+                          if (containerUsersRecord.video1 != null &&
+                              containerUsersRecord.video1 != '')
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 10.0, 10.0, 10.0),
+                                      child: FlutterFlowVideoPlayer(
+                                        path: containerUsersRecord.video1,
+                                        videoType: VideoType.network,
+                                        width: 200.0,
+                                        height: 200.0,
+                                        autoPlay: true,
+                                        looping: true,
+                                        showControls: true,
+                                        allowFullScreen: true,
+                                        allowPlaybackSpeedMenu: true,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (containerUsersRecord.video2 != null &&
+                              containerUsersRecord.video2 != '')
+                            Align(
+                              alignment: AlignmentDirectional(-0.95, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 10.0, 10.0, 10.0),
+                                      child: FlutterFlowVideoPlayer(
+                                        path: containerUsersRecord.video2,
+                                        videoType: VideoType.network,
+                                        width: 200.0,
+                                        height: 200.0,
+                                        autoPlay: false,
+                                        looping: true,
+                                        showControls: true,
+                                        allowFullScreen: true,
+                                        allowPlaybackSpeedMenu: false,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (containerUsersRecord.video3 != null &&
+                              containerUsersRecord.video3 != '')
+                            Align(
+                              alignment: AlignmentDirectional(-0.95, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 2.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Visibility(
+                                      visible:
+                                          containerUsersRecord.video3 != null &&
+                                              containerUsersRecord.video3 != '',
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 10.0, 10.0, 10.0),
+                                        child: FlutterFlowVideoPlayer(
+                                          path: containerUsersRecord.video3,
+                                          videoType: VideoType.network,
+                                          width: 200.0,
+                                          height: 200.0,
+                                          autoPlay: false,
+                                          looping: true,
+                                          showControls: true,
+                                          allowFullScreen: true,
+                                          allowPlaybackSpeedMenu: false,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         );
       },

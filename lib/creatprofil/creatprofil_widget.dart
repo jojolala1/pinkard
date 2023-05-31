@@ -42,6 +42,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'creatprofil_model.dart';
 export 'creatprofil_model.dart';
 
@@ -101,7 +102,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                   borderWidth: 1.0,
                   buttonSize: 60.0,
                   icon: Icon(
-                    Icons.exit_to_app,
+                    Icons.subdirectory_arrow_left,
                     color: FlutterFlowTheme.of(context).primaryText,
                     size: 30.0,
                   ),
@@ -114,16 +115,27 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                   },
                 ),
               ),
-              title: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
-                child: Text(
-                  'Pinkard',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Roboto',
-                        fontSize: 28.0,
-                      ),
-                ),
+              title: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: GradientText(
+                      'Pinkard',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 28.0,
+                          ),
+                      colors: [
+                        FlutterFlowTheme.of(context).primary,
+                        Color(0xFFFA09C6)
+                      ],
+                      gradientDirection: GradientDirection.ltr,
+                      gradientType: GradientType.linear,
+                    ),
+                  ),
+                ],
               ),
               actions: [
                 Align(
@@ -156,7 +168,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                   ),
                 ),
               ],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 2.0,
             ),
             body: SafeArea(
@@ -168,6 +180,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Material(
                         color: Colors.transparent,
@@ -356,19 +369,18 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 20.0, 0.0),
                                     child: FlutterFlowIconButton(
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .lineColor,
-                                      borderRadius: 20.0,
-                                      borderWidth: 1.0,
+                                      borderColor: Color(0xFFD252FF),
+                                      borderRadius: 24.0,
+                                      borderWidth: 2.0,
                                       buttonSize: 40.0,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .lineColor,
+                                      fillColor: Color(0xFFD252FF),
                                       icon: Icon(
                                         Icons.save_alt,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                            .primaryBtnText,
+                                        size: 20.0,
                                       ),
+                                      showLoadingIndicator: true,
                                       onPressed: () async {
                                         final usersUpdateData =
                                             createUsersRecordData(
@@ -485,19 +497,18 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 20.0, 0.0),
                                     child: FlutterFlowIconButton(
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .lineColor,
+                                      borderColor: Color(0xFFD252FF),
                                       borderRadius: 20.0,
-                                      borderWidth: 1.0,
+                                      borderWidth: 2.0,
                                       buttonSize: 40.0,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .lineColor,
+                                      fillColor: Color(0xFFD252FF),
                                       icon: Icon(
                                         Icons.save_alt,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .primaryBtnText,
                                         size: 24.0,
                                       ),
+                                      showLoadingIndicator: true,
                                       onPressed: () async {
                                         final usersUpdateData =
                                             createUsersRecordData(
@@ -614,19 +625,18 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 20.0, 0.0),
                                     child: FlutterFlowIconButton(
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .lineColor,
+                                      borderColor: Color(0xFFD252FF),
                                       borderRadius: 20.0,
-                                      borderWidth: 1.0,
+                                      borderWidth: 2.0,
                                       buttonSize: 40.0,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .lineColor,
+                                      fillColor: Color(0xFFD252FF),
                                       icon: Icon(
                                         Icons.save_alt,
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .primaryBtnText,
                                         size: 24.0,
                                       ),
+                                      showLoadingIndicator: true,
                                       onPressed: () async {
                                         final usersUpdateData =
                                             createUsersRecordData(
@@ -647,30 +657,122 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            context.pushNamed('galerie');
-                          },
-                          text: 'galerie',
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFFD252FF),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                ),
-                            elevation: 3.0,
-                            borderSide: BorderSide(
-                              color: Color(0xFFD252FF),
-                              width: 1.0,
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 2.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: Container(
+                            width: 200.0,
+                            height: 200.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(16.0),
                             ),
-                            borderRadius: BorderRadius.circular(20.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 5.0, 5.0, 5.0),
+                                  child: Container(
+                                    width: 130.0,
+                                    height: 130.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: Image.asset(
+                                          'assets/images/tlchargement_(1).png',
+                                        ).image,
+                                      ),
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, -1.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 15.0),
+                                          child: Container(
+                                            width: 140.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                            ),
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    context
+                                                        .pushNamed('galerie');
+                                                  },
+                                                  text: 'galerie',
+                                                  options: FFButtonOptions(
+                                                    width: 140.0,
+                                                    height: 40.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: Color(0xFFD252FF),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.white,
+                                                        ),
+                                                    elevation: 3.0,
+                                                    borderSide: BorderSide(
+                                                      color: Color(0xFFD252FF),
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20.0),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
