@@ -116,7 +116,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: Color(0xFFFAFAFA),
                     elevation: 0.5,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
@@ -577,7 +577,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: Color(0xFFFAFAFA),
                     elevation: 0.5,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
