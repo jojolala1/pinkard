@@ -70,16 +70,12 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                   borderWidth: 1.0,
                   buttonSize: 60.0,
                   icon: Icon(
-                    Icons.exit_to_app,
+                    Icons.chevron_left_rounded,
                     color: FlutterFlowTheme.of(context).primaryText,
                     size: 30.0,
                   ),
                   onPressed: () async {
-                    GoRouter.of(context).prepareAuthEvent();
-                    await authManager.signOut();
-                    GoRouter.of(context).clearRedirectLocation();
-
-                    context.goNamedAuth('pagedacceuil', context.mounted);
+                    context.safePop();
                   },
                 ),
               ),
@@ -779,25 +775,30 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                             ),
                                             child: Stack(
                                               children: [
-                                                AuthUserStreamWidget(
-                                                  builder: (context) =>
-                                                      FlutterFlowVideoPlayer(
-                                                    path: valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.video1,
-                                                        ''),
-                                                    videoType:
-                                                        VideoType.network,
-                                                    width: 200.0,
-                                                    height: 200.0,
-                                                    autoPlay: false,
-                                                    looping: false,
-                                                    showControls: false,
-                                                    allowFullScreen: false,
-                                                    allowPlaybackSpeedMenu:
-                                                        false,
-                                                    lazyLoad: false,
-                                                    pauseOnNavigate: false,
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10.0, 10.0,
+                                                          10.0, 10.0),
+                                                  child: AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        FlutterFlowVideoPlayer(
+                                                      path: valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.video1,
+                                                          ''),
+                                                      videoType:
+                                                          VideoType.network,
+                                                      width: 200.0,
+                                                      height: 200.0,
+                                                      autoPlay: false,
+                                                      looping: false,
+                                                      showControls: false,
+                                                      allowFullScreen: false,
+                                                      allowPlaybackSpeedMenu:
+                                                          false,
+                                                      lazyLoad: false,
+                                                      pauseOnNavigate: false,
+                                                    ),
                                                   ),
                                                 ),
                                                 Align(
@@ -880,23 +881,32 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                   alignment:
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
-                                                  child: AuthUserStreamWidget(
-                                                    builder: (context) =>
-                                                        FlutterFlowVideoPlayer(
-                                                      path: valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.video2,
-                                                          ''),
-                                                      videoType:
-                                                          VideoType.network,
-                                                      width: 200.0,
-                                                      height: 200.0,
-                                                      autoPlay: false,
-                                                      looping: true,
-                                                      showControls: true,
-                                                      allowFullScreen: true,
-                                                      allowPlaybackSpeedMenu:
-                                                          false,
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10.0,
+                                                                10.0,
+                                                                10.0,
+                                                                10.0),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          FlutterFlowVideoPlayer(
+                                                        path: valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.video2,
+                                                            ''),
+                                                        videoType:
+                                                            VideoType.network,
+                                                        width: 200.0,
+                                                        height: 200.0,
+                                                        autoPlay: false,
+                                                        looping: true,
+                                                        showControls: true,
+                                                        allowFullScreen: true,
+                                                        allowPlaybackSpeedMenu:
+                                                            false,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -980,23 +990,32 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                   alignment:
                                                       AlignmentDirectional(
                                                           0.0, 0.0),
-                                                  child: AuthUserStreamWidget(
-                                                    builder: (context) =>
-                                                        FlutterFlowVideoPlayer(
-                                                      path: valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.video3,
-                                                          ''),
-                                                      videoType:
-                                                          VideoType.network,
-                                                      width: 200.0,
-                                                      height: 200.0,
-                                                      autoPlay: false,
-                                                      looping: true,
-                                                      showControls: true,
-                                                      allowFullScreen: true,
-                                                      allowPlaybackSpeedMenu:
-                                                          false,
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10.0,
+                                                                10.0,
+                                                                10.0,
+                                                                10.0),
+                                                    child: AuthUserStreamWidget(
+                                                      builder: (context) =>
+                                                          FlutterFlowVideoPlayer(
+                                                        path: valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.video3,
+                                                            ''),
+                                                        videoType:
+                                                            VideoType.network,
+                                                        width: 200.0,
+                                                        height: 200.0,
+                                                        autoPlay: false,
+                                                        looping: true,
+                                                        showControls: true,
+                                                        allowFullScreen: true,
+                                                        allowPlaybackSpeedMenu:
+                                                            false,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
