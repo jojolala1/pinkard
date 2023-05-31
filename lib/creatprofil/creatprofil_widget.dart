@@ -185,12 +185,26 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       Material(
                         color: Colors.transparent,
                         elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
+                          ),
+                        ),
                         child: Container(
                           width: double.infinity,
                           height: 250.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20.0),
+                              bottomRight: Radius.circular(20.0),
+                              topLeft: Radius.circular(0.0),
+                              topRight: Radius.circular(0.0),
+                            ),
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -261,7 +275,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Form(
                           key: _model.formKey,
                           autovalidateMode: AutovalidateMode.always,
@@ -659,9 +673,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
-                          elevation: 2.0,
+                          elevation: 1.0,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
+                            borderRadius: BorderRadius.circular(30.0),
                           ),
                           child: Container(
                             width: 200.0,
@@ -669,7 +683,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              borderRadius: BorderRadius.circular(16.0),
+                              borderRadius: BorderRadius.circular(30.0),
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -733,7 +747,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     context
                                                         .pushNamed('galerie');
                                                   },
-                                                  text: 'galerie',
+                                                  text: 'photos/vidéos',
                                                   options: FFButtonOptions(
                                                     width: 140.0,
                                                     height: 40.0,

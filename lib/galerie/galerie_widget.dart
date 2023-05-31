@@ -17,6 +17,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'galerie_model.dart';
 export 'galerie_model.dart';
 
@@ -81,13 +82,18 @@ class _GalerieWidgetState extends State<GalerieWidget> {
               ),
               title: Align(
                 alignment: AlignmentDirectional(0.0, 0.0),
-                child: Text(
+                child: GradientText(
                   'Pinkard',
-                  textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Roboto',
+                        fontFamily: 'Poppins',
                         fontSize: 28.0,
                       ),
+                  colors: [
+                    FlutterFlowTheme.of(context).primary,
+                    Color(0xFFFA09C6)
+                  ],
+                  gradientDirection: GradientDirection.ltr,
+                  gradientType: GradientType.linear,
                 ),
               ),
               actions: [
@@ -116,7 +122,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                   ),
                 ),
               ],
-              centerTitle: false,
+              centerTitle: true,
               elevation: 2.0,
             ),
             body: SafeArea(

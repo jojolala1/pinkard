@@ -86,7 +86,7 @@ class _Video1bottomsheetWidgetState extends State<Video1bottomsheetWidget> {
                           Expanded(
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 16.0, 0.0),
+                                  0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 'video',
                                 textAlign: TextAlign.center,
@@ -110,42 +110,23 @@ class _Video1bottomsheetWidgetState extends State<Video1bottomsheetWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              width: 100.0,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFDBE2E7),
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: Image.asset(
-                                    'assets/images/addImage@2x.png',
-                                  ).image,
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => FlutterFlowVideoPlayer(
+                                  path: valueOrDefault(
+                                      currentUserDocument?.video1, ''),
+                                  videoType: VideoType.network,
+                                  width: 100.0,
+                                  height: 100.0,
+                                  autoPlay: false,
+                                  looping: false,
+                                  showControls: false,
+                                  allowFullScreen: false,
+                                  allowPlaybackSpeedMenu: false,
+                                  lazyLoad: false,
+                                  pauseOnNavigate: false,
                                 ),
-                                shape: BoxShape.circle,
-                              ),
-                              child: Stack(
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) =>
-                                          FlutterFlowVideoPlayer(
-                                        path: valueOrDefault(
-                                            currentUserDocument?.video1, ''),
-                                        videoType: VideoType.network,
-                                        width: 100.0,
-                                        height: 100.0,
-                                        autoPlay: false,
-                                        looping: false,
-                                        showControls: false,
-                                        allowFullScreen: false,
-                                        allowPlaybackSpeedMenu: false,
-                                        lazyLoad: false,
-                                        pauseOnNavigate: false,
-                                      ),
-                                    ),
-                                  ),
-                                ],
                               ),
                             ),
                           ],

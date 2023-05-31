@@ -85,7 +85,7 @@ class _Photo6bottomsheetWidgetState extends State<Photo6bottomsheetWidget> {
                           Expanded(
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 16.0, 0.0),
+                                  0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 'photo',
                                 textAlign: TextAlign.center,
