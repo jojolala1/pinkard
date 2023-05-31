@@ -63,22 +63,19 @@ class _GalerieWidgetState extends State<GalerieWidget> {
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
               automaticallyImplyLeading: false,
-              leading: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
-                child: FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30.0,
-                  borderWidth: 1.0,
-                  buttonSize: 60.0,
-                  icon: Icon(
-                    Icons.chevron_left_rounded,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 30.0,
-                  ),
-                  onPressed: () async {
-                    context.safePop();
-                  },
+              leading: FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 30.0,
+                borderWidth: 1.0,
+                buttonSize: 60.0,
+                icon: Icon(
+                  Icons.arrow_back_rounded,
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  size: 34.0,
                 ),
+                onPressed: () async {
+                  context.safePop();
+                },
               ),
               title: Align(
                 alignment: AlignmentDirectional(0.0, 0.0),
@@ -99,26 +96,22 @@ class _GalerieWidgetState extends State<GalerieWidget> {
               actions: [
                 Align(
                   alignment: AlignmentDirectional(0.95, -1.02),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      borderWidth: 1.0,
-                      buttonSize: 60.0,
-                      icon: Icon(
-                        Icons.save_alt,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 30.0,
-                      ),
-                      onPressed: () async {
-                        final usersUpdateData = createUsersRecordData();
-                        await currentUserReference!.update(usersUpdateData);
-
-                        context.pushNamed('creatprofil');
-                      },
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 60.0,
+                    icon: Icon(
+                      Icons.save_alt,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 30.0,
                     ),
+                    onPressed: () async {
+                      final usersUpdateData = createUsersRecordData();
+                      await currentUserReference!.update(usersUpdateData);
+
+                      context.pushNamed('creatprofil');
+                    },
                   ),
                 ),
               ],
