@@ -117,7 +117,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   child: Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     color: Color(0xFFFAFAFA),
-                    elevation: 0.5,
+                    elevation: 1.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
@@ -578,13 +578,13 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   child: Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     color: Color(0xFFFAFAFA),
-                    elevation: 0.5,
+                    elevation: 1.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -592,12 +592,12 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                               containerUsersRecord.video1 != '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 10.0),
+                                  20.0, 20.0, 20.0, 20.0),
                               child: FlutterFlowVideoPlayer(
                                 path: containerUsersRecord.video1,
                                 videoType: VideoType.network,
-                                width: 200.0,
-                                height: 200.0,
+                                width: 180.0,
+                                height: 180.0,
                                 autoPlay: false,
                                 looping: false,
                                 showControls: true,
@@ -613,8 +613,8 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                               child: FlutterFlowVideoPlayer(
                                 path: containerUsersRecord.video2,
                                 videoType: VideoType.network,
-                                width: 200.0,
-                                height: 200.0,
+                                width: 180.0,
+                                height: 180.0,
                                 autoPlay: false,
                                 looping: false,
                                 showControls: true,
@@ -626,12 +626,12 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                               containerUsersRecord.video3 != '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 10.0),
+                                  10.0, 10.0, 10.0, 20.0),
                               child: FlutterFlowVideoPlayer(
                                 path: containerUsersRecord.video3,
                                 videoType: VideoType.network,
-                                width: 200.0,
-                                height: 200.0,
+                                width: 180.0,
+                                height: 180.0,
                                 autoPlay: false,
                                 looping: false,
                                 showControls: true,
