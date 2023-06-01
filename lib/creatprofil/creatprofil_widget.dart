@@ -686,7 +686,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                               borderRadius: BorderRadius.circular(30.0),
                             ),
                             child: Container(
-                              width: 180.0,
+                              width: 160.0,
                               height: 180.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -1417,7 +1417,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Text(
                           'réseaux sociaux',
                           style:
@@ -2309,7 +2309,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Text(
                           'comunication',
                           style:
@@ -3055,7 +3055,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Text(
                           'économie',
                           style:
@@ -3254,7 +3254,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Text(
                           'service',
                           style:
@@ -3453,7 +3453,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Text(
                           'autre',
                           style:

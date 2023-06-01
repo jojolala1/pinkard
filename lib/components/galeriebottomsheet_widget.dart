@@ -114,7 +114,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                                     size: 34.0,
                                   ),
                                   onPressed: () async {
-                                    Navigator.pop(context);
+                                    context.safePop();
                                   },
                                 ),
                               ),
