@@ -159,28 +159,34 @@ class _Photo1bottomsheetWidgetState extends State<Photo1bottomsheetWidget> {
                                       ),
                                     ),
                                   ),
+                                  Align(
+                                    alignment:
+                                        AlignmentDirectional(0.89, -0.91),
+                                    child: FlutterFlowIconButton(
+                                      borderColor:
+                                          FlutterFlowTheme.of(context).error,
+                                      borderRadius: 20.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 30.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).error,
+                                      icon: Icon(
+                                        Icons.delete_forever,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        size: 14.0,
+                                      ),
+                                      onPressed: () async {
+                                        final usersUpdateData = {
+                                          'photo1': FieldValue.delete(),
+                                        };
+                                        await currentUserReference!
+                                            .update(usersUpdateData);
+                                      },
+                                    ),
+                                  ),
                                 ],
                               ),
-                            ),
-                            FlutterFlowIconButton(
-                              borderColor: FlutterFlowTheme.of(context).primary,
-                              borderRadius: 20.0,
-                              borderWidth: 1.0,
-                              buttonSize: 40.0,
-                              fillColor: FlutterFlowTheme.of(context).accent1,
-                              icon: Icon(
-                                Icons.add,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
-                              ),
-                              onPressed: () async {
-                                setState(() {
-                                  _model.isDataUploading = false;
-                                  _model.uploadedLocalFile = FFUploadedFile(
-                                      bytes: Uint8List.fromList([]));
-                                  _model.uploadedFileUrl = '';
-                                });
-                              },
                             ),
                           ],
                         ),

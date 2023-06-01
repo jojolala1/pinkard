@@ -153,7 +153,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 15.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 15.0),
                   child: Text(
                     'photos',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -602,7 +602,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 15.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 15.0),
                   child: Text(
                     'vidéos',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -612,7 +612,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 20.0),
                   child: Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     color: Color(0xFFFAFAFA),
@@ -621,8 +621,8 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          80.0, 30.0, 80.0, 30.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [

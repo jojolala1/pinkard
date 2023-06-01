@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -156,6 +157,32 @@ class _Photo5bottomsheetWidgetState extends State<Photo5bottomsheetWidget> {
                                         _model.uploadedFileUrl,
                                         fit: BoxFit.cover,
                                       ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment:
+                                        AlignmentDirectional(0.89, -0.88),
+                                    child: FlutterFlowIconButton(
+                                      borderColor:
+                                          FlutterFlowTheme.of(context).error,
+                                      borderRadius: 20.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 30.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).error,
+                                      icon: Icon(
+                                        Icons.delete_forever,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        size: 14.0,
+                                      ),
+                                      onPressed: () async {
+                                        final usersUpdateData = {
+                                          'photo5': FieldValue.delete(),
+                                        };
+                                        await currentUserReference!
+                                            .update(usersUpdateData);
+                                      },
                                     ),
                                   ),
                                 ],

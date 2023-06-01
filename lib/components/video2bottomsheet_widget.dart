@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
@@ -110,23 +111,58 @@ class _Video2bottomsheetWidgetState extends State<Video2bottomsheetWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => FlutterFlowVideoPlayer(
-                                  path: valueOrDefault(
-                                      currentUserDocument?.video2, ''),
-                                  videoType: VideoType.network,
-                                  width: 100.0,
-                                  height: 100.0,
-                                  autoPlay: false,
-                                  looping: false,
-                                  showControls: false,
-                                  allowFullScreen: false,
-                                  allowPlaybackSpeedMenu: false,
-                                  pauseOnNavigate: false,
+                            Stack(
+                              alignment: AlignmentDirectional(1.0, -1.0),
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(1.92, 0.12),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 5.0, 5.0, 5.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) =>
+                                          FlutterFlowVideoPlayer(
+                                        path: valueOrDefault(
+                                            currentUserDocument?.video2, ''),
+                                        videoType: VideoType.network,
+                                        width: 100.0,
+                                        height: 100.0,
+                                        autoPlay: false,
+                                        looping: false,
+                                        showControls: false,
+                                        allowFullScreen: false,
+                                        allowPlaybackSpeedMenu: false,
+                                        pauseOnNavigate: false,
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Align(
+                                  alignment: AlignmentDirectional(1.05, -1.02),
+                                  child: FlutterFlowIconButton(
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).error,
+                                    borderRadius: 20.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 30.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).error,
+                                    icon: Icon(
+                                      Icons.delete_forever,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBtnText,
+                                      size: 14.0,
+                                    ),
+                                    onPressed: () async {
+                                      final usersUpdateData = {
+                                        'video2': FieldValue.delete(),
+                                      };
+                                      await currentUserReference!
+                                          .update(usersUpdateData);
+                                    },
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
