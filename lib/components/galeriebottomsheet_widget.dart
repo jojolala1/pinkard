@@ -83,7 +83,7 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
               children: [
                 Material(
                   color: Colors.transparent,
-                  elevation: 2.0,
+                  elevation: 1.0,
                   child: Container(
                     width: double.infinity,
                     height: 60.0,
