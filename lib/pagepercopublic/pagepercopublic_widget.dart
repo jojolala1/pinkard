@@ -356,8 +356,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        pagepercopublicUsersRecord
-                                                            .biographie,
+                                                        valueOrDefault<String>(
+                                                          pagepercopublicUsersRecord
+                                                              .biographie,
+                                                          'Erreur de chargement de la biographie',
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -411,8 +414,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     140.0, 10.0, 0.0, 0.0),
                                             child: Text(
-                                              pagepercopublicUsersRecord
-                                                  .displayName,
+                                              valueOrDefault<String>(
+                                                pagepercopublicUsersRecord
+                                                    .displayName,
+                                                'Erreur de chargement du nom',
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -432,7 +438,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     140.0, 15.0, 0.0, 0.0),
                                             child: Text(
-                                              pagepercopublicUsersRecord.prenom,
+                                              valueOrDefault<String>(
+                                                pagepercopublicUsersRecord
+                                                    .prenom,
+                                                'Erreur de chargement du prénom',
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

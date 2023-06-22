@@ -63,12 +63,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
     super.initState();
     _model = createModel(context, () => CreatprofilModel());
 
-    _model.yourNameController ??=
-        TextEditingController(text: currentUserDisplayName);
+    _model.yourNameController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      currentUserDisplayName,
+      'Erreur de chargement du nom',
+    ));
     _model.prenomController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.prenom, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.prenom, ''),
+      'Erreur de chargement du prénom',
+    ));
     _model.myBioController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.biographie, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.biographie, ''),
+      'Erreur de chargement de la biographie',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

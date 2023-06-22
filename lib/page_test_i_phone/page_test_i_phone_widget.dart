@@ -70,10 +70,7 @@ class _PageTestIPhoneWidgetState extends State<PageTestIPhoneWidget> {
                   ),
                   AuthUserStreamWidget(
                     builder: (context) => Text(
-                      valueOrDefault<String>(
-                        currentUserDisplayName,
-                        'PasDeValeurWTF',
-                      ),
+                      valueOrDefault(currentUserDocument?.prenom, ''),
                       style: FlutterFlowTheme.of(context).bodyMedium,
                     ),
                   ),
