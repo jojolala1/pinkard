@@ -32,7 +32,6 @@ class _GalerieWidgetState extends State<GalerieWidget> {
   late GalerieModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -46,7 +45,6 @@ class _GalerieWidgetState extends State<GalerieWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -56,7 +54,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
         title: 'galerie',
         color: FlutterFlowTheme.of(context).primary,
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: Colors.white,
@@ -242,16 +240,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Photo1bottomsheetWidget(),
@@ -335,16 +332,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Photo2bottomsheeWidget(),
@@ -428,16 +424,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Photo3bottomsheetWidget(),
@@ -521,16 +516,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Photo4bottomsheetWidget(),
@@ -614,16 +608,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Photo5bottomsheetWidget(),
@@ -707,16 +700,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Photo6bottomsheetWidget(),
@@ -828,16 +820,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Video1bottomsheetWidget(),
@@ -937,16 +928,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Video2bottomsheetWidget(),
@@ -1046,16 +1036,15 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                             Colors.transparent,
                                                         enableDrag: false,
                                                         context: context,
-                                                        builder:
-                                                            (bottomSheetContext) {
+                                                        builder: (context) {
                                                           return GestureDetector(
                                                             onTap: () => FocusScope
                                                                     .of(context)
-                                                                .requestFocus(
-                                                                    _unfocusNode),
+                                                                .requestFocus(_model
+                                                                    .unfocusNode),
                                                             child: Padding(
-                                                              padding: MediaQuery.of(
-                                                                      bottomSheetContext)
+                                                              padding: MediaQuery
+                                                                      .of(context)
                                                                   .viewInsets,
                                                               child:
                                                                   Video3bottomsheetWidget(),

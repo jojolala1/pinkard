@@ -57,7 +57,6 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
   late CreatprofilModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -77,7 +76,6 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -87,7 +85,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
         title: 'creatprofil',
         color: FlutterFlowTheme.of(context).primary,
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: Colors.white,
@@ -156,7 +154,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       onPressed: () async {
                         context.pushNamed(
                           'pagepercopublic',
-                          queryParams: {
+                          queryParameters: {
                             'userRef': serializeParam(
                               currentUserReference,
                               ParamType.DocumentReference,
@@ -249,15 +247,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                             backgroundColor: Colors.white,
                                             enableDrag: false,
                                             context: context,
-                                            builder: (bottomSheetContext) {
+                                            builder: (context) {
                                               return GestureDetector(
-                                                onTap: () => FocusScope.of(
-                                                        context)
-                                                    .requestFocus(_unfocusNode),
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                 child: Padding(
-                                                  padding: MediaQuery.of(
-                                                          bottomSheetContext)
-                                                      .viewInsets,
+                                                  padding:
+                                                      MediaQuery.of(context)
+                                                          .viewInsets,
                                                   child: PicturchangeWidget(),
                                                 ),
                                               );
@@ -296,7 +295,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                           controller: _model.yourNameController,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: currentUserDisplayName,
+                                            labelText: 'Nom',
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -420,9 +419,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                           controller: _model.prenomController,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: valueOrDefault(
-                                                currentUserDocument?.prenom,
-                                                ''),
+                                            labelText: 'Prénom',
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -547,9 +544,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                           controller: _model.myBioController,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: valueOrDefault(
-                                                currentUserDocument?.biographie,
-                                                ''),
+                                            labelText: 'Bio',
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
@@ -879,16 +874,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           MapbottomsheetWidget(),
                                                     ),
@@ -961,16 +956,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           MenubottomsheetWidget(),
                                                     ),
@@ -1106,16 +1101,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             BookingbottomsheetWidget(),
@@ -1149,13 +1143,13 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                         backgroundColor: Colors.transparent,
                                         enableDrag: false,
                                         context: context,
-                                        builder: (bottomSheetContext) {
+                                        builder: (context) {
                                           return GestureDetector(
                                             onTap: () => FocusScope.of(context)
-                                                .requestFocus(_unfocusNode),
+                                                .requestFocus(
+                                                    _model.unfocusNode),
                                             child: Padding(
-                                              padding: MediaQuery.of(
-                                                      bottomSheetContext)
+                                              padding: MediaQuery.of(context)
                                                   .viewInsets,
                                               child: TiktokbottomshetWidget(),
                                             ),
@@ -1204,16 +1198,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             AirbnbbottomsheetWidget(),
@@ -1289,16 +1282,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           TripadvisorbottomsheetWidget(),
                                                     ),
@@ -1371,16 +1364,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           LienbottomsheetWidget(),
                                                     ),
@@ -1488,16 +1481,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           BottomsheetfbWidget(),
                                                     ),
@@ -1570,16 +1563,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           InstabottomsheetWidget(),
                                                     ),
@@ -1675,16 +1668,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             SnapbottomsheetWidget(),
@@ -1718,13 +1710,13 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                         backgroundColor: Colors.transparent,
                                         enableDrag: false,
                                         context: context,
-                                        builder: (bottomSheetContext) {
+                                        builder: (context) {
                                           return GestureDetector(
                                             onTap: () => FocusScope.of(context)
-                                                .requestFocus(_unfocusNode),
+                                                .requestFocus(
+                                                    _model.unfocusNode),
                                             child: Padding(
-                                              padding: MediaQuery.of(
-                                                      bottomSheetContext)
+                                              padding: MediaQuery.of(context)
                                                   .viewInsets,
                                               child: TiktokbottomshetWidget(),
                                             ),
@@ -1824,16 +1816,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           TwitterbottomsheetWidget(),
                                                     ),
@@ -1877,13 +1869,13 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                         backgroundColor: Colors.transparent,
                                         enableDrag: false,
                                         context: context,
-                                        builder: (bottomSheetContext) {
+                                        builder: (context) {
                                           return GestureDetector(
                                             onTap: () => FocusScope.of(context)
-                                                .requestFocus(_unfocusNode),
+                                                .requestFocus(
+                                                    _model.unfocusNode),
                                             child: Padding(
-                                              padding: MediaQuery.of(
-                                                      bottomSheetContext)
+                                              padding: MediaQuery.of(context)
                                                   .viewInsets,
                                               child: TwitchbottomsheetWidget(),
                                             ),
@@ -1932,16 +1924,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             TwitchbottomsheetWidget(),
@@ -2017,16 +2008,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           PinterestbottomsheetWidget(),
                                                     ),
@@ -2099,16 +2090,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           MessengerbottomsheetWidget(),
                                                     ),
@@ -2181,16 +2172,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           YoutubebottomsheetWidget(),
                                                     ),
@@ -2263,16 +2254,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           LinkedlnbottomsheetWidget(),
                                                     ),
@@ -2380,16 +2371,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           TelephonebebottomsheetWidget(),
                                                     ),
@@ -2462,16 +2453,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           SmsbebottomsheetWidget(),
                                                     ),
@@ -2544,16 +2535,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           MailbottomsheetWidget(),
                                                     ),
@@ -2604,14 +2595,14 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                           backgroundColor: Colors.transparent,
                                           enableDrag: false,
                                           context: context,
-                                          builder: (bottomSheetContext) {
+                                          builder: (context) {
                                             return GestureDetector(
-                                              onTap: () => FocusScope.of(
-                                                      context)
-                                                  .requestFocus(_unfocusNode),
+                                              onTap: () =>
+                                                  FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _model.unfocusNode),
                                               child: Padding(
-                                                padding: MediaQuery.of(
-                                                        bottomSheetContext)
+                                                padding: MediaQuery.of(context)
                                                     .viewInsets,
                                                 child:
                                                     WhatsappbottomsheetWidget(),
@@ -2676,13 +2667,13 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                         backgroundColor: Colors.transparent,
                                         enableDrag: false,
                                         context: context,
-                                        builder: (bottomSheetContext) {
+                                        builder: (context) {
                                           return GestureDetector(
                                             onTap: () => FocusScope.of(context)
-                                                .requestFocus(_unfocusNode),
+                                                .requestFocus(
+                                                    _model.unfocusNode),
                                             child: Padding(
-                                              padding: MediaQuery.of(
-                                                      bottomSheetContext)
+                                              padding: MediaQuery.of(context)
                                                   .viewInsets,
                                               child: TiktokbottomshetWidget(),
                                             ),
@@ -2731,16 +2722,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             ZoombottomsheetWidget(),
@@ -2816,16 +2806,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           DiscordbottomsheetWidget(),
                                                     ),
@@ -2869,13 +2859,13 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                         backgroundColor: Colors.transparent,
                                         enableDrag: false,
                                         context: context,
-                                        builder: (bottomSheetContext) {
+                                        builder: (context) {
                                           return GestureDetector(
                                             onTap: () => FocusScope.of(context)
-                                                .requestFocus(_unfocusNode),
+                                                .requestFocus(
+                                                    _model.unfocusNode),
                                             child: Padding(
-                                              padding: MediaQuery.of(
-                                                      bottomSheetContext)
+                                              padding: MediaQuery.of(context)
                                                   .viewInsets,
                                               child: TwitchbottomsheetWidget(),
                                             ),
@@ -2924,16 +2914,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             TelegrambottomsheetWidget(),
@@ -3009,16 +2998,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           SkypebottomsheetWidget(),
                                                     ),
@@ -3126,16 +3115,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           PaypalbottomsheetWidget(),
                                                     ),
@@ -3208,16 +3197,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           RevolutbottomsheetWidget(),
                                                     ),
@@ -3325,16 +3314,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           FiverrbottomsheetWidget(),
                                                     ),
@@ -3407,16 +3396,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           CinqeurosbottomsheetWidget(),
                                                     ),
@@ -3524,16 +3513,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           DeezerbottomsheetWidget(),
                                                     ),
@@ -3606,16 +3595,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           SpotifybottomsheetWidget(),
                                                     ),
@@ -3688,16 +3677,16 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                     Colors.transparent,
                                                 enableDrag: false,
                                                 context: context,
-                                                builder: (bottomSheetContext) {
+                                                builder: (context) {
                                                   return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .requestFocus(
-                                                                _unfocusNode),
+                                                    onTap: () => FocusScope.of(
+                                                            context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode),
                                                     child: Padding(
-                                                      padding: MediaQuery.of(
-                                                              bottomSheetContext)
-                                                          .viewInsets,
+                                                      padding:
+                                                          MediaQuery.of(context)
+                                                              .viewInsets,
                                                       child:
                                                           ApplemusicbottomsheetWidget(),
                                                     ),
@@ -3793,16 +3782,15 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             AmazonbottomsheetWidget(),

@@ -47,6 +47,7 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 class CreatprofilModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for yourName widget.
   TextEditingController? yourNameController;
@@ -82,10 +83,13 @@ class CreatprofilModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     yourNameController?.dispose();
     prenomController?.dispose();
     myBioController?.dispose();
   }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

@@ -24,6 +24,8 @@ class TwitchbottomsheetModel extends FlutterFlowModel {
     twitchController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

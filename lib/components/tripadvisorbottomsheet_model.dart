@@ -24,6 +24,8 @@ class TripadvisorbottomsheetModel extends FlutterFlowModel {
     tripadvisorController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

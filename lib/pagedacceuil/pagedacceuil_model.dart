@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 class PagedacceuilModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for emailAddress widget.
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
@@ -38,12 +39,15 @@ class PagedacceuilModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     emailAddressController?.dispose();
     passwordController?.dispose();
     saisirmailController?.dispose();
     saisirmotdepasseController?.dispose();
     saisirmotdepasse2Controller?.dispose();
   }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

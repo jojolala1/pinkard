@@ -24,6 +24,8 @@ class BookingbottomsheetModel extends FlutterFlowModel {
     tbookingController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

@@ -24,6 +24,8 @@ class MapbottomsheetModel extends FlutterFlowModel {
     mapController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

@@ -24,6 +24,8 @@ class InstabottomsheetModel extends FlutterFlowModel {
     instaController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

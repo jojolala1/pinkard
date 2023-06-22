@@ -24,6 +24,8 @@ class ApplemusicbottomsheetModel extends FlutterFlowModel {
     applemuscicController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

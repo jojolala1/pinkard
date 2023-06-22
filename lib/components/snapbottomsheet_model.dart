@@ -24,6 +24,8 @@ class SnapbottomsheetModel extends FlutterFlowModel {
     snapchatController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

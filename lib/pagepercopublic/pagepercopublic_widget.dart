@@ -31,12 +31,6 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
   late PagepercopublicModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
-  int get pageViewCurrentIndex => _model.pageViewController != null &&
-          _model.pageViewController!.hasClients &&
-          _model.pageViewController!.page != null
-      ? _model.pageViewController!.page!.round()
-      : 0;
 
   @override
   void initState() {
@@ -50,7 +44,6 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -61,12 +54,15 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
-          return Center(
-            child: SizedBox(
-              width: 50.0,
-              height: 50.0,
-              child: CircularProgressIndicator(
-                color: FlutterFlowTheme.of(context).primary,
+          return Scaffold(
+            backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+            body: Center(
+              child: SizedBox(
+                width: 50.0,
+                height: 50.0,
+                child: CircularProgressIndicator(
+                  color: FlutterFlowTheme.of(context).primary,
+                ),
               ),
             ),
           );
@@ -76,7 +72,8 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
             title: 'pagepercopublic',
             color: FlutterFlowTheme.of(context).primary,
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+              onTap: () =>
+                  FocusScope.of(context).requestFocus(_model.unfocusNode),
               child: WillPopScope(
                 onWillPop: () async => false,
                 child: Scaffold(
@@ -243,24 +240,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                         gradientType: GradientType.linear,
                       ),
                     ),
-                    actions: [
-                      FlutterFlowIconButton(
-                        borderColor:
-                            FlutterFlowTheme.of(context).primaryBtnText,
-                        borderRadius: 20.0,
-                        borderWidth: 1.0,
-                        buttonSize: 40.0,
-                        fillColor: FlutterFlowTheme.of(context).primaryBtnText,
-                        icon: Icon(
-                          Icons.menu_open,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 30.0,
-                        ),
-                        onPressed: () async {
-                          scaffoldKey.currentState!.openEndDrawer();
-                        },
-                      ),
-                    ],
+                    actions: [],
                     centerTitle: true,
                     elevation: 2.0,
                   ),
@@ -276,14 +256,9 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                               children: [
                                 Material(
                                   color: Colors.transparent,
-                                  elevation: 2.0,
+                                  elevation: 0.0,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(20.0),
-                                      bottomRight: Radius.circular(20.0),
-                                      topLeft: Radius.circular(0.0),
-                                      topRight: Radius.circular(0.0),
-                                    ),
+                                    borderRadius: BorderRadius.circular(0.0),
                                   ),
                                   child: Container(
                                     width: double.infinity,
@@ -291,11 +266,10 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(20.0),
-                                        bottomRight: Radius.circular(20.0),
-                                        topLeft: Radius.circular(0.0),
-                                        topRight: Radius.circular(0.0),
+                                      borderRadius: BorderRadius.circular(0.0),
+                                      border: Border.all(
+                                        color: Color(0xFFB2B1B1),
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Stack(
@@ -538,16 +512,15 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                       Colors.transparent,
                                                   enableDrag: false,
                                                   context: context,
-                                                  builder:
-                                                      (bottomSheetContext) {
+                                                  builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .requestFocus(
-                                                                  _unfocusNode),
+                                                      onTap: () => FocusScope
+                                                              .of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode),
                                                       child: Padding(
                                                         padding: MediaQuery.of(
-                                                                bottomSheetContext)
+                                                                context)
                                                             .viewInsets,
                                                         child:
                                                             GaleriebottomsheetWidget(
