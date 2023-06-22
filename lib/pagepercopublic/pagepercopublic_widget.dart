@@ -268,8 +268,8 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                           .primaryBtnText,
                                       borderRadius: BorderRadius.circular(0.0),
                                       border: Border.all(
-                                        color: Color(0xFFB2B1B1),
-                                        width: 2.0,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
                                       ),
                                     ),
                                     child: Stack(

@@ -104,7 +104,7 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                 indicatorColor: Colors.white,
                                 tabs: [
                                   Tab(
-                                    text: 'connection',
+                                    text: 'connection Test',
                                   ),
                                   Tab(
                                     text: 'création',
