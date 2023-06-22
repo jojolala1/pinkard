@@ -189,10 +189,9 @@ class _RevolutbottomsheetWidgetState extends State<RevolutbottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final usersUpdateData = createUsersRecordData(
+                await currentUserReference!.update(createUsersRecordData(
                   revolut: _model.revolutController.text,
-                );
-                await currentUserReference!.update(usersUpdateData);
+                ));
 
                 context.pushNamed('creatprofil');
               },

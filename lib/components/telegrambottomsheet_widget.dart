@@ -181,10 +181,9 @@ class _TelegrambottomsheetWidgetState extends State<TelegrambottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final usersUpdateData = createUsersRecordData(
+                await currentUserReference!.update(createUsersRecordData(
                   telegram: _model.telegramController.text,
-                );
-                await currentUserReference!.update(usersUpdateData);
+                ));
 
                 context.pushNamed('creatprofil');
               },

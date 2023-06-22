@@ -251,11 +251,10 @@ class _PicturchangelienWidgetState extends State<PicturchangelienWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final usersUpdateData = createUsersRecordData(
-                                  photourl2: _model.uploadedFileUrl,
-                                );
                                 await currentUserReference!
-                                    .update(usersUpdateData);
+                                    .update(createUsersRecordData(
+                                  photourl2: _model.uploadedFileUrl,
+                                ));
                                 Navigator.pop(context);
                               },
                               text: 'sauvgarder',

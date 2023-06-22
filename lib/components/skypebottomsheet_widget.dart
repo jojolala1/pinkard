@@ -180,10 +180,9 @@ class _SkypebottomsheetWidgetState extends State<SkypebottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final usersUpdateData = createUsersRecordData(
+                await currentUserReference!.update(createUsersRecordData(
                   skype: _model.skypeController.text,
-                );
-                await currentUserReference!.update(usersUpdateData);
+                ));
 
                 context.pushNamed('creatprofil');
               },

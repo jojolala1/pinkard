@@ -182,10 +182,9 @@ class _MessengerbottomsheetWidgetState
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final usersUpdateData = createUsersRecordData(
+                await currentUserReference!.update(createUsersRecordData(
                   messenger: _model.messengerController.text,
-                );
-                await currentUserReference!.update(usersUpdateData);
+                ));
 
                 context.pushNamed('creatprofil');
               },

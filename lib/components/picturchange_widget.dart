@@ -249,11 +249,10 @@ class _PicturchangeWidgetState extends State<PicturchangeWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final usersUpdateData = createUsersRecordData(
-                                  photoUrl: _model.uploadedFileUrl,
-                                );
                                 await currentUserReference!
-                                    .update(usersUpdateData);
+                                    .update(createUsersRecordData(
+                                  photoUrl: _model.uploadedFileUrl,
+                                ));
                               },
                               text: 'sauvgarder',
                               options: FFButtonOptions(

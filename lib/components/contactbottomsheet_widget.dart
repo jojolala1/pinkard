@@ -189,25 +189,37 @@ class _ContactbottomsheetWidgetState extends State<ContactbottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final selectedFile = await selectFile();
-                if (selectedFile != null) {
+                final selectedFiles = await selectFile(
+                  multiFile: false,
+                );
+                if (selectedFiles != null) {
                   setState(() => _model.isDataUploading = true);
-                  FFUploadedFile? selectedUploadedFile;
-                  String? downloadUrl;
+                  var selectedUploadedFiles = <FFUploadedFile>[];
+                  var downloadUrls = <String>[];
                   try {
-                    selectedUploadedFile = FFUploadedFile(
-                      name: selectedFile.storagePath.split('/').last,
-                      bytes: selectedFile.bytes,
-                    );
-                    downloadUrl = await uploadData(
-                        selectedFile.storagePath, selectedFile.bytes);
+                    selectedUploadedFiles = selectedFiles
+                        .map((f) => FFUploadedFile(
+                              name: f.storagePath.split('/').last,
+                              bytes: f.bytes,
+                            ))
+                        .toList();
+
+                    downloadUrls = (await Future.wait(
+                      selectedFiles.map(
+                        (f) async => await uploadData(f.storagePath, f.bytes),
+                      ),
+                    ))
+                        .where((u) => u != null)
+                        .map((u) => u!)
+                        .toList();
                   } finally {
                     _model.isDataUploading = false;
                   }
-                  if (selectedUploadedFile != null && downloadUrl != null) {
+                  if (selectedUploadedFiles.length == selectedFiles.length &&
+                      downloadUrls.length == selectedFiles.length) {
                     setState(() {
-                      _model.uploadedLocalFile = selectedUploadedFile!;
-                      _model.uploadedFileUrl = downloadUrl!;
+                      _model.uploadedLocalFile = selectedUploadedFiles.first;
+                      _model.uploadedFileUrl = downloadUrls.first;
                     });
                   } else {
                     setState(() {});

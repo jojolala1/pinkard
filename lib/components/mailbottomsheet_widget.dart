@@ -176,10 +176,9 @@ class _MailbottomsheetWidgetState extends State<MailbottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final usersUpdateData = createUsersRecordData(
+                await currentUserReference!.update(createUsersRecordData(
                   email: _model.mailController.text,
-                );
-                await currentUserReference!.update(usersUpdateData);
+                ));
 
                 context.pushNamed('creatprofil');
               },

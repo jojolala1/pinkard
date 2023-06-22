@@ -154,11 +154,9 @@ class _Video2bottomsheetWidgetState extends State<Video2bottomsheetWidget> {
                                       size: 14.0,
                                     ),
                                     onPressed: () async {
-                                      final usersUpdateData = {
+                                      await currentUserReference!.update({
                                         'video2': FieldValue.delete(),
-                                      };
-                                      await currentUserReference!
-                                          .update(usersUpdateData);
+                                      });
                                     },
                                   ),
                                 ),
@@ -256,11 +254,10 @@ class _Video2bottomsheetWidgetState extends State<Video2bottomsheetWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final usersUpdateData = createUsersRecordData(
-                                  video2: _model.uploadedFileUrl,
-                                );
                                 await currentUserReference!
-                                    .update(usersUpdateData);
+                                    .update(createUsersRecordData(
+                                  video2: _model.uploadedFileUrl,
+                                ));
                                 Navigator.pop(context);
                               },
                               text: 'sauvgarder',

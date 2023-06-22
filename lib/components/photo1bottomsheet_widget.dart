@@ -177,11 +177,9 @@ class _Photo1bottomsheetWidgetState extends State<Photo1bottomsheetWidget> {
                                         size: 14.0,
                                       ),
                                       onPressed: () async {
-                                        final usersUpdateData = {
+                                        await currentUserReference!.update({
                                           'photo1': FieldValue.delete(),
-                                        };
-                                        await currentUserReference!
-                                            .update(usersUpdateData);
+                                        });
                                       },
                                     ),
                                   ),
@@ -278,11 +276,10 @@ class _Photo1bottomsheetWidgetState extends State<Photo1bottomsheetWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                final usersUpdateData = createUsersRecordData(
-                                  photo1: _model.uploadedFileUrl,
-                                );
                                 await currentUserReference!
-                                    .update(usersUpdateData);
+                                    .update(createUsersRecordData(
+                                  photo1: _model.uploadedFileUrl,
+                                ));
                                 Navigator.pop(context);
                               },
                               text: 'sauvgarder',

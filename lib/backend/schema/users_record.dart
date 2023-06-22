@@ -289,8 +289,8 @@ class UsersRecord extends FirestoreRecord {
     _biographie = snapshotData['biographie'] as String?;
     _instagram = snapshotData['instagram'] as String?;
     _phoneNumber = snapshotData['phone_number'] as String?;
-    _mdp = snapshotData['mdp'] as int?;
-    _mdp2 = snapshotData['mdp2'] as int?;
+    _mdp = castToType<int>(snapshotData['mdp']);
+    _mdp2 = castToType<int>(snapshotData['mdp2']);
     _facebook = snapshotData['facebook'] as String?;
     _photos = snapshotData['photos'] as String?;
     _snapchat = snapshotData['snapchat'] as String?;

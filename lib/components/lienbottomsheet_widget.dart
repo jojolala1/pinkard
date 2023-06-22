@@ -115,7 +115,16 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
                                 builder: (context) {
                                   return Padding(
                                     padding: MediaQuery.of(context).viewInsets,
-                                    child: PicturchangelienWidget(),
+                                    child: Scaffold(
+                                      body: GestureDetector(
+                                        onTap: () => Navigator.pop(context),
+                                      ),
+                                      backgroundColor: Colors.transparent,
+                                      bottomSheet: Container(
+                                        color: Colors.transparent,
+                                        child: PicturchangelienWidget(),
+                                      ),
+                                    ),
                                   );
                                 },
                               ).then((value) => setState(() {}));
@@ -228,10 +237,9 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final usersUpdateData = createUsersRecordData(
+                await currentUserReference!.update(createUsersRecordData(
                   site: _model.lienController.text,
-                );
-                await currentUserReference!.update(usersUpdateData);
+                ));
 
                 context.pushNamed('creatprofil');
               },

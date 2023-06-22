@@ -253,7 +253,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                         onPressed: () async {
                                           await showModalBottomSheet(
                                             isScrollControlled: true,
-                                            backgroundColor: Colors.white,
+                                            backgroundColor: Colors.transparent,
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
@@ -266,7 +266,20 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                   padding:
                                                       MediaQuery.of(context)
                                                           .viewInsets,
-                                                  child: PicturchangeWidget(),
+                                                  child: Scaffold(
+                                                    body: GestureDetector(
+                                                      onTap: () =>
+                                                          Navigator.pop(
+                                                              context),
+                                                    ),
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    bottomSheet: Container(
+                                                      color: Colors.white,
+                                                      child:
+                                                          PicturchangeWidget(),
+                                                    ),
+                                                  ),
                                                 ),
                                               );
                                             },
@@ -404,13 +417,11 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                       ),
                                       showLoadingIndicator: true,
                                       onPressed: () async {
-                                        final usersUpdateData =
-                                            createUsersRecordData(
+                                        await currentUserReference!
+                                            .update(createUsersRecordData(
                                           displayName:
                                               _model.yourNameController.text,
-                                        );
-                                        await currentUserReference!
-                                            .update(usersUpdateData);
+                                        ));
                                       },
                                     ),
                                   ),
@@ -530,12 +541,10 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                       ),
                                       showLoadingIndicator: true,
                                       onPressed: () async {
-                                        final usersUpdateData =
-                                            createUsersRecordData(
-                                          prenom: _model.prenomController.text,
-                                        );
                                         await currentUserReference!
-                                            .update(usersUpdateData);
+                                            .update(createUsersRecordData(
+                                          prenom: _model.prenomController.text,
+                                        ));
                                       },
                                     ),
                                   ),
@@ -656,13 +665,11 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                       ),
                                       showLoadingIndicator: true,
                                       onPressed: () async {
-                                        final usersUpdateData =
-                                            createUsersRecordData(
+                                        await currentUserReference!
+                                            .update(createUsersRecordData(
                                           biographie:
                                               _model.myBioController.text,
-                                        );
-                                        await currentUserReference!
-                                            .update(usersUpdateData);
+                                        ));
                                       },
                                     ),
                                   ),
@@ -893,8 +900,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          MapbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              MapbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -975,8 +995,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          MenubottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              MenubottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1120,8 +1153,23 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            BookingbottomsheetWidget(),
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                BookingbottomsheetWidget(),
+                                                          ),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -1160,7 +1208,19 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                             child: Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,
-                                              child: TiktokbottomshetWidget(),
+                                              child: Scaffold(
+                                                body: GestureDetector(
+                                                  onTap: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                bottomSheet: Container(
+                                                  color: Colors.transparent,
+                                                  child:
+                                                      TiktokbottomshetWidget(),
+                                                ),
+                                              ),
                                             ),
                                           );
                                         },
@@ -1217,8 +1277,23 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            AirbnbbottomsheetWidget(),
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                AirbnbbottomsheetWidget(),
+                                                          ),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -1301,8 +1376,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          TripadvisorbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              TripadvisorbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1383,8 +1471,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          LienbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              LienbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1500,8 +1601,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          BottomsheetfbWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              BottomsheetfbWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1582,8 +1696,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          InstabottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              InstabottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1687,8 +1814,23 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            SnapbottomsheetWidget(),
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                SnapbottomsheetWidget(),
+                                                          ),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -1727,7 +1869,19 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                             child: Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,
-                                              child: TiktokbottomshetWidget(),
+                                              child: Scaffold(
+                                                body: GestureDetector(
+                                                  onTap: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                bottomSheet: Container(
+                                                  color: Colors.transparent,
+                                                  child:
+                                                      TiktokbottomshetWidget(),
+                                                ),
+                                              ),
                                             ),
                                           );
                                         },
@@ -1835,8 +1989,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          TwitterbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              TwitterbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -1886,7 +2053,19 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                             child: Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,
-                                              child: TwitchbottomsheetWidget(),
+                                              child: Scaffold(
+                                                body: GestureDetector(
+                                                  onTap: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                bottomSheet: Container(
+                                                  color: Colors.transparent,
+                                                  child:
+                                                      TwitchbottomsheetWidget(),
+                                                ),
+                                              ),
                                             ),
                                           );
                                         },
@@ -1943,8 +2122,23 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            TwitchbottomsheetWidget(),
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                TwitchbottomsheetWidget(),
+                                                          ),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -2027,8 +2221,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          PinterestbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              PinterestbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2109,8 +2316,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          MessengerbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              MessengerbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2191,8 +2411,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          YoutubebottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              YoutubebottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2273,8 +2506,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          LinkedlnbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              LinkedlnbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2390,8 +2636,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          TelephonebebottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              TelephonebebottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2472,8 +2731,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          SmsbebottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              SmsbebottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2554,8 +2826,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          MailbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              MailbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2613,8 +2898,19 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                               child: Padding(
                                                 padding: MediaQuery.of(context)
                                                     .viewInsets,
-                                                child:
-                                                    WhatsappbottomsheetWidget(),
+                                                child: Scaffold(
+                                                  body: GestureDetector(
+                                                    onTap: () =>
+                                                        Navigator.pop(context),
+                                                  ),
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  bottomSheet: Container(
+                                                    color: Colors.transparent,
+                                                    child:
+                                                        WhatsappbottomsheetWidget(),
+                                                  ),
+                                                ),
                                               ),
                                             );
                                           },
@@ -2684,7 +2980,19 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                             child: Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,
-                                              child: TiktokbottomshetWidget(),
+                                              child: Scaffold(
+                                                body: GestureDetector(
+                                                  onTap: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                bottomSheet: Container(
+                                                  color: Colors.transparent,
+                                                  child:
+                                                      TiktokbottomshetWidget(),
+                                                ),
+                                              ),
                                             ),
                                           );
                                         },
@@ -2741,8 +3049,23 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            ZoombottomsheetWidget(),
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                ZoombottomsheetWidget(),
+                                                          ),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -2825,8 +3148,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          DiscordbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              DiscordbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -2876,7 +3212,19 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                             child: Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,
-                                              child: TwitchbottomsheetWidget(),
+                                              child: Scaffold(
+                                                body: GestureDetector(
+                                                  onTap: () =>
+                                                      Navigator.pop(context),
+                                                ),
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                bottomSheet: Container(
+                                                  color: Colors.transparent,
+                                                  child:
+                                                      TwitchbottomsheetWidget(),
+                                                ),
+                                              ),
                                             ),
                                           );
                                         },
@@ -2933,8 +3281,23 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            TelegrambottomsheetWidget(),
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                TelegrambottomsheetWidget(),
+                                                          ),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -3017,8 +3380,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          SkypebottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              SkypebottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3134,8 +3510,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          PaypalbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              PaypalbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3216,8 +3605,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          RevolutbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              RevolutbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3333,8 +3735,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          FiverrbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              FiverrbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3415,8 +3830,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          CinqeurosbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              CinqeurosbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3532,8 +3960,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          DeezerbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              DeezerbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3614,8 +4055,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          SpotifybottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              SpotifybottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3696,8 +4150,21 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       padding:
                                                           MediaQuery.of(context)
                                                               .viewInsets,
-                                                      child:
-                                                          ApplemusicbottomsheetWidget(),
+                                                      child: Scaffold(
+                                                        body: GestureDetector(
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  context),
+                                                        ),
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        bottomSheet: Container(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child:
+                                                              ApplemusicbottomsheetWidget(),
+                                                        ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -3801,8 +4268,23 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            AmazonbottomsheetWidget(),
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                AmazonbottomsheetWidget(),
+                                                          ),
+                                                        ),
                                                       ),
                                                     );
                                                   },

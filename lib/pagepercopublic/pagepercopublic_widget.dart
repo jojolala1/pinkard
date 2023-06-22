@@ -532,11 +532,26 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child:
-                                                            GaleriebottomsheetWidget(
-                                                          galerieuserref:
-                                                              pagepercopublicUsersRecord
-                                                                  .reference,
+                                                        child: Scaffold(
+                                                          body: GestureDetector(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                          ),
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          bottomSheet:
+                                                              Container(
+                                                            color: Colors
+                                                                .transparent,
+                                                            child:
+                                                                GaleriebottomsheetWidget(
+                                                              galerieuserref:
+                                                                  pagepercopublicUsersRecord
+                                                                      .reference,
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                     );
