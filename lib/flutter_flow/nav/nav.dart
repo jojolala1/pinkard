@@ -116,6 +116,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'galerie',
               path: 'galerie',
               builder: (context, params) => GalerieWidget(),
+            ),
+            FFRoute(
+              name: 'pageTestIPhone',
+              path: 'pageTestIPhone',
+              builder: (context, params) => PageTestIPhoneWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
