@@ -68,11 +68,9 @@ class _PageTestIPhoneWidgetState extends State<PageTestIPhoneWidget> {
                     'J\'ai chié dans mon cul',
                     style: FlutterFlowTheme.of(context).bodyMedium,
                   ),
-                  AuthUserStreamWidget(
-                    builder: (context) => Text(
-                      currentUserDisplayName,
-                      style: FlutterFlowTheme.of(context).bodyMedium,
-                    ),
+                  Text(
+                    currentUserEmail,
+                    style: FlutterFlowTheme.of(context).bodyMedium,
                   ),
                 ],
               ),
