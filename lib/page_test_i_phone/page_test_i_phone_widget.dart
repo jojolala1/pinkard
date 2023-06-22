@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -66,6 +67,12 @@ class _PageTestIPhoneWidgetState extends State<PageTestIPhoneWidget> {
                   Text(
                     'J\'ai chié dans mon cul',
                     style: FlutterFlowTheme.of(context).bodyMedium,
+                  ),
+                  AuthUserStreamWidget(
+                    builder: (context) => Text(
+                      currentUserDisplayName,
+                      style: FlutterFlowTheme.of(context).bodyMedium,
+                    ),
                   ),
                 ],
               ),

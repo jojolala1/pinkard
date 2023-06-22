@@ -439,8 +439,25 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
                                             children: [
                                               FFButtonWidget(
                                                 onPressed: () async {
-                                                  context.pushNamed(
-                                                      'pageTestIPhone');
+                                                  GoRouter.of(context)
+                                                      .prepareAuthEvent();
+
+                                                  final user = await authManager
+                                                      .signInWithEmail(
+                                                    context,
+                                                    _model
+                                                        .emailAddressController
+                                                        .text,
+                                                    _model.passwordController
+                                                        .text,
+                                                  );
+                                                  if (user == null) {
+                                                    return;
+                                                  }
+
+                                                  context.pushNamedAuth(
+                                                      'pageTestIPhone',
+                                                      context.mounted);
                                                 },
                                                 text: 'test iPhone',
                                                 options: FFButtonOptions(
