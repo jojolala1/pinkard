@@ -33,7 +33,10 @@ class _InstabottomsheetWidgetState extends State<InstabottomsheetWidget> {
     _model = createModel(context, () => InstabottomsheetModel());
 
     _model.instaController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.instagram, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.instagram, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

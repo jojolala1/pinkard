@@ -34,7 +34,10 @@ class _TelegrambottomsheetWidgetState extends State<TelegrambottomsheetWidget> {
     _model = createModel(context, () => TelegrambottomsheetModel());
 
     _model.telegramController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.telegram, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.telegram, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

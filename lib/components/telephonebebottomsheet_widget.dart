@@ -34,7 +34,10 @@ class _TelephonebebottomsheetWidgetState
     _model = createModel(context, () => TelephonebebottomsheetModel());
 
     _model.phoneController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.phone, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.phone, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

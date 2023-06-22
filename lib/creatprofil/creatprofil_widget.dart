@@ -230,7 +230,10 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.network(
-                                            currentUserPhoto,
+                                            valueOrDefault<String>(
+                                              currentUserPhoto,
+                                              'https://png.pngitem.com/pimgs/s/117-1170205_red-cross-error-crossed-wrong-incorrect-marking-cross.png',
+                                            ),
                                             fit: BoxFit.cover,
                                           ),
                                         ),

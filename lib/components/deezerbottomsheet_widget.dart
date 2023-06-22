@@ -34,7 +34,10 @@ class _DeezerbottomsheetWidgetState extends State<DeezerbottomsheetWidget> {
     _model = createModel(context, () => DeezerbottomsheetModel());
 
     _model.deezerController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.deezer, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.deezer, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

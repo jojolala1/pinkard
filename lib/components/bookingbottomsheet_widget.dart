@@ -34,7 +34,10 @@ class _BookingbottomsheetWidgetState extends State<BookingbottomsheetWidget> {
     _model = createModel(context, () => BookingbottomsheetModel());
 
     _model.tbookingController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.booking, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.booking, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

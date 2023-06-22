@@ -35,7 +35,10 @@ class _PinterestbottomsheetWidgetState
     _model = createModel(context, () => PinterestbottomsheetModel());
 
     _model.pinterestController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.pinterest, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.pinterest, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

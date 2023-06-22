@@ -33,7 +33,10 @@ class _ZoombottomsheetWidgetState extends State<ZoombottomsheetWidget> {
     _model = createModel(context, () => ZoombottomsheetModel());
 
     _model.zoomController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.zoom, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.zoom, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

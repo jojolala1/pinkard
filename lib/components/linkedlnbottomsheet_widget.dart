@@ -34,7 +34,10 @@ class _LinkedlnbottomsheetWidgetState extends State<LinkedlnbottomsheetWidget> {
     _model = createModel(context, () => LinkedlnbottomsheetModel());
 
     _model.linkedlnController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.linkdln, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.linkdln, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

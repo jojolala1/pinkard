@@ -33,7 +33,10 @@ class _MapbottomsheetWidgetState extends State<MapbottomsheetWidget> {
     _model = createModel(context, () => MapbottomsheetModel());
 
     _model.mapController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.maps, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.maps, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

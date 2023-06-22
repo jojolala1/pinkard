@@ -34,7 +34,10 @@ class _ContactbottomsheetWidgetState extends State<ContactbottomsheetWidget> {
     _model = createModel(context, () => ContactbottomsheetModel());
 
     _model.contactController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.contact, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.contact, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

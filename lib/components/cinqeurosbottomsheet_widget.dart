@@ -35,7 +35,10 @@ class _CinqeurosbottomsheetWidgetState
     _model = createModel(context, () => CinqeurosbottomsheetModel());
 
     _model.cinqeuroController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.cinqeuro, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.cinqeuro, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

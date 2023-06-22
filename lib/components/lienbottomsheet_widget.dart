@@ -36,7 +36,10 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
     _model = createModel(context, () => LienbottomsheetModel());
 
     _model.lienController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.site, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.site, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

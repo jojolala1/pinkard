@@ -34,7 +34,10 @@ class _TwitterbottomsheetWidgetState extends State<TwitterbottomsheetWidget> {
     _model = createModel(context, () => TwitterbottomsheetModel());
 
     _model.twitterController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.twitter, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.twitter, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

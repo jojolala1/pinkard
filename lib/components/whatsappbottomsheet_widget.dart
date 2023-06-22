@@ -34,7 +34,10 @@ class _WhatsappbottomsheetWidgetState extends State<WhatsappbottomsheetWidget> {
     _model = createModel(context, () => WhatsappbottomsheetModel());
 
     _model.whatsappController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.whatsapp, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.whatsapp, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

@@ -122,8 +122,11 @@ class _Video2bottomsheetWidgetState extends State<Video2bottomsheetWidget> {
                                     child: AuthUserStreamWidget(
                                       builder: (context) =>
                                           FlutterFlowVideoPlayer(
-                                        path: valueOrDefault(
-                                            currentUserDocument?.video2, ''),
+                                        path: valueOrDefault<String>(
+                                          valueOrDefault(
+                                              currentUserDocument?.video2, ''),
+                                          'null',
+                                        ),
                                         videoType: VideoType.network,
                                         width: 100.0,
                                         height: 100.0,

@@ -34,7 +34,10 @@ class _DiscordbottomsheetWidgetState extends State<DiscordbottomsheetWidget> {
     _model = createModel(context, () => DiscordbottomsheetModel());
 
     _model.discordController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.discord, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.discord, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

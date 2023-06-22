@@ -34,7 +34,10 @@ class _RevolutbottomsheetWidgetState extends State<RevolutbottomsheetWidget> {
     _model = createModel(context, () => RevolutbottomsheetModel());
 
     _model.revolutController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.revolut, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.revolut, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

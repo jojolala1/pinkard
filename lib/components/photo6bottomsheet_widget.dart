@@ -154,7 +154,10 @@ class _Photo6bottomsheetWidgetState extends State<Photo6bottomsheetWidget> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.network(
-                                        _model.uploadedFileUrl,
+                                        valueOrDefault<String>(
+                                          _model.uploadedFileUrl,
+                                          'https://png.pngitem.com/pimgs/s/117-1170205_red-cross-error-crossed-wrong-incorrect-marking-cross.png',
+                                        ),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
