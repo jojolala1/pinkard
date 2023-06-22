@@ -40,7 +40,7 @@
         <string>pink</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>com.mycompany.pink</string>
+        <string></string>
         </array>
         </dict>
     </array>
