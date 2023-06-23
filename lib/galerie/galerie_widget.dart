@@ -250,24 +250,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Photo1bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Photo1bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },
@@ -358,24 +342,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Photo2bottomsheeWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Photo2bottomsheeWidget(),
                                                             ),
                                                           );
                                                         },
@@ -466,24 +434,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Photo3bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Photo3bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },
@@ -574,24 +526,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Photo4bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Photo4bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },
@@ -682,24 +618,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Photo5bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Photo5bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },
@@ -790,24 +710,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Photo6bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Photo6bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },
@@ -926,24 +830,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Video1bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Video1bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },
@@ -1050,24 +938,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Video2bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Video2bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },
@@ -1174,24 +1046,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                               padding: MediaQuery
                                                                       .of(context)
                                                                   .viewInsets,
-                                                              child: Scaffold(
-                                                                body:
-                                                                    GestureDetector(
-                                                                  onTap: () =>
-                                                                      Navigator.pop(
-                                                                          context),
-                                                                ),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                bottomSheet:
-                                                                    Container(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  child:
-                                                                      Video3bottomsheetWidget(),
-                                                                ),
-                                                              ),
+                                                              child:
+                                                                  Video3bottomsheetWidget(),
                                                             ),
                                                           );
                                                         },

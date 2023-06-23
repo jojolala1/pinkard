@@ -254,113 +254,153 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Material(
-                                  color: Colors.transparent,
-                                  elevation: 0.0,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(0.0),
-                                  ),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 250.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(0.0),
-                                      border: Border.all(
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 5.0, 5.0, 5.0),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 0.0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 250.0,
+                                      decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: Image.asset(
+                                            'assets/images/Design_sans_titre[2367].png',
+                                          ).image,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          width: 0.5,
+                                        ),
                                       ),
-                                    ),
-                                    child: Stack(
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, -0.95),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 20.0, 0.0, 0.0),
-                                            child: Container(
-                                              width: 100.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
-                                              ),
+                                      child: Stack(
+                                        children: [
+                                          Align(
+                                            alignment: AlignmentDirectional(
+                                                -1.0, -0.95),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 20.0, 0.0, 0.0),
                                               child: Container(
                                                 width: 100.0,
                                                 height: 100.0,
                                                 decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
+                                                  color: Color(0x00FFFFFF),
                                                 ),
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
-                                                  child: Container(
-                                                    width: 120.0,
-                                                    height: 120.0,
-                                                    clipBehavior:
-                                                        Clip.antiAlias,
-                                                    decoration: BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    child: Image.network(
-                                                      pagepercopublicUsersRecord
-                                                          .photoUrl,
-                                                      fit: BoxFit.cover,
+                                                child: Container(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0x00FFFFFF),
+                                                  ),
+                                                  child: Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Container(
+                                                      width: 120.0,
+                                                      height: 120.0,
+                                                      clipBehavior:
+                                                          Clip.antiAlias,
+                                                      decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      child: Image.network(
+                                                        pagepercopublicUsersRecord
+                                                            .photoUrl,
+                                                        fit: BoxFit.cover,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 1.0),
-                                                child: Container(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                      1.0,
-                                                  height: 110.0,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0x00FFFFFF),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 1.0),
+                                                  child: Container(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            1.0,
+                                                    height: 110.0,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0x00FFFFFF),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                    ),
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, -1.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    20.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            pagepercopublicUsersRecord
+                                                                .biographie,
+                                                            'Erreur de chargement de la biographie',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: Color(
+                                                                    0xFF050000),
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ),
+                                                ),
+                                                Expanded(
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            -1.0, -1.0),
+                                                            -1.0, -0.55),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  20.0,
-                                                                  0.0,
+                                                                  140.0,
+                                                                  15.0,
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        valueOrDefault<String>(
-                                                          pagepercopublicUsersRecord
-                                                              .biographie,
-                                                          'Erreur de chargement de la biographie',
-                                                        ),
+                                                        pagepercopublicUsersRecord
+                                                            .prenom,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -375,86 +415,59 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                              Expanded(
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          -1.0, -0.55),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(140.0,
-                                                                15.0, 0.0, 0.0),
-                                                    child: Text(
-                                                      pagepercopublicUsersRecord
-                                                          .prenom,
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: Color(
-                                                                    0xFF050000),
-                                                              ),
-                                                    ),
-                                                  ),
+                                              ],
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment: AlignmentDirectional(
+                                                -1.0, -0.75),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      140.0, 10.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  pagepercopublicUsersRecord
+                                                      .displayName,
+                                                  'Erreur de chargement du nom',
                                                 ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFF050000),
+                                                        ),
                                               ),
-                                            ],
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, -0.75),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    140.0, 10.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                pagepercopublicUsersRecord
-                                                    .displayName,
-                                                'Erreur de chargement du nom',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF050000),
-                                                      ),
                                             ),
                                           ),
-                                        ),
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, -0.55),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    140.0, 15.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                pagepercopublicUsersRecord
-                                                    .prenom,
-                                                'Erreur de chargement du prénom',
+                                          Align(
+                                            alignment: AlignmentDirectional(
+                                                -1.0, -0.55),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      140.0, 15.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  pagepercopublicUsersRecord
+                                                      .prenom,
+                                                  'Erreur de chargement du prénom',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFF050000),
+                                                        ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF050000),
-                                                      ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -532,26 +545,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                         padding: MediaQuery.of(
                                                                 context)
                                                             .viewInsets,
-                                                        child: Scaffold(
-                                                          body: GestureDetector(
-                                                            onTap: () =>
-                                                                Navigator.pop(
-                                                                    context),
-                                                          ),
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          bottomSheet:
-                                                              Container(
-                                                            color: Colors
-                                                                .transparent,
-                                                            child:
-                                                                GaleriebottomsheetWidget(
-                                                              galerieuserref:
-                                                                  pagepercopublicUsersRecord
-                                                                      .reference,
-                                                            ),
-                                                          ),
+                                                        child:
+                                                            GaleriebottomsheetWidget(
+                                                          galerieuserref:
+                                                              pagepercopublicUsersRecord
+                                                                  .reference,
                                                         ),
                                                       ),
                                                     );

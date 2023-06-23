@@ -118,16 +118,7 @@ class _LienbottomsheetWidgetState extends State<LienbottomsheetWidget> {
                                 builder: (context) {
                                   return Padding(
                                     padding: MediaQuery.of(context).viewInsets,
-                                    child: Scaffold(
-                                      body: GestureDetector(
-                                        onTap: () => Navigator.pop(context),
-                                      ),
-                                      backgroundColor: Colors.transparent,
-                                      bottomSheet: Container(
-                                        color: Colors.transparent,
-                                        child: PicturchangelienWidget(),
-                                      ),
-                                    ),
+                                    child: PicturchangelienWidget(),
                                   );
                                 },
                               ).then((value) => setState(() {}));
