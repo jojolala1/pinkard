@@ -317,8 +317,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.network(
-                                                        pagepercopublicUsersRecord
-                                                            .photoUrl,
+                                                        valueOrDefault<String>(
+                                                          pagepercopublicUsersRecord
+                                                              .photoUrl,
+                                                          'https://png.pngitem.com/pimgs/s/117-1170205_red-cross-error-crossed-wrong-incorrect-marking-cross.png',
+                                                        ),
                                                         fit: BoxFit.cover,
                                                       ),
                                                     ),
