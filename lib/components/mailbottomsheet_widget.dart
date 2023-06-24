@@ -32,7 +32,11 @@ class _MailbottomsheetWidgetState extends State<MailbottomsheetWidget> {
     super.initState();
     _model = createModel(context, () => MailbottomsheetModel());
 
-    _model.mailController ??= TextEditingController(text: currentUserEmail);
+    _model.mailController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      currentUserEmail,
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

@@ -33,7 +33,10 @@ class _SnapbottomsheetWidgetState extends State<SnapbottomsheetWidget> {
     _model = createModel(context, () => SnapbottomsheetModel());
 
     _model.snapchatController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.snapchat, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.snapchat, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

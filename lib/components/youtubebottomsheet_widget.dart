@@ -34,7 +34,10 @@ class _YoutubebottomsheetWidgetState extends State<YoutubebottomsheetWidget> {
     _model = createModel(context, () => YoutubebottomsheetModel());
 
     _model.youtubeController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.youtube, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.youtube, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

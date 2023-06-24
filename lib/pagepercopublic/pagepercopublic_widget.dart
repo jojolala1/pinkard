@@ -1063,7 +1063,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 30.0, 0.0, 0.0),
+                                  0.0, 40.0, 0.0, 0.0),
                               child: Text(
                                 'réseaux',
                                 style: FlutterFlowTheme.of(context)
@@ -1692,7 +1692,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 30.0, 0.0, 0.0),
+                                  0.0, 40.0, 0.0, 0.0),
                               child: Text(
                                 'comunication',
                                 style: FlutterFlowTheme.of(context)
@@ -2206,7 +2206,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 30.0, 0.0, 0.0),
+                                  0.0, 40.0, 0.0, 0.0),
                               child: Text(
                                 'économie',
                                 style: FlutterFlowTheme.of(context)
@@ -2365,7 +2365,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 30.0, 0.0, 0.0),
+                                  0.0, 40.0, 0.0, 0.0),
                               child: Text(
                                 'service',
                                 style: FlutterFlowTheme.of(context)
@@ -2523,7 +2523,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                   '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 30.0, 0.0, 0.0),
+                                  0.0, 40.0, 0.0, 0.0),
                               child: Text(
                                 'autre',
                                 style: FlutterFlowTheme.of(context)

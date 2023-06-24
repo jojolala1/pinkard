@@ -35,7 +35,10 @@ class _TripadvisorbottomsheetWidgetState
     _model = createModel(context, () => TripadvisorbottomsheetModel());
 
     _model.tripadvisorController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.tripadvisor, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.tripadvisor, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

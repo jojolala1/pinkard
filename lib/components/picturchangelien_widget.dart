@@ -153,7 +153,10 @@ class _PicturchangelienWidgetState extends State<PicturchangelienWidget> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.network(
-                                        _model.uploadedFileUrl,
+                                        valueOrDefault<String>(
+                                          _model.uploadedFileUrl,
+                                          'https://couleurmenthe.com/wp-content/uploads/2015/02/blanc.jpg',
+                                        ),
                                         fit: BoxFit.cover,
                                       ),
                                     ),

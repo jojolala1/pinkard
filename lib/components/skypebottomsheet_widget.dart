@@ -33,7 +33,10 @@ class _SkypebottomsheetWidgetState extends State<SkypebottomsheetWidget> {
     _model = createModel(context, () => SkypebottomsheetModel());
 
     _model.skypeController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.skype, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.skype, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

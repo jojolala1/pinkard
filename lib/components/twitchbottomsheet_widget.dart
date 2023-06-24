@@ -34,7 +34,10 @@ class _TwitchbottomsheetWidgetState extends State<TwitchbottomsheetWidget> {
     _model = createModel(context, () => TwitchbottomsheetModel());
 
     _model.twitchController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.twich, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.twich, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

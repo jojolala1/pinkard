@@ -34,7 +34,10 @@ class _SpotifybottomsheetWidgetState extends State<SpotifybottomsheetWidget> {
     _model = createModel(context, () => SpotifybottomsheetModel());
 
     _model.spotifyController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.spotify, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.spotify, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

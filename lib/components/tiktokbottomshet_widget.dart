@@ -33,7 +33,10 @@ class _TiktokbottomshetWidgetState extends State<TiktokbottomshetWidget> {
     _model = createModel(context, () => TiktokbottomshetModel());
 
     _model.tiktokhubController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.tiktok, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.tiktok, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

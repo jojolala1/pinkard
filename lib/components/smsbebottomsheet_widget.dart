@@ -32,7 +32,10 @@ class _SmsbebottomsheetWidgetState extends State<SmsbebottomsheetWidget> {
     _model = createModel(context, () => SmsbebottomsheetModel());
 
     _model.smsController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.phonesms, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.phonesms, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

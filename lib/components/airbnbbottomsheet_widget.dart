@@ -34,7 +34,10 @@ class _AirbnbbottomsheetWidgetState extends State<AirbnbbottomsheetWidget> {
     _model = createModel(context, () => AirbnbbottomsheetModel());
 
     _model.airbnbController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.airbnb, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.airbnb, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

@@ -33,7 +33,10 @@ class _MenubottomsheetWidgetState extends State<MenubottomsheetWidget> {
     _model = createModel(context, () => MenubottomsheetModel());
 
     _model.menuController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.menu, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.menu, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

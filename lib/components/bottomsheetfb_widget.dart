@@ -33,7 +33,10 @@ class _BottomsheetfbWidgetState extends State<BottomsheetfbWidget> {
     _model = createModel(context, () => BottomsheetfbModel());
 
     _model.facebookController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.facebook, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.facebook, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

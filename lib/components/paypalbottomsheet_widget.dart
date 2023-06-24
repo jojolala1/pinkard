@@ -34,7 +34,10 @@ class _PaypalbottomsheetWidgetState extends State<PaypalbottomsheetWidget> {
     _model = createModel(context, () => PaypalbottomsheetModel());
 
     _model.paypalController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.paypal, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.paypal, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

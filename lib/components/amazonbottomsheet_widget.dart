@@ -34,7 +34,10 @@ class _AmazonbottomsheetWidgetState extends State<AmazonbottomsheetWidget> {
     _model = createModel(context, () => AmazonbottomsheetModel());
 
     _model.amazonController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.amazon, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.amazon, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

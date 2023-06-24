@@ -611,77 +611,79 @@ class _GaleriebottomsheetWidgetState extends State<GaleriebottomsheetWidget> {
                         ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 20.0),
-                  child: Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: Color(0xFFFAFAFA),
-                    elevation: 1.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          80.0, 30.0, 80.0, 30.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (containerUsersRecord.video1 != null &&
-                              containerUsersRecord.video1 != '')
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 20.0, 20.0, 20.0),
-                              child: FlutterFlowVideoPlayer(
-                                path: containerUsersRecord.video1,
-                                videoType: VideoType.network,
-                                width: 180.0,
-                                height: 180.0,
-                                autoPlay: false,
-                                looping: false,
-                                showControls: true,
-                                allowFullScreen: true,
-                                allowPlaybackSpeedMenu: true,
+                if (widget.galerieuserref != null)
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 20.0),
+                    child: Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      color: Color(0xFFFAFAFA),
+                      elevation: 1.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            80.0, 30.0, 80.0, 30.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (containerUsersRecord.video1 != null &&
+                                containerUsersRecord.video1 != '')
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 20.0, 20.0, 20.0),
+                                child: FlutterFlowVideoPlayer(
+                                  path: containerUsersRecord.video1,
+                                  videoType: VideoType.network,
+                                  width: 180.0,
+                                  height: 180.0,
+                                  autoPlay: false,
+                                  looping: false,
+                                  showControls: true,
+                                  allowFullScreen: true,
+                                  allowPlaybackSpeedMenu: true,
+                                ),
                               ),
-                            ),
-                          if (containerUsersRecord.video2 != null &&
-                              containerUsersRecord.video2 != '')
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 10.0),
-                              child: FlutterFlowVideoPlayer(
-                                path: containerUsersRecord.video2,
-                                videoType: VideoType.network,
-                                width: 180.0,
-                                height: 180.0,
-                                autoPlay: false,
-                                looping: false,
-                                showControls: true,
-                                allowFullScreen: true,
-                                allowPlaybackSpeedMenu: true,
+                            if (containerUsersRecord.video2 != null &&
+                                containerUsersRecord.video2 != '')
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 10.0, 10.0, 10.0),
+                                child: FlutterFlowVideoPlayer(
+                                  path: containerUsersRecord.video2,
+                                  videoType: VideoType.network,
+                                  width: 180.0,
+                                  height: 180.0,
+                                  autoPlay: false,
+                                  looping: false,
+                                  showControls: true,
+                                  allowFullScreen: true,
+                                  allowPlaybackSpeedMenu: true,
+                                ),
                               ),
-                            ),
-                          if (containerUsersRecord.video3 != null &&
-                              containerUsersRecord.video3 != '')
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 20.0),
-                              child: FlutterFlowVideoPlayer(
-                                path: containerUsersRecord.video3,
-                                videoType: VideoType.network,
-                                width: 180.0,
-                                height: 180.0,
-                                autoPlay: false,
-                                looping: false,
-                                showControls: true,
-                                allowFullScreen: true,
-                                allowPlaybackSpeedMenu: true,
+                            if (containerUsersRecord.video3 != null &&
+                                containerUsersRecord.video3 != '')
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 10.0, 10.0, 20.0),
+                                child: FlutterFlowVideoPlayer(
+                                  path: containerUsersRecord.video3,
+                                  videoType: VideoType.network,
+                                  width: 180.0,
+                                  height: 180.0,
+                                  autoPlay: false,
+                                  looping: false,
+                                  showControls: true,
+                                  allowFullScreen: true,
+                                  allowPlaybackSpeedMenu: true,
+                                ),
                               ),
-                            ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
               ],
             ),
           ),

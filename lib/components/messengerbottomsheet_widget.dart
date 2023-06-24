@@ -35,7 +35,10 @@ class _MessengerbottomsheetWidgetState
     _model = createModel(context, () => MessengerbottomsheetModel());
 
     _model.messengerController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.messenger, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.messenger, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

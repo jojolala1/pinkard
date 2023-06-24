@@ -35,7 +35,10 @@ class _ApplemusicbottomsheetWidgetState
     _model = createModel(context, () => ApplemusicbottomsheetModel());
 
     _model.applemuscicController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.applemusic, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.applemusic, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

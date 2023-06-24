@@ -34,7 +34,10 @@ class _FiverrbottomsheetWidgetState extends State<FiverrbottomsheetWidget> {
     _model = createModel(context, () => FiverrbottomsheetModel());
 
     _model.fiverrController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.fiverr, ''));
+        text: valueOrDefault<String>(
+      valueOrDefault(currentUserDocument?.fiverr, ''),
+      'null',
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

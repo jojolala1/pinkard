@@ -6,3 +6,5 @@ export '/pagepercopublic/pagepercopublic_widget.dart'
 export '/galerie/galerie_widget.dart' show GalerieWidget;
 export '/page_test_i_phone/page_test_i_phone_widget.dart'
     show PageTestIPhoneWidget;
+export '/test_creat_profil/test_creat_profil_widget.dart'
+    show TestCreatProfilWidget;
