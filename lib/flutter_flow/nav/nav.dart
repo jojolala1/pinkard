@@ -121,11 +121,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'pageTestIPhone',
               path: 'pageTestIPhone',
               builder: (context, params) => PageTestIPhoneWidget(),
-            ),
-            FFRoute(
-              name: 'testCreatProfil',
-              path: 'testCreatProfil',
-              builder: (context, params) => TestCreatProfilWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

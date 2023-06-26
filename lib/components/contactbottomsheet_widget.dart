@@ -192,7 +192,7 @@ class _ContactbottomsheetWidgetState extends State<ContactbottomsheetWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
-                final selectedFiles = await selectFile(
+                final selectedFiles = await selectFiles(
                   multiFile: false,
                 );
                 if (selectedFiles != null) {
