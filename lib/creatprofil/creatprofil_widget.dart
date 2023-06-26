@@ -162,7 +162,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                       ),
                       onPressed: () async {
                         context.pushNamed(
-                          'pagepercopublic',
+                          'pagepercopublicCopy',
                           queryParameters: {
                             'userRef': serializeParam(
                               currentUserReference,

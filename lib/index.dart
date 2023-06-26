@@ -4,5 +4,5 @@ export '/creatprofil/creatprofil_widget.dart' show CreatprofilWidget;
 export '/pagepercopublic/pagepercopublic_widget.dart'
     show PagepercopublicWidget;
 export '/galerie/galerie_widget.dart' show GalerieWidget;
-export '/page_test_i_phone/page_test_i_phone_widget.dart'
-    show PageTestIPhoneWidget;
+export '/pagepercopublic_copy/pagepercopublic_copy_widget.dart'
+    show PagepercopublicCopyWidget;

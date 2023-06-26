@@ -118,9 +118,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => GalerieWidget(),
             ),
             FFRoute(
-              name: 'pageTestIPhone',
-              path: 'pageTestIPhone',
-              builder: (context, params) => PageTestIPhoneWidget(),
+              name: 'pagepercopublicCopy',
+              path: 'pagepercopublictest',
+              builder: (context, params) => PagepercopublicCopyWidget(
+                userRef: params.getParam(
+                    'userRef', ParamType.DocumentReference, false, ['users']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
