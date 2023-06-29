@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -64,39 +63,6 @@ class _TestWidgetState extends State<TestWidget> {
               actions: [],
               centerTitle: false,
               elevation: 2.0,
-            ),
-            body: SafeArea(
-              top: true,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  StreamBuilder<UsersRecord>(
-                    stream: UsersRecord.getDocument(widget.userrefff!),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              color: FlutterFlowTheme.of(context).primary,
-                            ),
-                          ),
-                        );
-                      }
-                      final textUsersRecord = snapshot.data!;
-                      return Text(
-                        textUsersRecord.displayName,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 28.0,
-                            ),
-                      );
-                    },
-                  ),
-                ],
-              ),
             ),
           ),
         ));

@@ -53,7 +53,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
             onWillPop: () async => false,
             child: Scaffold(
               key: scaffoldKey,
-              backgroundColor: FlutterFlowTheme.of(context).tertiary,
+              backgroundColor: FlutterFlowTheme.of(context).error,
               appBar: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
                 iconTheme: IconThemeData(
