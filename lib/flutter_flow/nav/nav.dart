@@ -107,7 +107,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'pagepercopublic',
               path: 'pagepercopublic1',
-              requireAuth: true,
               builder: (context, params) => PagepercopublicWidget(
                 userRef: params.getParam(
                     'userRef', ParamType.DocumentReference, false, ['users']),
