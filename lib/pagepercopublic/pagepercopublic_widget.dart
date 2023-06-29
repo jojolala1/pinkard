@@ -13,7 +13,7 @@ export 'pagepercopublic_model.dart';
 class PagepercopublicWidget extends StatefulWidget {
   const PagepercopublicWidget({
     Key? key,
-    required this.userRef,
+    this.userRef,
   }) : super(key: key);
 
   final DocumentReference? userRef;
@@ -50,7 +50,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).secondary,
+            backgroundColor: FlutterFlowTheme.of(context).tertiary,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -73,7 +73,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                 onWillPop: () async => false,
                 child: Scaffold(
                   key: scaffoldKey,
-                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                  backgroundColor: FlutterFlowTheme.of(context).tertiary,
                   appBar: AppBar(
                     backgroundColor:
                         FlutterFlowTheme.of(context).primaryBtnText,
