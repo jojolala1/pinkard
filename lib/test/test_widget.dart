@@ -87,7 +87,7 @@ class _TestWidgetState extends State<TestWidget> {
                       }
                       final textUsersRecord = snapshot.data!;
                       return Text(
-                        textUsersRecord.email,
+                        textUsersRecord.displayName,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 28.0,
