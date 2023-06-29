@@ -44,74 +44,79 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Title(
-        title: 'pagepercopublic',
-        color: FlutterFlowTheme.of(context).primary,
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
-          child: WillPopScope(
-            onWillPop: () async => false,
-            child: Scaffold(
-              key: scaffoldKey,
-              backgroundColor: FlutterFlowTheme.of(context).tertiary,
-              appBar: AppBar(
-                backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
-                iconTheme: IconThemeData(
-                    color: FlutterFlowTheme.of(context).primaryBtnText),
-                automaticallyImplyLeading: false,
-                leading: FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30.0,
-                  borderWidth: 1.0,
-                  buttonSize: 40.0,
-                  icon: Icon(
-                    Icons.arrow_back_rounded,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 30.0,
-                  ),
-                  onPressed: () async {
-                    context.pop();
-                  },
+    return StreamBuilder<UsersRecord>(
+      stream: UsersRecord.getDocument(widget.userRef!),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Scaffold(
+            backgroundColor: FlutterFlowTheme.of(context).tertiary,
+            body: Center(
+              child: SizedBox(
+                width: 50.0,
+                height: 50.0,
+                child: CircularProgressIndicator(
+                  color: FlutterFlowTheme.of(context).primary,
                 ),
-                title: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: GradientText(
-                    'Pinkard',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 28.0,
-                        ),
-                    colors: [
-                      FlutterFlowTheme.of(context).primary,
-                      Color(0xFFFA09C6)
-                    ],
-                    gradientDirection: GradientDirection.ltr,
-                    gradientType: GradientType.linear,
-                  ),
-                ),
-                actions: [],
-                centerTitle: true,
-                elevation: 2.0,
               ),
-              body: SafeArea(
-                top: true,
-                child: StreamBuilder<UsersRecord>(
-                  stream: UsersRecord.getDocument(widget.userRef!),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: SizedBox(
-                          width: 50.0,
-                          height: 50.0,
-                          child: CircularProgressIndicator(
-                            color: FlutterFlowTheme.of(context).primary,
-                          ),
-                        ),
-                      );
-                    }
-                    final columnUsersRecord = snapshot.data!;
-                    return SingleChildScrollView(
+            ),
+          );
+        }
+        final pagepercopublicUsersRecord = snapshot.data!;
+        return Title(
+            title: 'pagepercopublic',
+            color: FlutterFlowTheme.of(context).primary,
+            child: GestureDetector(
+              onTap: () =>
+                  FocusScope.of(context).requestFocus(_model.unfocusNode),
+              child: WillPopScope(
+                onWillPop: () async => false,
+                child: Scaffold(
+                  key: scaffoldKey,
+                  backgroundColor: FlutterFlowTheme.of(context).tertiary,
+                  appBar: AppBar(
+                    backgroundColor:
+                        FlutterFlowTheme.of(context).primaryBtnText,
+                    iconTheme: IconThemeData(
+                        color: FlutterFlowTheme.of(context).primaryBtnText),
+                    automaticallyImplyLeading: false,
+                    leading: FlutterFlowIconButton(
+                      borderColor: Colors.transparent,
+                      borderRadius: 30.0,
+                      borderWidth: 1.0,
+                      buttonSize: 40.0,
+                      icon: Icon(
+                        Icons.arrow_back_rounded,
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        size: 30.0,
+                      ),
+                      onPressed: () async {
+                        context.pop();
+                      },
+                    ),
+                    title: Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: GradientText(
+                        'Pinkard',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 28.0,
+                            ),
+                        colors: [
+                          FlutterFlowTheme.of(context).primary,
+                          Color(0xFFFA09C6)
+                        ],
+                        gradientDirection: GradientDirection.ltr,
+                        gradientType: GradientType.linear,
+                      ),
+                    ),
+                    actions: [],
+                    centerTitle: true,
+                    elevation: 2.0,
+                  ),
+                  body: SafeArea(
+                    top: true,
+                    child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -172,19 +177,51 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                     alignment:
                                                         AlignmentDirectional(
                                                             0.0, 0.0),
-                                                    child: Container(
-                                                      width: 120.0,
-                                                      height: 120.0,
-                                                      clipBehavior:
-                                                          Clip.antiAlias,
-                                                      decoration: BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                      child: Image.network(
-                                                        columnUsersRecord
-                                                            .photoUrl,
-                                                        fit: BoxFit.cover,
-                                                      ),
+                                                    child: StreamBuilder<
+                                                        UsersRecord>(
+                                                      stream: UsersRecord
+                                                          .getDocument(
+                                                              widget.userRef!),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        }
+                                                        final circleImageUsersRecord =
+                                                            snapshot.data!;
+                                                        return Container(
+                                                          width: 120.0,
+                                                          height: 120.0,
+                                                          clipBehavior:
+                                                              Clip.antiAlias,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Image.network(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              pagepercopublicUsersRecord
+                                                                  .photoUrl,
+                                                              'https://png.pngitem.com/pimgs/s/117-1170205_red-cross-error-crossed-wrong-incorrect-marking-cross.png',
+                                                            ),
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        );
+                                                      },
                                                     ),
                                                   ),
                                                 ),
@@ -229,8 +266,12 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          columnUsersRecord
-                                                              .biographie,
+                                                          valueOrDefault<
+                                                              String>(
+                                                            pagepercopublicUsersRecord
+                                                                .biographie,
+                                                            'Erreur de chargement de la biographie',
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -259,7 +300,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        columnUsersRecord
+                                                        pagepercopublicUsersRecord
                                                             .prenom,
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -286,7 +327,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                   .fromSTEB(
                                                       140.0, 10.0, 0.0, 0.0),
                                               child: Text(
-                                                columnUsersRecord.displayName,
+                                                valueOrDefault<String>(
+                                                  pagepercopublicUsersRecord
+                                                      .displayName,
+                                                  'Erreur de chargement du nom',
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -306,7 +351,11 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                                   .fromSTEB(
                                                       140.0, 15.0, 0.0, 0.0),
                                               child: Text(
-                                                columnUsersRecord.prenom,
+                                                valueOrDefault<String>(
+                                                  pagepercopublicUsersRecord
+                                                      .prenom,
+                                                  'Erreur de chargement du prénom',
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -326,98 +375,122 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 40.0, 0.0, 0.0),
-                            child: Text(
-                              'entreprise',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontSize: 25.0,
-                                  ),
+                          if ('${pagepercopublicUsersRecord.maps}${pagepercopublicUsersRecord.menu}${pagepercopublicUsersRecord.site}${pagepercopublicUsersRecord.contact}${pagepercopublicUsersRecord.booking}${pagepercopublicUsersRecord.airbnb}${pagepercopublicUsersRecord.tripadvisor}' !=
+                                  null &&
+                              '${pagepercopublicUsersRecord.maps}${pagepercopublicUsersRecord.menu}${pagepercopublicUsersRecord.site}${pagepercopublicUsersRecord.contact}${pagepercopublicUsersRecord.booking}${pagepercopublicUsersRecord.airbnb}${pagepercopublicUsersRecord.tripadvisor}' !=
+                                  '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 40.0, 0.0, 0.0),
+                              child: Text(
+                                'entreprise',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color: Colors.black,
+                                      fontSize: 25.0,
+                                    ),
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 40.0, 0.0, 0.0),
-                            child: Text(
-                              'réseaux',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontSize: 25.0,
-                                  ),
+                          if ('${pagepercopublicUsersRecord.instagram}${pagepercopublicUsersRecord.facebook}${pagepercopublicUsersRecord.snapchat}${pagepercopublicUsersRecord.tiktok}${pagepercopublicUsersRecord.messenger}${pagepercopublicUsersRecord.youtube}${pagepercopublicUsersRecord.pinterest}${pagepercopublicUsersRecord.linkdln}${pagepercopublicUsersRecord.twitter}${pagepercopublicUsersRecord.twich}' !=
+                                  null &&
+                              '${pagepercopublicUsersRecord.instagram}${pagepercopublicUsersRecord.facebook}${pagepercopublicUsersRecord.snapchat}${pagepercopublicUsersRecord.tiktok}${pagepercopublicUsersRecord.messenger}${pagepercopublicUsersRecord.youtube}${pagepercopublicUsersRecord.pinterest}${pagepercopublicUsersRecord.linkdln}${pagepercopublicUsersRecord.twitter}${pagepercopublicUsersRecord.twich}' !=
+                                  '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 40.0, 0.0, 0.0),
+                              child: Text(
+                                'réseaux',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color: Colors.black,
+                                      fontSize: 25.0,
+                                    ),
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 40.0, 0.0, 0.0),
-                            child: Text(
-                              'comunication',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontSize: 25.0,
-                                  ),
+                          if ('${pagepercopublicUsersRecord.phone}${pagepercopublicUsersRecord.phonesms}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
+                                  null &&
+                              '${pagepercopublicUsersRecord.phone}${pagepercopublicUsersRecord.phonesms}${pagepercopublicUsersRecord.email}${pagepercopublicUsersRecord.whatsapp}${pagepercopublicUsersRecord.zoom}${pagepercopublicUsersRecord.discord}${pagepercopublicUsersRecord.telegram}${pagepercopublicUsersRecord.skype}' !=
+                                  '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 40.0, 0.0, 0.0),
+                              child: Text(
+                                'comunication',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color: Colors.black,
+                                      fontSize: 25.0,
+                                    ),
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 40.0, 0.0, 0.0),
-                            child: Text(
-                              'économie',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontSize: 25.0,
-                                  ),
+                          if ('${pagepercopublicUsersRecord.paypal}${pagepercopublicUsersRecord.revolut}' !=
+                                  null &&
+                              '${pagepercopublicUsersRecord.paypal}${pagepercopublicUsersRecord.revolut}' !=
+                                  '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 40.0, 0.0, 0.0),
+                              child: Text(
+                                'économie',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color: Colors.black,
+                                      fontSize: 25.0,
+                                    ),
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 40.0, 0.0, 0.0),
-                            child: Text(
-                              'service',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontSize: 25.0,
-                                  ),
+                          if ('${pagepercopublicUsersRecord.fiverr}${pagepercopublicUsersRecord.cinqeuro}' !=
+                                  null &&
+                              '${pagepercopublicUsersRecord.fiverr}${pagepercopublicUsersRecord.cinqeuro}' !=
+                                  '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 40.0, 0.0, 0.0),
+                              child: Text(
+                                'service',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color: Colors.black,
+                                      fontSize: 25.0,
+                                    ),
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 40.0, 0.0, 0.0),
-                            child: Text(
-                              'autre',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    color: Colors.black,
-                                    fontSize: 25.0,
-                                  ),
+                          if ('${pagepercopublicUsersRecord.spotify}${pagepercopublicUsersRecord.deezer}${pagepercopublicUsersRecord.applemusic}${pagepercopublicUsersRecord.amazon}' !=
+                                  null &&
+                              '${pagepercopublicUsersRecord.spotify}${pagepercopublicUsersRecord.deezer}${pagepercopublicUsersRecord.applemusic}${pagepercopublicUsersRecord.amazon}' !=
+                                  '')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 40.0, 0.0, 0.0),
+                              child: Text(
+                                'autre',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Roboto',
+                                      color: Colors.black,
+                                      fontSize: 25.0,
+                                    ),
+                              ),
                             ),
-                          ),
                         ],
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ));
+            ));
+      },
+    );
   }
 }
