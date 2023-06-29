@@ -45,7 +45,7 @@ class _PagedacceuilWidgetState extends State<PagedacceuilWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'pagedacceuil',
-        color: FlutterFlowTheme.of(context).primary,
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(

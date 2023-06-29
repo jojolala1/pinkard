@@ -46,7 +46,7 @@ class _PicturchangeWidgetState extends State<PicturchangeWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 1.0,
+      width: MediaQuery.sizeOf(context).width * 1.0,
       height: 350.0,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -185,6 +185,7 @@ class _PicturchangeWidgetState extends State<PicturchangeWidget> {
                                   setState(() => _model.isDataUploading = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
+
                                   var downloadUrls = <String>[];
                                   try {
                                     selectedUploadedFiles = selectedMedia

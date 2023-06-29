@@ -46,7 +46,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'pagepercopublic',
-        color: FlutterFlowTheme.of(context).primary,
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: WillPopScope(
@@ -201,10 +201,10 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                                               alignment: AlignmentDirectional(
                                                   0.0, 1.0),
                                               child: Container(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
                                                 height: 110.0,
                                                 decoration: BoxDecoration(
                                                   color: Color(0x00FFFFFF),

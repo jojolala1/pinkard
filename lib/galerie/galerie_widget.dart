@@ -52,7 +52,7 @@ class _GalerieWidgetState extends State<GalerieWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'galerie',
-        color: FlutterFlowTheme.of(context).primary,
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
@@ -248,8 +248,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Photo1bottomsheetWidget(),
                                                             ),
@@ -340,8 +340,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Photo2bottomsheeWidget(),
                                                             ),
@@ -432,8 +432,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Photo3bottomsheetWidget(),
                                                             ),
@@ -524,8 +524,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Photo4bottomsheetWidget(),
                                                             ),
@@ -616,8 +616,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Photo5bottomsheetWidget(),
                                                             ),
@@ -708,8 +708,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Photo6bottomsheetWidget(),
                                                             ),
@@ -828,8 +828,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Video1bottomsheetWidget(),
                                                             ),
@@ -936,8 +936,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Video2bottomsheetWidget(),
                                                             ),
@@ -1044,8 +1044,8 @@ class _GalerieWidgetState extends State<GalerieWidget> {
                                                                     .unfocusNode),
                                                             child: Padding(
                                                               padding: MediaQuery
-                                                                      .of(context)
-                                                                  .viewInsets,
+                                                                  .viewInsetsOf(
+                                                                      context),
                                                               child:
                                                                   Video3bottomsheetWidget(),
                                                             ),

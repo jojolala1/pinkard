@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:collection/collection.dart';
+
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
@@ -482,4 +484,125 @@ Map<String, dynamic> createUsersRecordData({
   );
 
   return firestoreData;
+}
+
+class UsersRecordDocumentEquality implements Equality<UsersRecord> {
+  const UsersRecordDocumentEquality();
+
+  @override
+  bool equals(UsersRecord? e1, UsersRecord? e2) {
+    return e1?.email == e2?.email &&
+        e1?.displayName == e2?.displayName &&
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.uid == e2?.uid &&
+        e1?.createdTime == e2?.createdTime &&
+        e1?.prenom == e2?.prenom &&
+        e1?.biographie == e2?.biographie &&
+        e1?.instagram == e2?.instagram &&
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.mdp == e2?.mdp &&
+        e1?.mdp2 == e2?.mdp2 &&
+        e1?.facebook == e2?.facebook &&
+        e1?.photos == e2?.photos &&
+        e1?.snapchat == e2?.snapchat &&
+        e1?.tiktok == e2?.tiktok &&
+        e1?.messenger == e2?.messenger &&
+        e1?.youtube == e2?.youtube &&
+        e1?.pinterest == e2?.pinterest &&
+        e1?.linkdln == e2?.linkdln &&
+        e1?.twich == e2?.twich &&
+        e1?.twitter == e2?.twitter &&
+        e1?.whatsapp == e2?.whatsapp &&
+        e1?.zoom == e2?.zoom &&
+        e1?.discord == e2?.discord &&
+        e1?.skype == e2?.skype &&
+        e1?.telegram == e2?.telegram &&
+        e1?.maps == e2?.maps &&
+        e1?.menu == e2?.menu &&
+        e1?.site == e2?.site &&
+        e1?.contact == e2?.contact &&
+        e1?.booking == e2?.booking &&
+        e1?.airbnb == e2?.airbnb &&
+        e1?.tripadvisor == e2?.tripadvisor &&
+        e1?.paypal == e2?.paypal &&
+        e1?.revolut == e2?.revolut &&
+        e1?.fiverr == e2?.fiverr &&
+        e1?.cinqeuro == e2?.cinqeuro &&
+        e1?.spotify == e2?.spotify &&
+        e1?.deezer == e2?.deezer &&
+        e1?.applemusic == e2?.applemusic &&
+        e1?.amazon == e2?.amazon &&
+        e1?.photourl2 == e2?.photourl2 &&
+        e1?.phone == e2?.phone &&
+        e1?.phonesms == e2?.phonesms &&
+        e1?.photo1 == e2?.photo1 &&
+        e1?.photo2 == e2?.photo2 &&
+        e1?.photo3 == e2?.photo3 &&
+        e1?.photo4 == e2?.photo4 &&
+        e1?.photo5 == e2?.photo5 &&
+        e1?.photo6 == e2?.photo6 &&
+        e1?.video1 == e2?.video1 &&
+        e1?.video2 == e2?.video2 &&
+        e1?.video3 == e2?.video3;
+  }
+
+  @override
+  int hash(UsersRecord? e) => const ListEquality().hash([
+        e?.email,
+        e?.displayName,
+        e?.photoUrl,
+        e?.uid,
+        e?.createdTime,
+        e?.prenom,
+        e?.biographie,
+        e?.instagram,
+        e?.phoneNumber,
+        e?.mdp,
+        e?.mdp2,
+        e?.facebook,
+        e?.photos,
+        e?.snapchat,
+        e?.tiktok,
+        e?.messenger,
+        e?.youtube,
+        e?.pinterest,
+        e?.linkdln,
+        e?.twich,
+        e?.twitter,
+        e?.whatsapp,
+        e?.zoom,
+        e?.discord,
+        e?.skype,
+        e?.telegram,
+        e?.maps,
+        e?.menu,
+        e?.site,
+        e?.contact,
+        e?.booking,
+        e?.airbnb,
+        e?.tripadvisor,
+        e?.paypal,
+        e?.revolut,
+        e?.fiverr,
+        e?.cinqeuro,
+        e?.spotify,
+        e?.deezer,
+        e?.applemusic,
+        e?.amazon,
+        e?.photourl2,
+        e?.phone,
+        e?.phonesms,
+        e?.photo1,
+        e?.photo2,
+        e?.photo3,
+        e?.photo4,
+        e?.photo5,
+        e?.photo6,
+        e?.video1,
+        e?.video2,
+        e?.video3
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is UsersRecord;
 }

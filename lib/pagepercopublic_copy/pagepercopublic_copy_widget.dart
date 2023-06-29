@@ -69,7 +69,7 @@ class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
         final pagepercopublicCopyUsersRecord = snapshot.data!;
         return Title(
             title: 'pagepercopublicCopy',
-            color: FlutterFlowTheme.of(context).primary,
+            color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () =>
                   FocusScope.of(context).requestFocus(_model.unfocusNode),
@@ -216,11 +216,10 @@ class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
                                                       AlignmentDirectional(
                                                           0.0, 1.0),
                                                   child: Container(
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                                .size
-                                                                .width *
-                                                            1.0,
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        1.0,
                                                     height: 110.0,
                                                     decoration: BoxDecoration(
                                                       color: Color(0x00FFFFFF),
@@ -418,9 +417,9 @@ class _PagepercopublicCopyWidgetState extends State<PagepercopublicCopyWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             GaleriebottomsheetWidget(
                                                           galerieuserref:

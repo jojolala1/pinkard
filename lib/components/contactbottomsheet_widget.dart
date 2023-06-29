@@ -198,12 +198,13 @@ class _ContactbottomsheetWidgetState extends State<ContactbottomsheetWidget> {
                 if (selectedFiles != null) {
                   setState(() => _model.isDataUploading = true);
                   var selectedUploadedFiles = <FFUploadedFile>[];
+
                   var downloadUrls = <String>[];
                   try {
                     selectedUploadedFiles = selectedFiles
-                        .map((f) => FFUploadedFile(
-                              name: f.storagePath.split('/').last,
-                              bytes: f.bytes,
+                        .map((m) => FFUploadedFile(
+                              name: m.storagePath.split('/').last,
+                              bytes: m.bytes,
                             ))
                         .toList();
 

@@ -92,7 +92,7 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'creatprofil',
-        color: FlutterFlowTheme.of(context).primary,
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
@@ -267,8 +267,8 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             _model.unfocusNode),
                                                 child: Padding(
                                                   padding:
-                                                      MediaQuery.of(context)
-                                                          .viewInsets,
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
                                                   child: PicturchangeWidget(),
                                                 ),
                                               );
@@ -924,9 +924,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             MapbottomsheetWidget(),
                                                       ),
@@ -1008,9 +1008,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             MenubottomsheetWidget(),
                                                       ),
@@ -1156,10 +1156,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               BookingbottomsheetWidget(),
                                                         ),
@@ -1199,8 +1198,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       .requestFocus(
                                                           _model.unfocusNode),
                                               child: Padding(
-                                                padding: MediaQuery.of(context)
-                                                    .viewInsets,
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
                                                 child: TiktokbottomshetWidget(),
                                               ),
                                             );
@@ -1255,10 +1255,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               AirbnbbottomsheetWidget(),
                                                         ),
@@ -1341,9 +1340,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             TripadvisorbottomsheetWidget(),
                                                       ),
@@ -1425,9 +1424,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             LienbottomsheetWidget(),
                                                       ),
@@ -1548,9 +1547,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             BottomsheetfbWidget(),
                                                       ),
@@ -1632,9 +1631,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             InstabottomsheetWidget(),
                                                       ),
@@ -1739,10 +1738,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               SnapbottomsheetWidget(),
                                                         ),
@@ -1782,8 +1780,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       .requestFocus(
                                                           _model.unfocusNode),
                                               child: Padding(
-                                                padding: MediaQuery.of(context)
-                                                    .viewInsets,
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
                                                 child: TiktokbottomshetWidget(),
                                               ),
                                             );
@@ -1891,9 +1890,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             TwitterbottomsheetWidget(),
                                                       ),
@@ -1945,8 +1944,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       .requestFocus(
                                                           _model.unfocusNode),
                                               child: Padding(
-                                                padding: MediaQuery.of(context)
-                                                    .viewInsets,
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
                                                 child:
                                                     TwitchbottomsheetWidget(),
                                               ),
@@ -2002,10 +2002,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               TwitchbottomsheetWidget(),
                                                         ),
@@ -2088,9 +2087,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             PinterestbottomsheetWidget(),
                                                       ),
@@ -2172,9 +2171,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             MessengerbottomsheetWidget(),
                                                       ),
@@ -2256,9 +2255,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             YoutubebottomsheetWidget(),
                                                       ),
@@ -2340,9 +2339,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             LinkedlnbottomsheetWidget(),
                                                       ),
@@ -2463,9 +2462,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             TelephonebebottomsheetWidget(),
                                                       ),
@@ -2547,9 +2546,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             SmsbebottomsheetWidget(),
                                                       ),
@@ -2631,9 +2630,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             MailbottomsheetWidget(),
                                                       ),
@@ -2693,8 +2692,8 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             _model.unfocusNode),
                                                 child: Padding(
                                                   padding:
-                                                      MediaQuery.of(context)
-                                                          .viewInsets,
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
                                                   child:
                                                       WhatsappbottomsheetWidget(),
                                                 ),
@@ -2766,8 +2765,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       .requestFocus(
                                                           _model.unfocusNode),
                                               child: Padding(
-                                                padding: MediaQuery.of(context)
-                                                    .viewInsets,
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
                                                 child: TiktokbottomshetWidget(),
                                               ),
                                             );
@@ -2822,10 +2822,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               ZoombottomsheetWidget(),
                                                         ),
@@ -2908,9 +2907,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             DiscordbottomsheetWidget(),
                                                       ),
@@ -2962,8 +2961,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                       .requestFocus(
                                                           _model.unfocusNode),
                                               child: Padding(
-                                                padding: MediaQuery.of(context)
-                                                    .viewInsets,
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
                                                 child:
                                                     TwitchbottomsheetWidget(),
                                               ),
@@ -3019,10 +3019,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               TelegrambottomsheetWidget(),
                                                         ),
@@ -3105,9 +3104,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             SkypebottomsheetWidget(),
                                                       ),
@@ -3228,9 +3227,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             PaypalbottomsheetWidget(),
                                                       ),
@@ -3312,9 +3311,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             RevolutbottomsheetWidget(),
                                                       ),
@@ -3435,9 +3434,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             FiverrbottomsheetWidget(),
                                                       ),
@@ -3519,9 +3518,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             CinqeurosbottomsheetWidget(),
                                                       ),
@@ -3642,9 +3641,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             DeezerbottomsheetWidget(),
                                                       ),
@@ -3726,9 +3725,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             SpotifybottomsheetWidget(),
                                                       ),
@@ -3810,9 +3809,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child:
                                                             ApplemusicbottomsheetWidget(),
                                                       ),
@@ -3917,10 +3916,9 @@ class _CreatprofilWidgetState extends State<CreatprofilWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               AmazonbottomsheetWidget(),
                                                         ),

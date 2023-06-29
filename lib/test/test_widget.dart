@@ -46,7 +46,7 @@ class _TestWidgetState extends State<TestWidget> {
   Widget build(BuildContext context) {
     return Title(
         title: 'test',
-        color: FlutterFlowTheme.of(context).primary,
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
