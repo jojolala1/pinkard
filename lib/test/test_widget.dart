@@ -138,7 +138,10 @@ class _TestWidgetState extends State<TestWidget> {
                                     }
                                     final textUsersRecord = snapshot.data!;
                                     return Text(
-                                      textUsersRecord.displayName,
+                                      valueOrDefault<String>(
+                                        textUsersRecord.displayName,
+                                        'error',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     );
