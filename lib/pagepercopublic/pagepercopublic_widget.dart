@@ -50,7 +50,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).warning,
+            backgroundColor: FlutterFlowTheme.of(context).secondary,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -73,7 +73,7 @@ class _PagepercopublicWidgetState extends State<PagepercopublicWidget> {
                 onWillPop: () async => false,
                 child: Scaffold(
                   key: scaffoldKey,
-                  backgroundColor: FlutterFlowTheme.of(context).warning,
+                  backgroundColor: FlutterFlowTheme.of(context).secondary,
                   appBar: AppBar(
                     backgroundColor:
                         FlutterFlowTheme.of(context).primaryBtnText,
