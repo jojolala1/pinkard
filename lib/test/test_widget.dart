@@ -51,7 +51,7 @@ class _TestWidgetState extends State<TestWidget> {
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).warning,
+            backgroundColor: FlutterFlowTheme.of(context).accent1,
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
               iconTheme: IconThemeData(
@@ -116,63 +116,147 @@ class _TestWidgetState extends State<TestWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                StreamBuilder<UsersRecord>(
-                                  stream: UsersRecord.getDocument(
-                                      widget.userrefff!),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    final textUsersRecord = snapshot.data!;
-                                    return Text(
-                                      valueOrDefault<String>(
-                                        textUsersRecord.displayName,
-                                        'error',
+                            StreamBuilder<UsersRecord>(
+                              stream:
+                                  UsersRecord.getDocument(widget.userrefff!),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                    ),
+                                  );
+                                }
+                                final textUsersRecord = snapshot.data!;
+                                return Text(
+                                  valueOrDefault<String>(
+                                    textUsersRecord.displayName,
+                                    'error',
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                );
+                              },
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: StreamBuilder<UsersRecord>(
+                                stream:
+                                    UsersRecord.getDocument(widget.userrefff!),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                        ),
+                                      ),
                                     );
-                                  },
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  'Hello World',
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  'Hello World',
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ),
-                              ],
+                                  }
+                                  final textUsersRecord = snapshot.data!;
+                                  return Text(
+                                    textUsersRecord.biographie,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                  );
+                                },
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
+                  ),
+                  StreamBuilder<UsersRecord>(
+                    stream: UsersRecord.getDocument(widget.userrefff!),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              color: FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        );
+                      }
+                      final textUsersRecord = snapshot.data!;
+                      return Text(
+                        textUsersRecord.prenom,
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      );
+                    },
+                  ),
+                  StreamBuilder<UsersRecord>(
+                    stream: UsersRecord.getDocument(widget.userrefff!),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              color: FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        );
+                      }
+                      final containerUsersRecord = snapshot.data!;
+                      return Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Text(
+                          containerUsersRecord.email,
+                          style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                      );
+                    },
+                  ),
+                  StreamBuilder<UsersRecord>(
+                    stream: UsersRecord.getDocument(widget.userrefff!),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              color: FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        );
+                      }
+                      final imageUsersRecord = snapshot.data!;
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.network(
+                          imageUsersRecord.photoUrl,
+                          width: 300.0,
+                          height: 200.0,
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
