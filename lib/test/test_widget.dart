@@ -13,7 +13,7 @@ export 'test_model.dart';
 class TestWidget extends StatefulWidget {
   const TestWidget({
     Key? key,
-    required this.userrefff,
+    this.userrefff,
   }) : super(key: key);
 
   final DocumentReference? userrefff;
@@ -51,7 +51,7 @@ class _TestWidgetState extends State<TestWidget> {
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).accent1,
+            backgroundColor: FlutterFlowTheme.of(context).secondary,
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
               iconTheme: IconThemeData(
