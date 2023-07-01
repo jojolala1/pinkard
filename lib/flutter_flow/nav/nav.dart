@@ -132,6 +132,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 userrefff: params.getParam(
                     'userrefff', ParamType.DocumentReference, false, ['users']),
               ),
+            ),
+            FFRoute(
+              name: 'testCopy',
+              path: 'testCopy',
+              builder: (context, params) => TestCopyWidget(
+                userrefff: params.getParam(
+                    'userrefff', ParamType.DocumentReference, false, ['users']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
