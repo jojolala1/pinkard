@@ -51,7 +51,7 @@ class _TestWidgetState extends State<TestWidget> {
           onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).alternate,
+            backgroundColor: FlutterFlowTheme.of(context).warning,
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
               iconTheme: IconThemeData(
