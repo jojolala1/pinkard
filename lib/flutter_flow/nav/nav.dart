@@ -106,7 +106,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'pagepercopublic',
-              path: 'pagepercopublic1',
+              path: 'pagepercopublic',
               builder: (context, params) => PagepercopublicWidget(
                 userRef: params.getParam(
                     'userRef', ParamType.DocumentReference, false, ['users']),
@@ -116,30 +116,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'galerie',
               path: 'galerie',
               builder: (context, params) => GalerieWidget(),
-            ),
-            FFRoute(
-              name: 'pagepercopublicCopy',
-              path: 'pagepercopublictest',
-              builder: (context, params) => PagepercopublicCopyWidget(
-                userRef: params.getParam(
-                    'userRef', ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
-              name: 'test',
-              path: 'test',
-              builder: (context, params) => TestWidget(
-                userrefff: params.getParam(
-                    'userrefff', ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
-              name: 'testCopy',
-              path: 'testCopy',
-              builder: (context, params) => TestCopyWidget(
-                userrefff: params.getParam(
-                    'userrefff', ParamType.DocumentReference, false, ['users']),
-              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
